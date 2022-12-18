@@ -17,9 +17,9 @@ def seed():
         # the schema name (see comment in users.py undo_users function).
         # Make sure to add all your other model's undo functions below
         undo_users()
-        db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
+        # db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
         # Add a truncate command here for every table that will be seeded.
-        db.session.commit()
+        # db.session.commit()
     seed_users()
     # Add other seed functions here
 
