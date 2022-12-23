@@ -25,29 +25,29 @@ export default function EditDish() {
     // const [errors, setErrors] = useState([]);
 
 
-    useEffect(()=>{
-        getOnePrimaryReviewThunk(dishId)
-    //   const errors = []
-    //   if(!sessUser) errors.push("Must be logged in to Host a spot")
-    //   if(!address) errors.push("Street address is required")
-    //   if(address.length > 99) errors.push("Street address must be less than 100 characters")
-    //   if(!city) errors.push("City is required")
-    //   if(city.length > 99) errors.push("City must be less than 100 characters")
-    //   if(!state) errors.push("State is required")
-    //   if(state.length > 99) errors.push("State must be less than 100 characters")
-    //   if(!country) errors.push("Country is required")
-    //   if(country.length > 49) errors.push("Country must be less than 50 characters")
-    //   if(name.length > 49) errors.push("Name must be less than 50 characters")
-    //   if(!name) errors.push("Name is required")
-    //   if(!description) errors.push("Description is required")
-    //   if(description.length > 999) errors.push("Description must be less than 1000 characters")
-    //   if(!price) errors.push("Price per day is required")
-    //   if(price <= 0) errors.push("Price must be greater than $0")
-    //   if (price.toString().length > 9) errors.push("Price must be less than 10 characters")
+//     useEffect(()=>{
+//         getOnePrimaryReviewThunk(dishId)
+//       const errors = []
+//       if(!sessUser) errors.push("Must be logged in to Host a spot")
+//       if(!address) errors.push("Street address is required")
+//       if(address.length > 99) errors.push("Street address must be less than 100 characters")
+//       if(!city) errors.push("City is required")
+//       if(city.length > 99) errors.push("City must be less than 100 characters")
+//       if(!state) errors.push("State is required")
+//       if(state.length > 99) errors.push("State must be less than 100 characters")
+//       if(!country) errors.push("Country is required")
+//       if(country.length > 49) errors.push("Country must be less than 50 characters")
+//       if(name.length > 49) errors.push("Name must be less than 50 characters")
+//       if(!name) errors.push("Name is required")
+//       if(!description) errors.push("Description is required")
+//       if(description.length > 999) errors.push("Description must be less than 1000 characters")
+//       if(!price) errors.push("Price per day is required")
+//       if(price <= 0) errors.push("Price must be greater than $0")
+//       if (price.toString().length > 9) errors.push("Price must be less than 10 characters")
 
-    //   setErrors(errors)
-    // },[price, address, city, state, country, name, description, sessUser])
-},[dispatch, dishId])
+//       setErrors(errors)
+//     },[price, address, city, state, country, name, description, sessUser])
+// },[dispatch, dishId])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -56,7 +56,8 @@ export default function EditDish() {
         const payload = {
             description,
             category,
-            rating
+            rating,
+            id: dishId
         };
         console.log(payload, 'payload')
 

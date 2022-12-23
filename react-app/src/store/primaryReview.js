@@ -81,19 +81,15 @@ export const getAllPrimaryReviewsThunk = () => async (dispatch) => {
 
 // Update a primary review
 export const editPrimaryReviewThunk = (primaryReview) => async (dispatch) => {
-    const {id, name, description, category, image, address, rating, user_id} = primaryReview
+    const {id, description, category, rating} = primaryReview
     console.log('in the update', primaryReview)
     const response = await fetch(`/api/primaryreviews/edit/${id}`, {
         method: 'PUT',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({
-            name,
             description,
             category,
-            image,
-            address,
-            rating,
-            user_id
+            rating
         })
     });
 
