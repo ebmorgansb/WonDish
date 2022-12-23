@@ -13,30 +13,24 @@ export default function CreateDish() {
     const [image, setImage] = useState('')
     const [address, setAddress] = useState('');
     const [rating, setRating] = useState('');
-    // const [errors, setErrors] = useState([]);
+    const [errors, setErrors] = useState([]);
 
 
-    // useEffect(()=>{
-    //   const errors = []
-    //   if(!sessUser) errors.push("Must be logged in to Host a spot")
-    //   if(!address) errors.push("Street address is required")
-    //   if(address.length > 99) errors.push("Street address must be less than 100 characters")
-    //   if(!city) errors.push("City is required")
-    //   if(city.length > 99) errors.push("City must be less than 100 characters")
-    //   if(!state) errors.push("State is required")
-    //   if(state.length > 99) errors.push("State must be less than 100 characters")
-    //   if(!country) errors.push("Country is required")
-    //   if(country.length > 49) errors.push("Country must be less than 50 characters")
-    //   if(name.length > 49) errors.push("Name must be less than 50 characters")
-    //   if(!name) errors.push("Name is required")
-    //   if(!description) errors.push("Description is required")
-    //   if(description.length > 999) errors.push("Description must be less than 1000 characters")
-    //   if(!price) errors.push("Price per day is required")
-    //   if(price <= 0) errors.push("Price must be greater than $0")
-    //   if (price.toString().length > 9) errors.push("Price must be less than 10 characters")
+    useEffect(()=>{
+      const errors = []
+      if(name.length > 19) errors.push("Name must be less than 20 characters");
+      if(!name) errors.push("Name is required");
+      if(!description) errors.push("Description is required");
+      if(description.length > 499) errors.push("Description must be less than 500 characters");
+      if(!sessUser) errors.push("Must be logged in to Host a spot");
+      if(!address) errors.push("Street address is required");
+      if(address.length > 99) errors.push("Street address must be less than 100 characters");
+      if(image.length > 254) errors.push("Image link must be less than 255 characters");
+      if(category.length > 19) errors.push("Category must be less than 20 characters");
 
-    //   setErrors(errors)
-    // },[price, address, city, state, country, name, description, sessUser])
+
+      setErrors(errors)
+    },[address, name, description, sessUser, category])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -147,8 +141,7 @@ export default function CreateDish() {
         </label>
         </div>
     </div>
-        {/* <button className="spotSubmitButton" disabled={errors.length > 0} type='submit'>Submit</button> */}
-        <button className="spotSubmitButton" type='submit'>Submit</button>
+        <button className="spotSubmitButton" disabled={errors.length > 0} type='submit'>Submit</button>
       </form>
     </>
     )
