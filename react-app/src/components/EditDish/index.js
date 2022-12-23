@@ -47,11 +47,11 @@ export default function EditDish() {
         };
 
         const editPrimaryReview = await dispatch(editPrimaryReviewThunk(payload))
-        if (editPrimaryReview) {
-          history.push(`/dish/${editPrimaryReview.id}`)
+        // if (editPrimaryReview) {
+          // history.push(`/dish/${editPrimaryReview.id}`)
         //   setShowCreate(false)
           // await dispatch(getSpotThunk(newSpot.id))
-        }
+        // }
       }
 
     return (
