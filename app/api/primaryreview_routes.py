@@ -16,10 +16,11 @@ def allprimaryreviews():
   return jsonify(primaryreviews)
 
 #get primary review by id
-@primaryreviews_routes.route('/<int:primaryreview_id>')
+@primaryreviews_routes.route('/<int:primaryreview_id>', methods=['GET'])
 def primaryreview(primaryreview_id):
   query = PrimaryReview.query.get(primaryreview_id)
   primaryreview = query.to_dict()
+  print('Inda route========', primaryreview)
   return jsonify(primaryreview)
 
 #create new primary review

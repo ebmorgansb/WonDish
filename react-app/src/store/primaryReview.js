@@ -59,6 +59,16 @@ export const createPrimaryReviewThunk = (primaryReview) => async (dispatch) => {
     };
 };
 
+// Get primary review
+export const getOnePrimaryReviewThunk = (primaryReviewId) => async (dispatch) => {
+    const response = await fetch(`/api/primaryreviews/${primaryReviewId}`);
+    if (response.ok) {
+        const primaryReview = await response.json();
+        console.log('in da tunk===', primaryReview)
+        dispatch(getOnePrimaryReviewAction(primaryReview));
+    };
+};
+
 // Get all primary reviews
 export const getAllPrimaryReviewsThunk = () => async (dispatch) => {
     const response = await fetch('/api/primaryreviews/all');
@@ -112,6 +122,11 @@ export default function primaryReviewsReducer(state = {}, action) {
             action.primaryReviews.forEach(primaryReview => newState[primaryReview.id] = primaryReview)
             return newState
 
+        case GETONEPRIMARYREVIEW:
+            // newState = { ...state }
+            newState[action.primaryReview.id] = action.primaryReview
+            return newState
+
         case DELETEPRIMARYREVIEW:
             newState = { ...state }
             delete newState[action.primaryReviewId]
@@ -122,8 +137,11 @@ export default function primaryReviewsReducer(state = {}, action) {
             newState[action.primaryReview.id] = action.primaryReview
             return newState
 
+
         case UPDATEPRIMARYREVIEW:
             newState = {...state}
+            // left side evaluates to an id, left of comma evaluates to the old primary review fields spread out, the right evaluates to the new primary review spread out
+            //and overwrites fields with the same "key" aka field names with the new values from the new primary review.
             newState[action.primaryReview.id] = {...newState[action.primaryReview.id], ...action.primaryReview}
             return newState
 

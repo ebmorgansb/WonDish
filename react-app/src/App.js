@@ -8,7 +8,9 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
-import Dish from './components/Dish';
+import Dishes from './components/Dish';
+import OneDish from './components/OneDish';
+import Home from './components/Home';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -41,11 +43,15 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-        <Route path='/dish' exact={true} >
-          <Dish/>
+        <Route path='/dishes' exact={true} >
+          <Dishes/>
+        </Route>
+        <Route path='/dish/:dishId' exact={true} >
+          <OneDish/>
         </Route>
         <Route path='/' exact={true} >
           <h1>My Home Page</h1>
+          <Home/>
         </Route>
       </Switch>
     </BrowserRouter>
