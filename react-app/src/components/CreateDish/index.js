@@ -18,19 +18,21 @@ export default function CreateDish() {
 
     useEffect(()=>{
       const errors = []
+      if(!sessUser) errors.push("Must be logged in to Host a spot");
       if(name.length > 19) errors.push("Name must be less than 20 characters");
       if(!name) errors.push("Name is required");
       if(!description) errors.push("Description is required");
       if(description.length > 499) errors.push("Description must be less than 500 characters");
-      if(!sessUser) errors.push("Must be logged in to Host a spot");
       if(!address) errors.push("Street address is required");
       if(address.length > 99) errors.push("Street address must be less than 100 characters");
+      if(!image) errors.push("Image is required");
       if(image.length > 254) errors.push("Image link must be less than 255 characters");
-      if(category.length > 19) errors.push("Category must be less than 20 characters");
+      if(category && category.length > 19) errors.push("Category must be less than 20 characters");
+      if(!rating) errors.push("Rating is required");
 
 
       setErrors(errors)
-    },[address, name, description, sessUser, category])
+    },[address, name, description, sessUser, category, rating, image])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -58,10 +60,10 @@ export default function CreateDish() {
       <>
       <h2 className="title">Add a Primary Review</h2>
      <form className="fullSpotFormCreateSpot" onSubmit={handleSubmit}>
-     {/* <ul className="errors">
+     <ul className="errors">
   {errors.map((error) => (
         <li className="oneError" key={`a${error}`}> {error}</li>))}
-      </ul> */}
+      </ul>
       <div className="formInputs">
       <div className="oneFormInput">
      <label>
