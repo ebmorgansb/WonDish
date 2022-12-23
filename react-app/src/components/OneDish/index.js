@@ -3,8 +3,9 @@ import {useDispatch, useSelector} from 'react-redux'
 // import CreateReviewForm from '../CreateReviewForm/CreateReviewForm'
 import {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
-import { getOnePrimaryReviewThunk } from '../../store/primaryReview'
-
+import { deletePrimaryReviewThunk, getOnePrimaryReviewThunk } from '../../store/primaryReview'
+import EditDish from '../EditDish'
+import { NavLink } from 'react-router-dom'
 
 export default function OneDish () {
 
@@ -12,7 +13,8 @@ export default function OneDish () {
   dishId = parseInt(dishId)
   const dispatch = useDispatch()
 
-
+  const userId = useSelector(state => state.session.user.id)
+  console.log('USERID', userId)
   const primaryDish = Object.values(useSelector(state => state.primaryReview))[0]
   console.log(primaryDish, 'wow')
   useEffect(() => {
@@ -33,6 +35,14 @@ return (
       {primaryDish.address}
       {primaryDish.rating}
       </div>
+      <EditDish/>
+      {/* {userId === primaryDish.id && */}
+        <div>
+        {/* <NavLink to={`/`}> */}
+        <button className='crudButton' onClick={()=> {dispatch(deletePrimaryReviewThunk(dishId))}}>Delete Review</button>
+        {/* </NavLink> */}
+        </div>
+        {/* // } */}
 </div>
 )
 

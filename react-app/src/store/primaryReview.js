@@ -82,7 +82,8 @@ export const getAllPrimaryReviewsThunk = () => async (dispatch) => {
 // Update a primary review
 export const editPrimaryReviewThunk = (primaryReview) => async (dispatch) => {
     const {id, name, description, category, image, address, rating, user_id} = primaryReview
-    const response = await fetch(`/api/primaryreviews/${id}`, {
+    console.log('in the update', primaryReview)
+    const response = await fetch(`/api/primaryreviews/edit/${id}`, {
         method: 'PUT',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({
@@ -105,7 +106,7 @@ export const editPrimaryReviewThunk = (primaryReview) => async (dispatch) => {
 
 // Delete a primary review
 export const deletePrimaryReviewThunk = (primaryReviewId) => async (dispatch) => {
-    const response = await fetch(`/api/primaryreviews/${primaryReviewId}`, { method: 'DELETE' });
+    const response = await fetch(`/api/primaryreviews/delete/${primaryReviewId}`, { method: 'DELETE' });
     if (response.ok) {
         dispatch(deletePrimaryReviewAction(primaryReviewId))
     }
