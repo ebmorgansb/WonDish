@@ -29,7 +29,7 @@ export default function EditDish() {
       if(!sessUser) errors.push("Must be logged in to edit a review")
       if(!description) errors.push("Description is required")
       if(description.length > 499) errors.push("Description must be less than 500 characters")
-      if(category.length > 19) errors.push("Category must be less than 20 characters")
+      // if(category.length > 19) errors.push("Category must be less than 20 characters")
       if(!rating) errors.push("Rating is required")
       setErrors(errors)
       },
