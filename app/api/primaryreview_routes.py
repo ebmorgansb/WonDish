@@ -5,6 +5,13 @@ from app.forms.edit_primaryreview import EditPrimaryReviewForm
 from app.forms.primary_review import PrimaryReviewForm
 
 
+# if not list:
+#     return {'errors': ['That list does not exist']}, 401
+#   else:
+#     return jsonify(form.errors)
+    # if form.errors:
+    # return jsonify(form.errors)
+
 primaryreviews_routes = Blueprint('primaryreviews', __name__, url_prefix="/api/primaryreviews")
 
 #get all primary reviews
@@ -19,6 +26,8 @@ def allprimaryreviews():
 @primaryreviews_routes.route('/<int:primaryreview_id>', methods=['GET'])
 def primaryreview(primaryreview_id):
   query = PrimaryReview.query.get(primaryreview_id)
+  if not query:
+    return {'errors': ['This review does not exist']}, 401
   primaryreview = query.to_dict()
   print('Inda route========', primaryreview)
   return jsonify(primaryreview)
@@ -47,11 +56,13 @@ def create_primaryreviews():
   return jsonify(form.errors)
 
 #edit primary review by id
-@primaryreviews_routes.route('/edit/<int:primaryreview_id>', methods=['PUT'])
+@primaryreviews_routes.route('/edit/<int:secondaryreview_id>', methods=['PUT'])
 @login_required
 def edit_primaryreview(primaryreview_id):
   form = EditPrimaryReviewForm()
   query = PrimaryReview.query.get(primaryreview_id)
+  if not query:
+    return {'errors': ['This review does not exist']}, 401
   oldPrimaryReview = query.to_dict()
   print('test', oldPrimaryReview)
   form['csrf_token'].data = request.cookies['csrf_token']
@@ -75,6 +86,8 @@ def delete_primaryreviews(primaryreview_id):
     allSecondaryReviews = SecondaryReview.query.filter(primaryreview_id == SecondaryReview.primaryreview_id).all()
     if len(allSecondaryReviews) == 0:
       onePrimaryReview = PrimaryReview.query.get(primaryreview_id)
+      if not onePrimaryReview:
+        return {'errors': ['That list does not exist']}, 401
       db.session.delete(onePrimaryReview)
       db.session.commit()
       return jsonify('Successfully deleted a primary review that does not have associated secondary reviews')

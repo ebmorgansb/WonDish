@@ -7,14 +7,14 @@ class SecondaryReview(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), nullable=False)
+    name = db.Column(db.String(50))
     description = db.Column(db.String(1000), nullable=False)
     category = db.Column(db.String(50))
-    image =  db.Column(db.String(2000), nullable=False)
-    address = db.Column(db.String(255), nullable=False)
-    rating = db.Column(db.Integer, nullable=False)
+    image =  db.Column(db.String(2000))
+    address = db.Column(db.String(255))
+    rating = db.Column(db.Integer)
     primaryreview_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('primary_reviews.id')), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')))
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     updated_at = db.Column(db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
 

@@ -5,7 +5,7 @@ def seed_secondaryreviews():
     review1 = SecondaryReview(
         name='burrito',
         description='It was a solid burrito',
-        image='image.png',
+        image='https://static.wixstatic.com/media/e82dd7_366ee2ec761a4c70a910db016b1efcde~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Burrito%204.jpg',
         address='216 Ocean Ave, santa barbara, CA, 93101',
         rating=5,
         user_id=1,

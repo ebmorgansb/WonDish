@@ -5,7 +5,7 @@ def seed_primaryreviews():
     review1 = PrimaryReview(
         name='burrito',
         description='Definitely solid',
-        image='image.png',
+        image='https://static.wixstatic.com/media/e82dd7_366ee2ec761a4c70a910db016b1efcde~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Burrito%204.jpg',
         address='216 Ocean Ave',
         rating=7,
         user_id=1)
@@ -13,7 +13,7 @@ def seed_primaryreviews():
     review2 = PrimaryReview(
         name='Chicken Parm',
         description='literally the best',
-        image='image.png',
+        image='https://thecozycook.com/wp-content/uploads/2022/08/Chicken-Parmesan-Recipe-f-500x500.jpg',
         address='3200 California Ave',
         rating=10,
         user_id=1)
@@ -21,7 +21,7 @@ def seed_primaryreviews():
     review3 = PrimaryReview(
         name='Pad Thai',
         description='Better than average',
-        image='image.png',
+        image='https://www.aheadofthyme.com/wp-content/uploads/2020/04/10-minute-chicken-pad-thai-7.jpg',
         address='805 lighthouse Ave',
         rating=6,
         user_id=1)
