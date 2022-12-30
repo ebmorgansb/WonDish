@@ -10,7 +10,7 @@ export default function Search() {
     const dispatch = useDispatch()
     const history = useHistory()
     const [name, setName] = useState('');
-    const [address, setAddress] = useState('');
+    // const [address, setAddress] = useState('');
     const [errors, setErrors] = useState([]);
 
 
@@ -20,13 +20,13 @@ export default function Search() {
     //   if(!sessUser) errors.push("Must be logged in to Host a spot");
       if(name.length > 19) errors.push("Name must be less than 20 characters");
       if(!name) errors.push("Name is required");
-      if(!address) errors.push("Street address is required");
-      if(address.length > 99) errors.push("Street address must be less than 100 characters");
+      // if(!address) errors.push("Street address is required");
+      // if(address.length > 99) errors.push("Street address must be less than 100 characters");
 
 
 
       setErrors(errors)
-    },[address, name, sessUser, dispatch])
+    },[name, sessUser, dispatch])
 
     const handleSubmit = async (e) => {
         console.log(primaryReviews, 'test')
@@ -35,12 +35,12 @@ export default function Search() {
 
         const payload = {
             name,
-            address,
+            // address,
             // user_id: sessUser.id
         };
         console.log(primaryReviews, 'in handle submit')
         primaryReviews.forEach(primaryReview => {
-            if (primaryReview.name === payload.name && primaryReview.address === payload.address) {
+            if (primaryReview.name === payload.name) {
                 console.log(primaryReview, 'if conditional')
                 history.push(`/dish/${primaryReview.id}`)
             }
@@ -72,7 +72,7 @@ export default function Search() {
         </div>
      </label>
       </div>
-        <div className="oneFormInput">
+        {/* <div className="oneFormInput">
         <label>
         Address
         <div className="formPadding">
@@ -84,7 +84,7 @@ export default function Search() {
         />
         </div>
         </label>
-        </div>
+        </div> */}
     </div>
         <button className="spotSubmitButton" disabled={errors.length > 0} type='submit'>Submit</button>
       </form>

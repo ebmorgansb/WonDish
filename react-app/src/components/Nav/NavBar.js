@@ -1,10 +1,19 @@
-
+import './index.css'
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import LogoutButton from './auth/LogoutButton';
-
+import LogoutButton from '../auth/LogoutButton';
+import symbol from '../allImages/symbol.png'
 const NavBar = () => {
   return (
+  <>
+  <div className='navAndTitle'>
+    <NavLink style={{ textDecoration: 'none' }} to={'/'}>
+    <div className='titleAndLogo'>
+      <div className='homeTitle1'>WonDish</div>
+    <img className='symbolNav' src={symbol}></img>
+    </div>
+    </NavLink>
+    <div className='totalNav'>
     <nav>
       <div>
         <div>
@@ -32,6 +41,9 @@ const NavBar = () => {
         </div>
       </div>
     </nav>
+    </div>
+    </div>
+    </>
   );
 }
 

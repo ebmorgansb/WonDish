@@ -1,9 +1,14 @@
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
+import { getAllPrimaryReviewsThunk } from "../../store/primaryReview"
 
-export default function CreateDishFilter() {
+export default function CreateDishFilter({setShowModal}) {
     const sessUser = useSelector(state => state.session.user)
+    const primaryDishes = Object.values(useSelector(state => state.primaryReview))[0]
+    console.log(primaryDishes, 'eowowowwowo')
+
+
     const dispatch = useDispatch()
     const history = useHistory()
     const [name, setName] = useState('');
@@ -19,8 +24,7 @@ export default function CreateDishFilter() {
       if(!address) errors.push("Street address is required");
       if(address.length > 99) errors.push("Street address must be less than 100 characters");
 
-
-
+      getAllPrimaryReviewsThunk()
       setErrors(errors)
     },[address, name, sessUser])
 
@@ -37,9 +41,9 @@ export default function CreateDishFilter() {
         //slice of state, then have two redirects one within an if and the other else
         // if (newPrimaryReview) {
         //   history.push(`/dish/${newPrimaryReview.id}`)
-
+        // {setShowModal}
         }
-      
+
 
     return (
       <>

@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
-import NavBar from './components/NavBar';
+import NavBar from './components/Nav/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
@@ -12,6 +12,7 @@ import Dishes from './components/Dish';
 import OneDish from './components/OneDish';
 import Home from './components/Home';
 import CreateDish from './components/CreateDish';
+import CreateSecondaryDish from './components/CreateSecondaryDish';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -49,6 +50,9 @@ function App() {
         </Route>
         <Route path='/primarydish/create' exact={true} >
           <CreateDish/>
+        </Route>
+        <Route path='/secondarydish/create' exact={true} >
+          <CreateSecondaryDish/>
         </Route>
         <Route path='/dish/:dishId' exact={true} >
           <OneDish/>

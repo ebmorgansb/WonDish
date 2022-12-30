@@ -2,9 +2,12 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session'
 import primaryReviewsReducer from './primaryReview';
+import secondaryReviewsReducer from './secondaryReview';
+
 const rootReducer = combineReducers({
   session,
-  primaryReview: primaryReviewsReducer
+  primaryReview: primaryReviewsReducer,
+  secondaryReview: secondaryReviewsReducer
 });
 
 

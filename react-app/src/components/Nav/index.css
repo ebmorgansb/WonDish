@@ -1,0 +1,29 @@
+.navAndTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: rgb(70, 67, 67) solid 1px;
+}
+
+.homeTitle1 {
+    margin: 10px;
+    margin-left: 25px;
+}
+
+.homeTitle1:hover {
+    color: rgb(121, 144, 150);
+}
+
+.symbolNav {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+}
+
+
+.titleAndLogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
