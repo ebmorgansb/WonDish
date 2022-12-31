@@ -30,6 +30,7 @@ return (
     <Slider/>
   </div>
 </div>
+
 )
 
 }

@@ -13,6 +13,7 @@ import OneDish from './components/OneDish';
 import Home from './components/Home';
 import CreateDish from './components/CreateDish';
 import CreateSecondaryDish from './components/CreateSecondaryDish';
+import Footer from './components/Footer';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -61,6 +62,7 @@ function App() {
           <Home/>
         </Route>
       </Switch>
+      <Footer/>
     </BrowserRouter>
   );
 }

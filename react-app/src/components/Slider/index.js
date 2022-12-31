@@ -42,7 +42,7 @@ return (
     <div className='allCar'>
       <button className='arrow-button-left' onClick={handlePrevious}></button>
       <NavLink to={`/dish/${primaryDishes[currentIndex]?.id}`}>
-      <img src={primaryDishes[currentIndex]?.image} alt="Slider image" />
+      <img className='sliderImages' src={primaryDishes[currentIndex]?.image} alt="Slider image" />
       </NavLink>
       <button className='arrow-button-right' onClick={handleNext}></button>
     </div>
