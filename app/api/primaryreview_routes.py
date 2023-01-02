@@ -56,7 +56,7 @@ def create_primaryreviews():
   return jsonify(form.errors)
 
 #edit primary review by id
-@primaryreviews_routes.route('/edit/<int:secondaryreview_id>', methods=['PUT'])
+@primaryreviews_routes.route('/edit/<int:primaryreview_id>', methods=['PUT'])
 @login_required
 def edit_primaryreview(primaryreview_id):
   form = EditPrimaryReviewForm()

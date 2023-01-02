@@ -80,7 +80,7 @@ export const getAllSecondaryReviewsThunk = (primaryReviewId) => async (dispatch)
 
 
 // Update a secondary review
-export const editPrimaryReviewThunk = (secondaryReview) => async (dispatch) => {
+export const editSecondaryReviewThunk = (secondaryReview) => async (dispatch) => {
     const {id, description, category, rating} = secondaryReview
     // console.log('in the update', primaryReview)
     const response = await fetch(`/api/secondaryreviews/edit/${id}`, {
@@ -95,6 +95,7 @@ export const editPrimaryReviewThunk = (secondaryReview) => async (dispatch) => {
 
     if (response.ok) {
         const editedSecondaryReview = await response.json();
+        // console.log('editedSecondaryReview)
         dispatch(updateSecondaryReviewAction(editedSecondaryReview));
         return editedSecondaryReview;
     };

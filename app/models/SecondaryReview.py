@@ -28,6 +28,7 @@ class SecondaryReview(db.Model):
             'description':self.description,
             'category':self.category,
             'address':self.address,
+            'image':self.image,
             'rating':self.rating,
             'user_id':self.user_id,
             'primaryreview_id': self.primaryreview_id,

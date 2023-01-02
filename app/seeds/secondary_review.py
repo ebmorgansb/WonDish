@@ -11,12 +11,30 @@ def seed_secondaryreviews():
         user_id=1,
         primaryreview_id=1)
 
+    review1b = SecondaryReview(
+        name='burrito',
+        description='It was delicious but not traditional',
+        image='https://www.shutterstock.com/image-photo/mexican-beef-burrito-260nw-1349138753.jpg',
+        address='216 Ocean Ave, santa barbara, CA, 93101',
+        rating=9,
+        user_id=1,
+        primaryreview_id=1)
+
     review2 = SecondaryReview(
         name='Chicken Parmesan',
         description='off the charts, on god very enjoyable.',
         image='image.png',
         address='3200 California Ave, santa barbara, CA, 93101',
         rating=10,
+        user_id=1,
+        primaryreview_id=2)
+
+    review2b = SecondaryReview(
+        name='Chicken Parmesan',
+        description='Absolutely loved it',
+        image='https://www.cookingclassy.com/wp-content/uploads/2013/02/chicken-parmesan-16.jpg',
+        address='3200 California Ave, santa barbara, CA, 93101',
+        rating=8,
         user_id=1,
         primaryreview_id=2)
 
@@ -29,10 +47,22 @@ def seed_secondaryreviews():
         user_id=1,
         primaryreview_id=3)
 
+    review3b = SecondaryReview(
+        name='Pad Thai',
+        description='So unique and flavorful.',
+        image='https://media.istockphoto.com/id/475306578/photo/pad-thai-shrimp.jpg',
+        address='805 lighthouse Ave, santa barbara, CA, 93101',
+        rating=6,
+        user_id=1,
+        primaryreview_id=3)
+
 
     db.session.add(review1)
+    db.session.add(review1b)
     db.session.add(review2)
+    db.session.add(review2b)
     db.session.add(review3)
+    db.session.add(review3b)
     db.session.commit()
 
 

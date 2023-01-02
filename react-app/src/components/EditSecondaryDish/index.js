@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { useParams } from "react-router-dom"
 import { getOnePrimaryReviewThunk } from "../../store/primaryReview"
-import { editPrimaryReviewThunk } from "../../store/primaryReview"
+import { editSecondaryReviewThunk } from "../../store/secondaryReview"
 
 
 
@@ -49,7 +49,7 @@ export default function EditSecondaryDish() {
             id: dishId
         };
 
-        const editPrimaryReview = await dispatch(editPrimaryReviewThunk(payload))
+        const editPrimaryReview = await dispatch(editSecondaryReviewThunk(payload))
         // if (editPrimaryReview) {
           // history.push(`/dish/${editPrimaryReview.id}`)
         //   setShowCreate(false)
