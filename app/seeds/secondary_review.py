@@ -23,7 +23,7 @@ def seed_secondaryreviews():
     review2 = SecondaryReview(
         name='Chicken Parmesan',
         description='off the charts, on god very enjoyable.',
-        image='image.png',
+        image='https://theblondcook.com/wp-content/uploads/2021/02/chicken-parmesan-6.jpg',
         address='3200 California Ave, santa barbara, CA, 93101',
         rating=10,
         user_id=1,
@@ -41,7 +41,7 @@ def seed_secondaryreviews():
     review3 = SecondaryReview(
         name='Pad Thai',
         description='It was flavorful and authentic... would go back!',
-        image='image.png',
+        image='https://www.chilipeppermadness.com/wp-content/uploads/2022/03/Pad-Thai-SQ-500x375.jpg',
         address='805 lighthouse Ave, santa barbara, CA, 93101',
         rating=7,
         user_id=1,
