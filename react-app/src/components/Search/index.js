@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { getAllPrimaryReviewsThunk } from "../../store/primaryReview"
+import './index.css'
 
 export default function Search() {
     const sessUser = useSelector(state => state.session.user)
@@ -19,7 +20,7 @@ export default function Search() {
       const errors = []
     //   if(!sessUser) errors.push("Must be logged in to Host a spot");
       if(name.length > 19) errors.push("Name must be less than 20 characters");
-      if(!name) errors.push("Name is required");
+      // if(!name) errors.push("Name is required");
       // if(!address) errors.push("Street address is required");
       // if(address.length > 99) errors.push("Street address must be less than 100 characters");
 
@@ -31,8 +32,6 @@ export default function Search() {
     const handleSubmit = async (e) => {
         console.log(primaryReviews, 'test')
         e.preventDefault();
-
-
         const payload = {
             name,
             // address,
@@ -52,25 +51,21 @@ export default function Search() {
 
     return (
       <div className="searchForm">
-      <h2 className="title">Find the winning dish!</h2>
-     <form className="fullSpotFormCreateSpot" onSubmit={handleSubmit}>
+     <form className="totalSearchForm" onSubmit={handleSubmit}>
      <ul className="errors">
   {errors.map((error) => (
         <li className="oneError" key={`a${error}`}> {error}</li>))}
       </ul>
-      <div className="formInputs">
+      <div className="subTitle">Find the winning dish!</div>
+      <div>
       <div className="oneFormInput">
-     <label>
-        Name
-        <div className="formPadding">
         <input className="actualInput"
+          placeholder="Dish Name"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-        />
-        </div>
-     </label>
+          ></input>
       </div>
         {/* <div className="oneFormInput">
         <label>
@@ -86,7 +81,9 @@ export default function Search() {
         </label>
         </div> */}
     </div>
-        <button className="spotSubmitButton" disabled={errors.length > 0} type='submit'>Submit</button>
+        <button className="button" disabled={errors.length > 0} type='submit'>Submit</button>
+        {/* <button className="spotSubmitButton" type='submit'>Submit</button> */}
+
       </form>
     </div>
     )

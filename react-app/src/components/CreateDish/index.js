@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { createPrimaryReviewThunk } from "../../store/primaryReview"
 
-export default function CreateDish() {
+export default function CreateDish({setShowModal}) {
     const sessUser = useSelector(state => state.session.user)
     const dispatch = useDispatch()
     const history = useHistory()
@@ -51,7 +51,7 @@ export default function CreateDish() {
         const newPrimaryReview = await dispatch(createPrimaryReviewThunk(payload))
         if (newPrimaryReview) {
           history.push(`/dish/${newPrimaryReview.id}`)
-        //   setShowCreate(false)
+          setShowModal(false)
           // await dispatch(getSpotThunk(newSpot.id))
         }
       }

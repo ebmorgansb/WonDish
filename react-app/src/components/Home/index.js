@@ -5,30 +5,22 @@ import {useParams} from 'react-router-dom'
 import CreateDish from '../CreateDish'
 // import { ModalProvider } from '../../context/modal'
 import { Modal } from '../../context/modal'
-import CreateDishFilter from '../CreateDishFilter/CreateDishFilter'
+// import CreateDishFilter from '../CreateDishFilter/CreateDishFilter'
 import Search from '../Search';
 import Slider from '../Slider';
+import CreateADishModal from '../CreateDishFilter/CreateDishFilterModal'
 
 
 export default function Home() {
-  const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch()
 
 
 return (
 <div className='totalHome'>
-  <div className='search'>
+  <div className='title1'>WonDish</div>
     <Search/>
-  </div>
-  <button onClick={() => setShowModal(true)}>Create a Dish Review</button>
-  {showModal && (
-  <Modal onClose={() => setShowModal(false)}>
-    <CreateDishFilter setShowModal={setShowModal}/>
-  </Modal>
-  )}
-  <div>
     <Slider/>
-  </div>
+    <CreateADishModal/>
 </div>
 
 )

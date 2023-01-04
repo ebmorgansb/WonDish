@@ -7,7 +7,7 @@ import { editPrimaryReviewThunk } from "../../store/primaryReview"
 
 
 
-export default function EditDish() {
+export default function EditDish({setShowModa}) {
     let {dishId} = useParams()
     dishId = parseInt(dishId)
     const sessUser = useSelector(state => state.session.user)

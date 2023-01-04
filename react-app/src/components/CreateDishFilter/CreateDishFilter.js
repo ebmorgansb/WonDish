@@ -2,11 +2,24 @@ import { useSelector, useDispatch } from "react-redux"
 import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { getAllPrimaryReviewsThunk } from "../../store/primaryReview"
+import { Modal } from "../../context/modal"
 
-export default function CreateDishFilter({setShowModal}) {
+export default function CreateDishFilter() {
     const sessUser = useSelector(state => state.session.user)
-    const primaryDishes = Object.values(useSelector(state => state.primaryReview))[0]
-    console.log(primaryDishes, 'eowowowwowo')
+    const primaryDishes = [Object.values(useSelector(state => state.primaryReview))[0]]
+    console.log('in the modal', primaryDishes)
+    // if (!primaryDishes) {
+    //   return null
+    // }
+    const primaryDishNames = []
+    const primaryDishAddresses = []
+    // primaryDishes.forEach(primaryDish => primaryDishNames.append(primaryDish.name))
+    for (let i = 0; i < primaryDishes.length; i++) {
+      let primaryDishName = primaryDishes[i].name
+      let primaryDishAddress = primaryDishes[i].address
+      primaryDishNames.push(primaryDishName)
+      primaryDishAddresses.push(primaryDishAddress)
+    }
 
 
     const dispatch = useDispatch()
@@ -42,6 +55,13 @@ export default function CreateDishFilter({setShowModal}) {
         // if (newPrimaryReview) {
         //   history.push(`/dish/${newPrimaryReview.id}`)
         // {setShowModal}
+        if (primaryDishNames.includes(name) && primaryDishAddresses.includes(address)) {
+          // if (primaryDishNames.includes(name)) {
+          history.push(`/secondarydish/create`)
+        }
+        else {
+          history.push(`/primarydish/create`)
+        }
         }
 
 
@@ -81,7 +101,7 @@ export default function CreateDishFilter({setShowModal}) {
         </label>
         </div>
     </div>
-        <button className="spotSubmitButton" disabled={errors.length > 0} type='submit'>Submit</button>
+        <button className="button" disabled={errors.length > 0} type='submit'>Submit</button>
       </form>
     </>
     )

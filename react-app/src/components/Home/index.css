@@ -4,24 +4,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     width: 100%;
-    /* height: max-content; */
-    height: 100%
+    height: 100%;
+    margin-top: 50px;
   }
 
   .jesus {
     height: 100%;
-  }
-
-   .search {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    height: 25%;
   }
 
   .filter {
@@ -34,7 +24,7 @@
     height: 25%;
   }
 
-  .homeTitle1 {
+  .title1 {
     color: rgb(44, 64, 74);
-    font-size: 50px;
+    font-size: 64px;
   }
