@@ -32,6 +32,7 @@ def primaryreview(secondaryreview_id):
 @secondaryreviews_routes.route('/create/assocprime/<int:primaryreview_id>', methods=['POST'])
 @login_required
 def create_secondaryreview(primaryreview_id):
+  print('tetetetetetetetetete')
   form = SecondaryReviewForm()
   form['csrf_token'].data = request.cookies['csrf_token']
   data = form.data
@@ -47,6 +48,7 @@ def create_secondaryreview(primaryreview_id):
       user_id = data['user_id'],
       primaryreview_id = primaryreview_id
     )
+    print('unbeliebable', secondary_review)
     db.session.add(secondary_review)
     db.session.commit()
     return jsonify(secondary_review.to_dict())
