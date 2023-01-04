@@ -7,18 +7,14 @@ import { Modal } from "../../context/modal"
 export default function CreateDishFilter() {
     const sessUser = useSelector(state => state.session.user)
     const primaryDishes = [Object.values(useSelector(state => state.primaryReview))[0]]
-    console.log('in the modal', primaryDishes)
-    // if (!primaryDishes) {
-    //   return null
-    // }
     const primaryDishNames = []
     const primaryDishAddresses = []
-    // primaryDishes.forEach(primaryDish => primaryDishNames.append(primaryDish.name))
+
     for (let i = 0; i < primaryDishes.length; i++) {
-      let primaryDishName = primaryDishes[i].name
-      let primaryDishAddress = primaryDishes[i].address
-      primaryDishNames.push(primaryDishName)
-      primaryDishAddresses.push(primaryDishAddress)
+      let primaryDishName = primaryDishes[i].name.split(" ").join("")
+      let primaryDishAddress = primaryDishes[i].address.split(" ").join("")
+      primaryDishNames.push(primaryDishName.toLowerCase())
+      primaryDishAddresses.push(primaryDishAddress.toLowerCase())
     }
 
 
@@ -55,12 +51,12 @@ export default function CreateDishFilter() {
         // if (newPrimaryReview) {
         //   history.push(`/dish/${newPrimaryReview.id}`)
         // {setShowModal}
-        if (primaryDishNames.includes(name) && primaryDishAddresses.includes(address)) {
+        if (primaryDishNames.includes(name.split(" ").join("").toLowerCase()) && primaryDishAddresses.includes(address.split(" ").join("").toLowerCase())) {
           // if (primaryDishNames.includes(name)) {
-          history.push(`/secondarydish/create`)
+          history.push(`/secondarydish/create`, {name, address})
         }
         else {
-          history.push(`/primarydish/create`)
+          history.push(`/primarydish/create`, {name, address})
         }
         }
 

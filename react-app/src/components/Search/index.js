@@ -14,7 +14,16 @@ export default function Search() {
     // const [address, setAddress] = useState('');
     const [errors, setErrors] = useState([]);
 
+    // const primaryDishez = [Object.values(useSelector(state => state.primaryReview))[0]]
+    // const primaryDishNames = []
+    // const primaryDishAddresses = []
 
+    // for (let i = 0; i < primaryDishez.length; i++) {
+    //   let primaryDishName = primaryDishez[i].name
+    //   let primaryDishAddress = primaryDishez[i].address
+    //   primaryDishNames.push(primaryDishName)
+    //   primaryDishAddresses.push(primaryDishAddress)
+    // }
     useEffect(()=>{
         dispatch(getAllPrimaryReviewsThunk());
       const errors = []
@@ -42,6 +51,9 @@ export default function Search() {
             if (primaryReview.name === payload.name) {
                 console.log(primaryReview, 'if conditional')
                 history.push(`/dish/${primaryReview.id}`)
+            }
+            else {
+              setErrors(['TEST'])
             }
         })
 
@@ -82,7 +94,7 @@ export default function Search() {
         </div> */}
     </div>
         <button className="button" disabled={errors.length > 0} type='submit'>Submit</button>
-        {/* <button className="spotSubmitButton" type='submit'>Submit</button> */}
+
 
       </form>
     </div>

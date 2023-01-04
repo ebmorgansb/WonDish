@@ -2,16 +2,20 @@ import { useSelector, useDispatch } from "react-redux"
 import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { createPrimaryReviewThunk } from "../../store/primaryReview"
+import { useLocation } from "react-router-dom"
+import React from 'react';
 
-export default function CreateDish({setShowModal}) {
+export default function CreateDish() {
+  const location = useLocation();
+  const data = location.state;
     const sessUser = useSelector(state => state.session.user)
     const dispatch = useDispatch()
     const history = useHistory()
-    const [name, setName] = useState('');
+    const [name, setName] = useState('' ||data.name);
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
     const [image, setImage] = useState('')
-    const [address, setAddress] = useState('');
+    const [address, setAddress] = useState('' || data.address);
     const [rating, setRating] = useState('');
     const [errors, setErrors] = useState([]);
 
@@ -51,15 +55,13 @@ export default function CreateDish({setShowModal}) {
         const newPrimaryReview = await dispatch(createPrimaryReviewThunk(payload))
         if (newPrimaryReview) {
           history.push(`/dish/${newPrimaryReview.id}`)
-          setShowModal(false)
-          // await dispatch(getSpotThunk(newSpot.id))
         }
       }
 
     return (
       <>
       <h2 className="title">Add a Primary Review</h2>
-     <form className="fullSpotFormCreateSpot" onSubmit={handleSubmit}>
+     <form className="createDishForm" onSubmit={handleSubmit}>
      <ul className="errors">
   {errors.map((error) => (
         <li className="oneError" key={`a${error}`}> {error}</li>))}

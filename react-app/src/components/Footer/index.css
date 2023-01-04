@@ -1,16 +1,4 @@
-.footer {
-    display: flex;
-    position: sticky;
-    bottom: 0;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-around;
-    border-top: 1px solid grey;
-    background-color: white;
-    max-height: 42px;
-    width: 100%;
-    min-height: 40px;
-}
+
 
 #root {
     height: 100vH;
@@ -36,4 +24,14 @@ position: relative;
     width: 30px;
     padding-top:7px;
     padding-left: 5px;
+}
+
+.oneDishButton {
+    background-color: hsl(0, 0%, 50%, .04);
+    border: 1px solid black;
+    border: 1px solid black;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 10px;
+    font-size: 16px;
 }

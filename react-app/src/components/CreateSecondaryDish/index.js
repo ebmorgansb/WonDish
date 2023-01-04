@@ -1,17 +1,23 @@
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect, useState } from "react"
+import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { useHistory } from "react-router-dom"
 import { createSecondaryReviewThunk } from "../../store/secondaryReview"
+import './index.css'
+export default function CreateSecondaryDish({primaryId}) {
 
-export default function CreateSecondaryDish({primaryId, name, address}) {
+    const location = useLocation();
+    const data = location.state;
+
     const sessUser = useSelector(state => state.session.user)
     const dispatch = useDispatch()
     const history = useHistory()
-    // const [name, setName] = useState('');
+    const [nameSec, setNameSec] = useState('' || data.name);
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
     const [image, setImage] = useState('')
-    // const [address, setAddress] = useState('');
+    const [addressSec, setAddressSec] = useState('' || data.address);
     const [rating, setRating] = useState('');
     const [errors, setErrors] = useState([]);
 
@@ -39,17 +45,17 @@ export default function CreateSecondaryDish({primaryId, name, address}) {
 
 
         const payload = {
-            name,
+            nameSec,
             description,
             category,
             image,
-            address,
+            addressSec,
             rating,
             user_id: sessUser.id,
             primaryreview_id: primaryId
         };
-
-        const newSecondaryReview = await dispatch(createSecondaryReviewThunk(payload))
+        console.log('yo dis the payload', payload)
+        const newSecondaryReview = await dispatch(createSecondaryReviewThunk(payload, payload.primaryreview_id))
         if (newSecondaryReview) {
           history.push(`/dish/${newSecondaryReview.primaryreview_id}`)
         }
@@ -57,26 +63,26 @@ export default function CreateSecondaryDish({primaryId, name, address}) {
 
     return (
       <>
-      <h2 className="title">Add a Secondary Review</h2>
-     <form className="fullSpotFormCreateSpot" onSubmit={handleSubmit}>
+     <form className="secondaryReviewForm" onSubmit={handleSubmit}>
+     <h2 className="title">Add a Secondary Review</h2>
      <ul className="errors">
   {errors.map((error) => (
         <li className="oneError" key={`a${error}`}> {error}</li>))}
       </ul>
       <div className="formInputs">
-      {/* <div className="oneFormInput">
+      <div className="oneFormInput">
      <label>
         Name
         <div className="formPadding">
         <input className="actualInput"
           type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={nameSec}
+          onChange={(e) => setNameSec(e.target.value)}
           required
         />
         </div>
      </label>
-      </div> */}
+      </div>
      <div className="oneFormInput">
      <label>
         Description
@@ -115,19 +121,19 @@ export default function CreateSecondaryDish({primaryId, name, address}) {
         </div>
         </label>
         </div>
-        {/* <div className="oneFormInput">
+        <div className="oneFormInput">
         <label>
         Address
         <div className="formPadding">
         <input className="actualInput"
           type="text"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
+          value={addressSec}
+          onChange={(e) => setAddressSec(e.target.value)}
           required
         />
         </div>
         </label>
-        </div> */}
+        </div>
         <div className="oneFormInput">
         <label>
         Rating

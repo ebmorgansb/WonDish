@@ -21,7 +21,6 @@ export default function OneDish () {
   const userId = user?.id
   const primaryDish = Object.values(useSelector(state => state.primaryReview))[0]
   const secondaryDishes = Object.values(useSelector(state => state.secondaryReview))
-  // const secondaryDishes = secondState[0]
 
 
   useEffect(() => {
@@ -51,14 +50,14 @@ return (
         <div>Address: {primaryDish?.address}</div>
         <div>Rating: {primaryDish?.rating}</div>
         </div>
-      <button onClick={() => setShowModal(true)}>Edit your Dish</button>
+      <button className='oneDishButton' onClick={() => setShowModal(true)}>Edit your Dish</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <EditDish setShowModal={setShowModal} />
         </Modal>
       )}
         <NavLink to={`/`}>
-          <button className='crudButton' onClick={() => { dispatch(deletePrimaryReviewThunk(dishId)) }}>Delete Review</button>
+          <button className='oneDishButton' onClick={() => { dispatch(deletePrimaryReviewThunk(dishId)) }}>Delete Review</button>
         </NavLink>
       </div>
     </div>
@@ -74,13 +73,13 @@ return (
               <div>{secondaryDish.description}</div>
             </div>
             <div className='editAndDeleteSecond'>
-              <button onClick={() => setShowModal2(true)}>Edit your Dish</button>
+              <button className='oneDishButton' onClick={() => setShowModal2(true)}>Edit your Dish</button>
               {showModal2 && (
               <Modal onClose={() => setShowModal2(false)}>
                 <EditSecondaryDish setShowModal2={setShowModal2} />
               </Modal>
               )}
-              <button className='crudButton' onClick={() => { dispatch(deleteSecondaryReviewThunk(secondaryDish.id)) }}>Delete Review</button>
+              <button className='oneDishButton' onClick={() => { dispatch(deleteSecondaryReviewThunk(secondaryDish.id)) }}>Delete Review</button>
               </div>
           </div>
         </div>
