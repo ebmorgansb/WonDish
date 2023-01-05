@@ -1,14 +1,12 @@
-.createDishForm {
+.authForms {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 100%;
-    background-color: rgba(220, 225, 224, 0.3);
 }
 
-.spotSubmitButton {
+.authSubmitButton {
     width: 40%;
     height: 50px;
     min-height: 50px;

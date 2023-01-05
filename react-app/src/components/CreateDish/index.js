@@ -63,10 +63,10 @@ export default function CreateDish() {
       <>
      <form className="createDishForm" onSubmit={handleSubmit}>
      <h2 className="title">Add a Primary Review</h2>
-     <ul className="errors">
+     <div className="errors">
   {errors.map((error) => (
-        <li className="oneError" key={`a${error}`}> {error}</li>))}
-      </ul>
+        <div className="oneError" key={`a${error}`}> {error}</div>))}
+      </div>
       <div className="formInputs">
       <div className="oneFormInput">
      <label>

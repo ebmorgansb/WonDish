@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
+import './index.css'
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -33,15 +34,16 @@ const LoginForm = () => {
   }
 
   return (
-    <form onSubmit={onLogin}>
-      <div>
+    <form className='authForms' onSubmit={onLogin}>
+      <h1>Log in</h1>
+      <div className='errors'>
         {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
+          <div className='oneError' key={ind}>{error}</div>
         ))}
       </div>
-      <div>
+      <div className='oneFormInput'>
         <label htmlFor='email'>Email</label>
-        <input
+        <input className='actualInput'
           name='email'
           type='text'
           placeholder='Email'
@@ -49,17 +51,17 @@ const LoginForm = () => {
           onChange={updateEmail}
         />
       </div>
-      <div>
+      <div className='oneFormInput'>
         <label htmlFor='password'>Password</label>
-        <input
+        <input className='actualInput'
           name='password'
           type='password'
           placeholder='Password'
           value={password}
           onChange={updatePassword}
         />
-        <button type='submit'>Login</button>
-        <button  type="submit"
+        <button className='authSubmitButton' type='submit'>Login</button>
+        <button className='authSubmitButton' type="submit"
   onClick={()=>{setEmail("demo@aa.io");setPassword("password")}}>Demo Login</button>
       </div>
     </form>

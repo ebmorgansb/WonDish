@@ -10,3 +10,66 @@
         font-size: 16px;
 
 }
+
+.createFilterForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .authSubmitButton {
+        width: 40%;
+        height: 50px;
+        min-height: 50px;
+        border-radius: 2px;
+        background-color: rgb(215, 4, 102);
+        color: white;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+
+    .formInputs {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .oneFormInput {
+        padding: 4px;
+    }
+
+    .textAreaInputCreate {
+        width: 100%;
+        height: 25px;
+        /* resize: none; */
+        border-radius: 4px;
+        padding: 4px;
+        border: 1px solid black;
+    }
+
+    .formPadding {
+        padding: 3px;
+    }
+
+    .actualInput {
+        border-radius: 4px;
+        border: 1px solid black;
+    }
+
+    .title {
+        margin-left: 35px;
+        /* margin-bottom:20px */
+    }
+
+    .errors {
+        display: flex;
+        flex-direction: column;
+        justify-content:end;
+        /* margin-top: 10px; */
+    }
+
+    .oneError {
+        font-size: 10px;
+        margin-top: 2px;
+    }

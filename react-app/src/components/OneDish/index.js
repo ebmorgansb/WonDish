@@ -23,7 +23,7 @@ export default function OneDish () {
   const userId = user?.id
 
   const primaryDish = Object.values(useSelector(state => state.primaryReview))[0]
-  const secondaryDishes = Object.values(useSelector(state => state.secondaryReview))
+  const secondaryDishes = Object.values(useSelector(state => state.secondaryReview)).slice(0,6)
 
 
   useEffect(() => {

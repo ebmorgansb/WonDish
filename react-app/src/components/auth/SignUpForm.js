@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import './index.css'
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -43,42 +44,43 @@ const SignUpForm = () => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
-      <div>
+    <form className='authForms' onSubmit={onSignUp}>
+      <h1>Sign Up</h1>
+      <div className='errors'>
         {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
+          <div className='oneError' key={ind}>{error}</div>
         ))}
       </div>
-      <div>
+      <div className='oneFormInput'>
         <label>User Name</label>
-        <input
+        <input className='actualInput'
           type='text'
           name='username'
           onChange={updateUsername}
           value={username}
         ></input>
       </div>
-      <div>
+      <div className='oneFormInput'>
         <label>Email</label>
-        <input
+        <input className='actualInput'
           type='text'
           name='email'
           onChange={updateEmail}
           value={email}
         ></input>
       </div>
-      <div>
+      <div className='oneFormInput'>
         <label>Password</label>
-        <input
+        <input className='actualInput'
           type='password'
           name='password'
           onChange={updatePassword}
           value={password}
         ></input>
       </div>
-      <div>
+      <div className='oneFormInput'>
         <label>Repeat Password</label>
-        <input
+        <input className='actualInput'
           type='password'
           name='repeat_password'
           onChange={updateRepeatPassword}
@@ -86,7 +88,7 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
-      <button type='submit'>Sign Up</button>
+      <button className='authSubmitButton' type='submit'>Sign Up</button>
     </form>
   );
 };

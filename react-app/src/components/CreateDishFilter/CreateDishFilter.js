@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { getAllPrimaryReviewsThunk } from "../../store/primaryReview"
 import { Modal } from "../../context/modal"
+import './index.css'
 
 export default function CreateDishFilter() {
     const sessUser = useSelector(state => state.session.user)
@@ -25,7 +26,7 @@ export default function CreateDishFilter() {
 
     useEffect(()=>{
       const errors = []
-      if(!sessUser) errors.push("Must be logged in to Host a spot");
+      if(!sessUser) errors.push("Must be logged in to create a review");
       if(name.length > 19) errors.push("Name must be less than 20 characters");
       if(!name) errors.push("Name is required");
       if(!address) errors.push("Street address is required");
@@ -61,12 +62,12 @@ export default function CreateDishFilter() {
 
     return (
       <>
-      <h2 className="title">Where and what did you eat?!</h2>
-     <form className="fullSpotFormCreateSpot" onSubmit={handleSubmit}>
-     <ul className="errors">
+     <form className="createFilterForm" onSubmit={handleSubmit}>
+     <h1 className="title">Where and what did you eat?!</h1>
+     <div className="errors">
   {errors.map((error) => (
-        <li className="oneError" key={`a${error}`}> {error}</li>))}
-      </ul>
+        <div className="oneError" key={`a${error}`}> {error}</div>))}
+      </div>
       <div className="formInputs">
       <div className="oneFormInput">
      <label>
