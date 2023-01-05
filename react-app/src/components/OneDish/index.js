@@ -44,9 +44,13 @@ return (
   <>
   <div className='totalOneDish'>
     <div className='primeDish'>
-      {/* <div className='primeImage'> */}
-        <img className='primeImage' src={primaryDish?.image}></img>
-      {/* </div> */}
+    <img
+      className='primeImage'
+      src={primaryDish?.image}
+      alt="image description for screen readers"
+      onError={e => { e.currentTarget.src ="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930"; }}
+    />
+
       <div className='primeInfoAndButtons'>
         <div className='primeInfo'>
           <h1>The Winning Dish</h1>
@@ -78,7 +82,14 @@ return (
       <div className='additionalReviews'>
       {secondaryDishes.map(secondaryDish =>
         <div className='secondaryDish'>
-          <div className='secondDishDiv'><img className='secondDishImg' src={secondaryDish.image}></img></div>
+          <div className='secondDishDiv'>
+          <img
+      className='secondDishImg'
+      src={secondaryDish.image}
+      alt="image description for screen readers"
+      onError={e => { e.currentTarget.src ="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930"; }}
+    />
+      </div>
           <div>
             <div className='secondReviewText'>
               <div>{secondaryDish.name}</div>

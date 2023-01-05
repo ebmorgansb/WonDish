@@ -22,13 +22,13 @@ export default function Slider() {
   function handlePrevious() {
     setCurrentIndex(currentIndex - 1);
     if (currentIndex === 0) {
-        setCurrentIndex(3)
+        setCurrentIndex(primaryDishes.length-1)
     }
   }
 
   function handleNext() {
     setCurrentIndex(currentIndex + 1)
-    if (currentIndex === 3) {
+    if (currentIndex === primaryDishes.length-1) {
         setCurrentIndex(0)
     }
   }
@@ -42,7 +42,12 @@ return (
     <div className='allCar'>
       <button className='arrow-button-left' onClick={handlePrevious}></button>
       <NavLink to={`/dish/${primaryDishes[currentIndex]?.id}`}>
-      <img className='sliderImages' src={primaryDishes[currentIndex]?.image} alt="Slider image" />
+      <img
+      className='sliderImages'
+      src={primaryDishes[currentIndex]?.image}
+      alt="image description for screen readers"
+      onError={e => { e.currentTarget.src ="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930"; }}
+    />
       </NavLink>
       <button className='arrow-button-right' onClick={handleNext}></button>
     </div>
