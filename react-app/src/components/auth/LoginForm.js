@@ -7,6 +7,8 @@ const LoginForm = () => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  // const [credential, setCredential] = useState("");
+  // const [password, setPassword] = useState("");
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
@@ -57,6 +59,8 @@ const LoginForm = () => {
           onChange={updatePassword}
         />
         <button type='submit'>Login</button>
+        <button  type="submit"
+  onClick={()=>{setEmail("demo@aa.io");setPassword("password")}}>Demo Login</button>
       </div>
     </form>
   );
