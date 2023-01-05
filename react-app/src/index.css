@@ -1,12 +1,11 @@
 /* TODO Add site wide styles */
 
-body {
-    margin: 0px;
-    position: relative;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
- }
 
-#root { height: 100vh; }
+ body, html{
+    margin: 0px;
+    padding: 0px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
 
 .button {
     background-color: hsl(0, 0%, 50%, .04);
@@ -21,7 +20,7 @@ body {
 .footer {
     /* margin-top: auto; */
     display: flex;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     align-items: center;
     flex-direction: row;

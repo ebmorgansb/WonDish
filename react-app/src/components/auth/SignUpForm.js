@@ -4,6 +4,30 @@ import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 import './index.css'
 
+
+
+// const [confirmPassword, setConfirmPassword] = useState("");
+//   const [errors, setErrors] = useState([]);
+
+//   if (sessionUser) return <Redirect to="/" />;
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     if (password === confirmPassword) {
+//       setErrors([]);
+//       return dispatch(sessionActions.signup({ email, username, password, firstName, lastName }))
+//       .then(() => setShowModal(false))
+//         .catch(async (res) => {
+//           const data = await res.json();
+//           if (data && data.errors) setErrors(data.errors);
+//         });
+//     }
+//     return setErrors(['Confirm Password field must be the same as the Password field']);
+//   };
+
+
+
+
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
@@ -15,12 +39,14 @@ const SignUpForm = () => {
 
   const onSignUp = async (e) => {
     e.preventDefault();
+
     if (password === repeatPassword) {
       const data = await dispatch(signUp(username, email, password));
       if (data) {
         setErrors(data)
       }
     }
+    return setErrors(['Confirm Password field must be the same as the Password field']);
   };
 
   const updateUsername = (e) => {

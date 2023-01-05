@@ -1,15 +1,5 @@
 
 
-#root {
-    height: 100vH;
-}
-
-html { height: 100%; }
-
-body {
-margin: 0px;
-position: relative;
-}
 
 .gitLogo {
     height: 30px;
