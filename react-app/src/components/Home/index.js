@@ -23,7 +23,7 @@ return (
     <Search/>
     <Slider/>
     <CreateADishModal/>
-    <Footer/>
+    {/* <Footer/> */}
 </div>
 </>
 

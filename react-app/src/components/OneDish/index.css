@@ -59,23 +59,23 @@ margin-top: 20px;
     margin-top: 5%;
     align-items: center;
     justify-content: center;
-    height: 10%;
-    width: 25%;
+    height: 8%;
+    width: 20%;
 }
 
 .secondDishImg {
 
-    height: 85%;
-    width: 85%;
-    max-width: 300px;
-    max-height: 300px;
+    height: 80%;
+    width: 80%;
+    max-width: 275px;
+    max-height: 250px;
 
 }
 
 .addReview {
     border-top: solid 1px rgb(143, 142, 142, .5);
     text-align: center;
-    margin: 40px;
+    margin: 20px;
     padding-top: 20px;
 }
 
