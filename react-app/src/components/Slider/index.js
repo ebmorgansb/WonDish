@@ -22,13 +22,13 @@ export default function Slider() {
   function handlePrevious() {
     setCurrentIndex(currentIndex - 1);
     if (currentIndex === 0) {
-        setCurrentIndex(2)
+        setCurrentIndex(3)
     }
   }
 
   function handleNext() {
     setCurrentIndex(currentIndex + 1)
-    if (currentIndex === 2) {
+    if (currentIndex === 3) {
         setCurrentIndex(0)
     }
   }

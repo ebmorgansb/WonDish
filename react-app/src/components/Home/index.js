@@ -9,6 +9,7 @@ import { Modal } from '../../context/modal'
 import Search from '../Search';
 import Slider from '../Slider';
 import CreateADishModal from '../CreateDishFilter/CreateDishFilterModal'
+import Footer from '../Footer'
 
 
 export default function Home() {
@@ -16,12 +17,15 @@ export default function Home() {
 
 
 return (
+  <>
 <div className='totalHome'>
   <div className='title1'>WonDish</div>
     <Search/>
     <Slider/>
     <CreateADishModal/>
+    <Footer/>
 </div>
+</>
 
 )
 

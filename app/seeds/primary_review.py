@@ -26,10 +26,18 @@ def seed_primaryreviews():
         rating=6,
         user_id=1)
 
+    review4 = PrimaryReview(
+        name='sandwich',
+        description='Loved it',
+        image='https://assets.bonappetit.com/photos/62b1f659a38f8b1339b88af8/5:4/w_2715,h_2172,c_limit/20220615-0622-sandwiches-1746-final%20(1).jpg',
+        address='909 speedway street',
+        rating=8,
+        user_id=2)
 
     db.session.add(review1)
     db.session.add(review2)
     db.session.add(review3)
+    db.session.add(review4)
     db.session.commit()
 
 

@@ -47,7 +47,9 @@ export const updateSecondaryReviewAction = (secondaryReview) => {
 
 // Create a Secondary Review
 export const createSecondaryReviewThunk = (secondaryReview, primaryreview_id) => async (dispatch) => {
-    const response = await fetch(`/api/secondayreviews/create/assocprime/${primaryreview_id}`, {
+    console.log('in the secondary review TUNK', secondaryReview)
+    console.log('ID', primaryreview_id)
+    const response = await fetch(`/api/secondaryreviews/create/assocprime/${primaryreview_id}`, {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify(secondaryReview)
@@ -82,7 +84,7 @@ export const getAllSecondaryReviewsThunk = (primaryReviewId) => async (dispatch)
 // Update a secondary review
 export const editSecondaryReviewThunk = (secondaryReview) => async (dispatch) => {
     const {id, description, category, rating} = secondaryReview
-    // console.log('in the update', primaryReview)
+    console.log('in the update', secondaryReview)
     const response = await fetch(`/api/secondaryreviews/edit/${id}`, {
         method: 'PUT',
         headers: {'Content-Type':'application/json'},
@@ -95,7 +97,7 @@ export const editSecondaryReviewThunk = (secondaryReview) => async (dispatch) =>
 
     if (response.ok) {
         const editedSecondaryReview = await response.json();
-        // console.log('editedSecondaryReview)
+        console.log('editedSecondaryReview=================================', editedSecondaryReview)
         dispatch(updateSecondaryReviewAction(editedSecondaryReview));
         return editedSecondaryReview;
     };

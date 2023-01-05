@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { useHistory } from "react-router-dom"
 import { createSecondaryReviewThunk } from "../../store/secondaryReview"
 import './index.css'
-export default function CreateSecondaryDish({primaryId}) {
+export default function CreateSecondaryDish() {
 
     const location = useLocation();
     const data = location.state;
@@ -13,11 +13,11 @@ export default function CreateSecondaryDish({primaryId}) {
     const sessUser = useSelector(state => state.session.user)
     const dispatch = useDispatch()
     const history = useHistory()
-    const [nameSec, setNameSec] = useState('' || data.name);
+    const [name, setName] = useState('' || data.name);
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
     const [image, setImage] = useState('')
-    const [addressSec, setAddressSec] = useState('' || data.address);
+    const [address, setAddress] = useState('' || data.address);
     const [rating, setRating] = useState('');
     const [errors, setErrors] = useState([]);
 
@@ -45,16 +45,16 @@ export default function CreateSecondaryDish({primaryId}) {
 
 
         const payload = {
-            nameSec,
+            name,
             description,
             category,
             image,
-            addressSec,
+            address,
             rating,
             user_id: sessUser.id,
-            primaryreview_id: primaryId
+            primaryreview_id: data.primaryReviewId
         };
-        console.log('yo dis the payload', payload)
+        console.log('yo dis the payload', payload.primaryreview_id)
         const newSecondaryReview = await dispatch(createSecondaryReviewThunk(payload, payload.primaryreview_id))
         if (newSecondaryReview) {
           history.push(`/dish/${newSecondaryReview.primaryreview_id}`)
@@ -76,8 +76,8 @@ export default function CreateSecondaryDish({primaryId}) {
         <div className="formPadding">
         <input className="actualInput"
           type="text"
-          value={nameSec}
-          onChange={(e) => setNameSec(e.target.value)}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           required
         />
         </div>
@@ -127,8 +127,8 @@ export default function CreateSecondaryDish({primaryId}) {
         <div className="formPadding">
         <input className="actualInput"
           type="text"
-          value={addressSec}
-          onChange={(e) => setAddressSec(e.target.value)}
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
           required
         />
         </div>

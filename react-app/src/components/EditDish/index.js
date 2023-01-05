@@ -7,7 +7,7 @@ import { editPrimaryReviewThunk } from "../../store/primaryReview"
 
 
 
-export default function EditDish({setShowModa}) {
+export default function EditDish({setShowModal}) {
     let {dishId} = useParams()
     dishId = parseInt(dishId)
     const sessUser = useSelector(state => state.session.user)
@@ -24,7 +24,7 @@ export default function EditDish({setShowModa}) {
 
 
     useEffect(()=>{
-      // getOnePrimaryReviewThunk(dishId)
+      getOnePrimaryReviewThunk(dishId)
       const errors = []
       if(!sessUser) errors.push("Must be logged in to edit a review")
       if(!description) errors.push("Description is required")
@@ -49,7 +49,7 @@ export default function EditDish({setShowModa}) {
         const editPrimaryReview = await dispatch(editPrimaryReviewThunk(payload))
         // if (editPrimaryReview) {
           // history.push(`/dish/${editPrimaryReview.id}`)
-        //   setShowCreate(false)
+          setShowModal(false)
           // await dispatch(getSpotThunk(newSpot.id))
         // }
       }

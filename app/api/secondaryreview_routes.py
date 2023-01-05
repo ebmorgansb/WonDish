@@ -48,7 +48,6 @@ def create_secondaryreview(primaryreview_id):
       user_id = data['user_id'],
       primaryreview_id = primaryreview_id
     )
-    print('unbeliebable', secondary_review)
     db.session.add(secondary_review)
     db.session.commit()
     return jsonify(secondary_review.to_dict())

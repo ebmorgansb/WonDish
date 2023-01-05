@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom"
 import { createPrimaryReviewThunk } from "../../store/primaryReview"
 import { useLocation } from "react-router-dom"
 import React from 'react';
+import './index.css'
 
 export default function CreateDish() {
   const location = useLocation();
@@ -60,8 +61,8 @@ export default function CreateDish() {
 
     return (
       <>
-      <h2 className="title">Add a Primary Review</h2>
      <form className="createDishForm" onSubmit={handleSubmit}>
+     <h2 className="title">Add a Primary Review</h2>
      <ul className="errors">
   {errors.map((error) => (
         <li className="oneError" key={`a${error}`}> {error}</li>))}

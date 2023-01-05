@@ -1,0 +1,12 @@
+.buttonFilter {
+
+        background-color: hsl(0, 0%, 50%, .04);
+        border: 1px solid black;
+        border: 1px solid black;
+        padding: 12px;
+        margin: 8px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        font-size: 16px;
+
+}

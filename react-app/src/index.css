@@ -1,11 +1,12 @@
 /* TODO Add site wide styles */
 
 body {
-    min-height: 100vh;
+    margin: 0px;
+    position: relative;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
  }
 
-#root { min-height: 100vh; }
+#root { height: 100vh; }
 
 .button {
     background-color: hsl(0, 0%, 50%, .04);
@@ -18,8 +19,9 @@ body {
 }
 
 .footer {
+    /* margin-top: auto; */
     display: flex;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     align-items: center;
     flex-direction: row;

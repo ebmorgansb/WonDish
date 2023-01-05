@@ -1,5 +1,6 @@
 .navAndTitle {
     top: 0px;
+    z-index: 0;
     position: sticky;
     display: flex;
     flex-direction: row;

@@ -4,10 +4,11 @@ import { useHistory } from "react-router-dom"
 import { useParams } from "react-router-dom"
 import { getOnePrimaryReviewThunk } from "../../store/primaryReview"
 import { editSecondaryReviewThunk } from "../../store/secondaryReview"
+import { getAllSecondaryReviewsThunk } from "../../store/secondaryReview"
 
 
 
-export default function EditSecondaryDish() {
+export default function EditSecondaryDish({setShowModal2, secondaryDishId}) {
     let {dishId} = useParams()
     dishId = parseInt(dishId)
     const sessUser = useSelector(state => state.session.user)
@@ -27,7 +28,8 @@ export default function EditSecondaryDish() {
 
 
     useEffect(()=>{
-      // getOnePrimaryReviewThunk(dishId)
+      getOnePrimaryReviewThunk(dishId)
+      getAllSecondaryReviewsThunk(dishId)
       const errors = []
       if(!sessUser) errors.push("Must be logged in to edit a review")
       if(!description) errors.push("Description is required")
@@ -46,15 +48,11 @@ export default function EditSecondaryDish() {
             description,
             category,
             rating,
-            id: dishId
+            id: secondaryDishId
         };
 
         const editPrimaryReview = await dispatch(editSecondaryReviewThunk(payload))
-        // if (editPrimaryReview) {
-          // history.push(`/dish/${editPrimaryReview.id}`)
-        //   setShowCreate(false)
-          // await dispatch(getSpotThunk(newSpot.id))
-        // }
+          setShowModal2(false)
       }
 
     return (

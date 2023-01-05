@@ -2,14 +2,18 @@
 display: flex;
 flex-direction: row;
 width: 100%;
-height: 50%;
+height: 70%;
 align-items: center;
 justify-content: center;
 }
 
+.totalOneDish {
+    height: 70%;
+}
+
 .primeInfoAndButtons {
 height: 50%;
-width: 50%;
+width: 40%;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -22,8 +26,8 @@ justify-content: center;
 }
 
 .primeImage {
-height: 50%;
-width: 50%;
+height: 75%;
+width: 40%;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -31,28 +35,40 @@ margin: 10px;
 margin-top: 20px;
 }
 
+.addReviewsAndTitle {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .additionalReviews {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    height: 50%;
+    height: 100%;
     width: 100%;
+    /* overflow-y:scroll */
 }
 
 .secondaryDish {
     display: flex;
     flex-direction: column;
-    /* align-items: center;
-    justify-content: center; */
-    height: 100%;
-    width: 33%;
+    margin: 8px;
+    margin-top: 5%;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    width: 25%;
 }
 
 .secondDishImg {
 
-    height: 45%;
-    width: 50%;
+    height: 85%;
+    width: 85%;
+    max-width: 300px;
+    max-height: 300px;
 
 }
 

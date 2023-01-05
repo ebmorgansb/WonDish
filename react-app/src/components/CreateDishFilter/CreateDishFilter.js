@@ -17,8 +17,6 @@ export default function CreateDishFilter() {
       primaryDishAddresses.push(primaryDishAddress.toLowerCase())
     }
 
-
-    const dispatch = useDispatch()
     const history = useHistory()
     const [name, setName] = useState('');
     const [address, setAddress] = useState('');
@@ -48,12 +46,11 @@ export default function CreateDishFilter() {
         };
         //create conditional logic using payload to filter through primary reviews
         //slice of state, then have two redirects one within an if and the other else
-        // if (newPrimaryReview) {
-        //   history.push(`/dish/${newPrimaryReview.id}`)
-        // {setShowModal}
+
         if (primaryDishNames.includes(name.split(" ").join("").toLowerCase()) && primaryDishAddresses.includes(address.split(" ").join("").toLowerCase())) {
-          // if (primaryDishNames.includes(name)) {
-          history.push(`/secondarydish/create`, {name, address})
+          let idx = primaryDishNames.indexOf(name.split(" ").join("").toLowerCase())
+          let primaryReviewId = primaryDishes[idx].id
+          history.push(`/secondarydish/create`, {name, address, primaryReviewId})
         }
         else {
           history.push(`/primarydish/create`, {name, address})
