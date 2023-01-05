@@ -47,7 +47,8 @@ export default function CreateDishFilter() {
         //create conditional logic using payload to filter through primary reviews
         //slice of state, then have two redirects one within an if and the other else
 
-        if (primaryDishNames.includes(name.split(" ").join("").toLowerCase()) && primaryDishAddresses.includes(address.split(" ").join("").toLowerCase())) {
+        // if (primaryDishNames.includes(name.split(" ").join("").toLowerCase()) && primaryDishAddresses.includes(address.split(" ").join("").toLowerCase())) {
+          if (primaryDishNames.includes(name.split(" ").join("").toLowerCase())) {
           let idx = primaryDishNames.indexOf(name.split(" ").join("").toLowerCase())
           let primaryReviewId = primaryDishes[idx].id
           history.push(`/secondarydish/create`, {name, address, primaryReviewId})

@@ -39,9 +39,6 @@ export default function OneDish () {
     return null
   }
 
-  // if (!user) {
-  //   return null
-  // }
 return (
   <>
   <div className='totalOneDish'>
@@ -65,7 +62,7 @@ return (
           <EditDish setShowModal={setShowModal} />
         </Modal>
       )}
-      {!secondaryDishes &&
+      {secondaryDishes.length == 0 &&
         <NavLink to={`/`}>
           <button className='oneDishButton' onClick={() => {
             dispatch(deletePrimaryReviewThunk(dishId))
