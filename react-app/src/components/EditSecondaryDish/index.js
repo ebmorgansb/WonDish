@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom"
 import { getOnePrimaryReviewThunk } from "../../store/primaryReview"
 import { editSecondaryReviewThunk } from "../../store/secondaryReview"
 import { getAllSecondaryReviewsThunk } from "../../store/secondaryReview"
+import './index.css'
 
 
 
@@ -12,6 +13,8 @@ export default function EditSecondaryDish({setShowModal2, secondaryDishId}) {
     let {dishId} = useParams()
     dishId = parseInt(dishId)
     const sessUser = useSelector(state => state.session.user)
+    const des = useSelector(state => state.secondaryReview)
+    console.log(des, 'testwfeheubofwbuoefobuiewipfewinpefonw[ef')
     // const oldSecondaryReview = Object.values(useSelector(state => state.primaryReview))[0]
     const dispatch = useDispatch()
     const history = useHistory()
@@ -23,7 +26,7 @@ export default function EditSecondaryDish({setShowModal2, secondaryDishId}) {
     // const [image, setImage] = useState('')
     // const [address, setAddress] = useState('');
     // const [rating, setRating] = useState('' || oldPrimaryReview.rating);
-    const [rating, setRating] = useState('');
+    const [rating, setRating] = useState(6);
     const [errors, setErrors] = useState([]);
 
 
@@ -57,12 +60,12 @@ export default function EditSecondaryDish({setShowModal2, secondaryDishId}) {
 
     return (
       <>
-      <h2 className="title">Edit a Secondary Review</h2>
-     <form className="fullSpotFormCreateSpot" onSubmit={handleSubmit}>
-     <ul className="errors">
+     <form className="editDishForm" onSubmit={handleSubmit}>
+     <h2 className="title">Edit a Secondary Review</h2>
+     <div className="errors">
   {errors.map((error) => (
-        <li className="oneError" key={`a${error}`}> {error}</li>))}
-      </ul>
+        <div className="oneError" key={`a${error}`}> {error}</div>))}
+      </div>
       <div className="formInputs">
      <div className="oneFormInput">
      <label>
@@ -93,12 +96,17 @@ export default function EditSecondaryDish({setShowModal2, secondaryDishId}) {
         <label>
         Rating
         <div className="formPadding">
-        <input className="actualInput"
-          type="number"
-          value={rating}
-          onChange={(e) => setRating(e.target.value)}
-          required
-        />
+        <select
+                    onChange={(e) => setRating(e.target.value)}
+                    value={rating}
+                    required
+                >
+                    <option value={6}>6</option>
+                    <option value={7}>7</option>
+                    <option value={8}>8</option>
+                    <option value={9}>9</option>
+                    <option value={10}>10</option>
+                </select>
         </div>
         </label>
         </div>

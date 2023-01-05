@@ -12,11 +12,11 @@ export default function CreateDish() {
     const sessUser = useSelector(state => state.session.user)
     const dispatch = useDispatch()
     const history = useHistory()
-    const [name, setName] = useState('' ||data.name);
+    const [name, setName] = useState(data.name);
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
     const [image, setImage] = useState('')
-    const [address, setAddress] = useState('' || data.address);
+    const [address, setAddress] = useState('');
     const [rating, setRating] = useState('');
     const [errors, setErrors] = useState([]);
 
@@ -62,24 +62,22 @@ export default function CreateDish() {
     return (
       <>
      <form className="createDishForm" onSubmit={handleSubmit}>
-     <h2 className="title">Add a Primary Review</h2>
+     <h2 className="title">Be the first to review the {name}!</h2>
      <div className="errors">
   {errors.map((error) => (
         <div className="oneError" key={`a${error}`}> {error}</div>))}
       </div>
       <div className="formInputs">
       <div className="oneFormInput">
-     <label>
-        Name
         <div className="formPadding">
         <input className="actualInput"
           type="text"
+          hidden
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setName(name)}
           required
         />
         </div>
-     </label>
       </div>
      <div className="oneFormInput">
      <label>
@@ -136,12 +134,17 @@ export default function CreateDish() {
         <label>
         Rating
         <div className="formPadding">
-        <input className="actualInput"
-          type="number"
-          value={rating}
-          onChange={(e) => setRating(e.target.value)}
-          required
-        />
+        <select
+                    onChange={(e) => setRating(e.target.value)}
+                    value={rating}
+                    required
+                >
+                    <option value={6}>6</option>
+                    <option value={7}>7</option>
+                    <option value={8}>8</option>
+                    <option value={9}>9</option>
+                    <option value={10}>10</option>
+                </select>
         </div>
         </label>
         </div>

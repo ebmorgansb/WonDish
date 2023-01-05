@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom"
 import { useParams } from "react-router-dom"
 import { getOnePrimaryReviewThunk } from "../../store/primaryReview"
 import { editPrimaryReviewThunk } from "../../store/primaryReview"
+import './index.css'
 
 
 
@@ -56,12 +57,12 @@ export default function EditDish({setShowModal}) {
 
     return (
       <>
-      <h2 className="title">Edit a Primary Review</h2>
-     <form className="fullSpotFormCreateSpot" onSubmit={handleSubmit}>
-     <ul className="errors">
+     <form className="editDishForm" onSubmit={handleSubmit}>
+     <h2 className="title">Edit a Primary Review</h2>
+     <div className="errors">
   {errors.map((error) => (
-        <li className="oneError" key={`a${error}`}> {error}</li>))}
-      </ul>
+        <div className="oneError" key={`a${error}`}> {error}</div>))}
+      </div>
       <div className="formInputs">
      <div className="oneFormInput">
      <label>
@@ -92,12 +93,17 @@ export default function EditDish({setShowModal}) {
         <label>
         Rating
         <div className="formPadding">
-        <input className="actualInput"
-          type="number"
-          value={rating}
-          onChange={(e) => setRating(e.target.value)}
-          required
-        />
+        <select
+                    onChange={(e) => setRating(e.target.value)}
+                    value={rating}
+                    required
+                >
+                    <option value={6}>6</option>
+                    <option value={7}>7</option>
+                    <option value={8}>8</option>
+                    <option value={9}>9</option>
+                    <option value={10}>10</option>
+                </select>
         </div>
         </label>
         </div>

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { getAllPrimaryReviewsThunk } from "../../store/primaryReview"
 import './index.css'
+import { clearPrimaryAction } from '../../store/primaryReview'
 
 export default function Search() {
     const sessUser = useSelector(state => state.session.user)
@@ -20,24 +21,37 @@ export default function Search() {
       if(name.length > 19) errors.push("Name must be less than 20 characters");
 
       setErrors(errors)
-    },[name, sessUser, dispatch])
+    },[name, sessUser, dispatch]
+
+    )
 
     const handleSubmit = async (e) => {
-        console.log(primaryReviews, 'test')
+        // console.log(primaryReviews, 'test')
         e.preventDefault();
         const payload = {
             name
         };
 
-        primaryReviews.forEach(primaryReview => {
-            if (primaryReview.name.split(" ").join("").toLowerCase() === payload.name.split(" ").join("").toLowerCase()) {
-                history.push(`/dish/${primaryReview.id}`)
-            }
-            else {
-              setErrors(['We do not have a review for that dish!'])
-            }
-        })
-        }
+        // primaryReviews.forEach(primaryReview => {
+        //     if (primaryReview.name.split(" ").join("").toLowerCase() === payload.name.split(" ").join("").toLowerCase()) {
+        //         history.push(`/dish/${primaryReview.id}`)
+        //     }
+        //     else {
+        //       setErrors(['We do not have a review for that dish!'])
+        //     }
+        // })
+        // }
+
+        for (let i = 0; i < primaryReviews.length; i++) {
+          if (primaryReviews[i].name.split(" ").join("").toLowerCase() === payload.name.split(" ").join("").toLowerCase()) {
+              return history.push(`/dish/${primaryReviews[i].id}`)
+          }
+          else {
+            setErrors(['We do not have a review for that dish!'])
+          }
+
+      }
+    }
 
 
     return (

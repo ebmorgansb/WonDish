@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/modal';
 import CreateDishFilter from './CreateDishFilter';
-import './index.css'
-
+import './index.css';
+import {useDispatch, useSelector} from 'react-redux'
+import { clearPrimaryAction } from '../../store/primaryReview';
+import { useEffect } from 'react';
 
 
 export default function CreateADishModal() {
   const [showModal, setShowModal] = useState(false);
+
 
   return (
     <>

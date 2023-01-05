@@ -10,11 +10,17 @@ import Search from '../Search';
 import Slider from '../Slider';
 import CreateADishModal from '../CreateDishFilter/CreateDishFilterModal'
 import Footer from '../Footer'
+import { clearPrimaryAction } from '../../store/primaryReview'
 
 
 export default function Home() {
   const dispatch = useDispatch()
 
+  useEffect(() => {
+
+    return (() => dispatch(clearPrimaryAction()))
+}
+ ,[dispatch])
 
 return (
   <>
@@ -23,8 +29,8 @@ return (
     <Search/>
     <Slider/>
     <CreateADishModal/>
-    {/* <Footer/> */}
 </div>
+{/* <Footer/> */}
 </>
 
 )

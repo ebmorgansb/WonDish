@@ -3,6 +3,8 @@ const GETALLPRIMARYREVIEWS = 'primaryreviews/all'
 const GETONEPRIMARYREVIEW = 'primaryreviews/one'
 const UPDATEPRIMARYREVIEW = 'primaryreviews/update'
 const DELETEPRIMARYREVIEW = 'primaryreviews/delete'
+const CLEARPRIMARY = 'spot/clearPrimary'
+
 
 
 /* ___________ Action Creators   ___________ */
@@ -42,6 +44,11 @@ export const updatePrimaryReviewAction = (primaryReview) => {
     };
 };
 
+export const clearPrimaryAction = () => {
+    return {
+      type: CLEARPRIMARY,
+    };
+  };
 /* ___________ T H U N K S   ___________ */
 
 
@@ -140,6 +147,9 @@ export default function primaryReviewsReducer(state = {}, action) {
             // left side evaluates to an id, left of comma evaluates to the old primary review fields spread out, the right evaluates to the new primary review spread out
             //and overwrites fields with the same "key" aka field names with the new values from the new primary review.
             newState[action.primaryReview.id] = {...newState[action.primaryReview.id], ...action.primaryReview}
+            return newState
+
+        case CLEARPRIMARY:
             return newState
 
         default:

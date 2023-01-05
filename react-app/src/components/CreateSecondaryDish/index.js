@@ -17,8 +17,8 @@ export default function CreateSecondaryDish() {
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
     const [image, setImage] = useState('')
-    const [address, setAddress] = useState('' || data.address);
-    const [rating, setRating] = useState('');
+    const [address, setAddress] = useState('');
+    const [rating, setRating] = useState(6);
     const [errors, setErrors] = useState([]);
 
 
@@ -29,8 +29,8 @@ export default function CreateSecondaryDish() {
     //   if(!name) errors.push("Name is required");
       if(!description) errors.push("Description is required");
       if(description.length > 499) errors.push("Description must be less than 500 characters");
-    //   if(!address) errors.push("Street address is required");
-    //   if(address.length > 99) errors.push("Street address must be less than 100 characters");
+      if(!address) errors.push("Street address is required");
+      if(address.length > 99) errors.push("Street address must be less than 100 characters");
       if(!image) errors.push("Image is required");
       if(image.length > 254) errors.push("Image link must be less than 255 characters");
       if(category && category.length > 19) errors.push("Category must be less than 20 characters");
@@ -38,7 +38,7 @@ export default function CreateSecondaryDish() {
 
 
       setErrors(errors)
-    },[description, sessUser, category, rating, image])
+    },[description,address, sessUser, category, rating, image])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -64,24 +64,22 @@ export default function CreateSecondaryDish() {
     return (
       <>
      <form className="secondaryReviewForm" onSubmit={handleSubmit}>
-     <h2 className="title">Add a Secondary Review</h2>
+     <h2 className="title">Add to the conversation on {name}'s!</h2>
      <ul className="errors">
   {errors.map((error) => (
         <li className="oneError" key={`a${error}`}> {error}</li>))}
       </ul>
       <div className="formInputs">
       <div className="oneFormInput">
-     <label>
-        Name
         <div className="formPadding">
         <input className="actualInput"
           type="text"
+          hidden
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setName(name)}
           required
         />
         </div>
-     </label>
       </div>
      <div className="oneFormInput">
      <label>
@@ -138,12 +136,17 @@ export default function CreateSecondaryDish() {
         <label>
         Rating
         <div className="formPadding">
-        <input className="actualInput"
-          type="number"
-          value={rating}
-          onChange={(e) => setRating(e.target.value)}
-          required
-        />
+        <select
+                    onChange={(e) => setRating(e.target.value)}
+                    value={rating}
+                    required
+                >
+                    <option value={6}>6</option>
+                    <option value={7}>7</option>
+                    <option value={8}>8</option>
+                    <option value={9}>9</option>
+                    <option value={10}>10</option>
+                </select>
         </div>
         </label>
         </div>

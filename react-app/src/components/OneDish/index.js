@@ -26,6 +26,7 @@ export default function OneDish () {
   const secondaryDishes = Object.values(useSelector(state => state.secondaryReview)).slice(0,6)
 
 
+
   useEffect(() => {
     dispatch(getOnePrimaryReviewThunk(dishId))
     dispatch(getAllSecondaryReviewsThunk(dishId))
@@ -86,11 +87,12 @@ return (
             </div>
             <div className='editAndDeleteSecond'>
               { userId == secondaryDish.user_id &&
-              <button className='oneDishButton' onClick={() => setShowModal2(true)}>Edit your Dish</button>
+              <button className='oneDishButton' onClick={() =>setShowModal2(true)}
+                >Edit your Dish</button>
             }
               {showModal2 && (
               <Modal onClose={() => setShowModal2(false)}>
-                <EditSecondaryDish secondaryDishId={secondaryDish.id} setShowModal2={setShowModal2} />
+                <EditSecondaryDish secondaryDish={secondaryDish} secondaryDishId={secondaryDish.id} setShowModal2={setShowModal2} />
               </Modal>
               )}
               {userId == secondaryDish.user_id &&

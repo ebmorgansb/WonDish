@@ -7,6 +7,8 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
 
+
+
 .button {
     background-color: hsl(0, 0%, 50%, .04);
     border: 1px solid black;
@@ -18,10 +20,10 @@
 }
 
 .footer {
-    /* margin-top: auto; */
+
     display: flex;
     position: sticky;
-    bottom: 0;
+    bottom: 0px;
     align-items: center;
     flex-direction: row;
     justify-content: space-around;
