@@ -32,16 +32,6 @@ export default function Search() {
             name
         };
 
-        // primaryReviews.forEach(primaryReview => {
-        //     if (primaryReview.name.split(" ").join("").toLowerCase() === payload.name.split(" ").join("").toLowerCase()) {
-        //         history.push(`/dish/${primaryReview.id}`)
-        //     }
-        //     else {
-        //       setErrors(['We do not have a review for that dish!'])
-        //     }
-        // })
-        // }
-
         for (let i = 0; i < primaryReviews.length; i++) {
           if (primaryReviews[i].name.split(" ").join("").toLowerCase() === payload.name.split(" ").join("").toLowerCase()) {
               return history.push(`/dish/${primaryReviews[i].id}`)
