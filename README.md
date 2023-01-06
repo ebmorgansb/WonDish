@@ -1,6 +1,49 @@
 # Flask React Project
 
-This is the starter for the Flask React project.
+![WonDish](https://user-images.githubusercontent.com/104551393/211102356-e309f227-4848-44c0-a22c-909983ae1e36.png)
+
+# About
+
+WonDish is a Full Stack web application where you can always find favorite dish.
+
+## Check out my live AirBeeBs site:
+[**https://won-dish.onrender.com**](https://won-dish.onrender.com)
+
+## Project Wiki
+-[API Routes]()
+
+-[Database Schema](https://github.com/ebmorgansb/WonDish/wiki/Database-Schema)
+
+-[Feature List](https://github.com/ebmorgansb/WonDish/wiki/Feature-List)
+
+-[User Stories(https://github.com/ebmorgansb/WonDish/wiki/User-Stories)
+
+-[Redux Shape]()
+
+
+#### Frameworks, Platforms, & Libraries:
+- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+- ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
+- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+- ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+- ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+- ![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+
+ #### Editors, IDEs, & Misc:
+ - ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+ - ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+
+
+#### Database:
+- ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
 
 ## Getting started
 1. Clone this repository (only this branch)
@@ -146,3 +189,27 @@ your site just below the name of the Web Service at the top of the page.
 
 [Render.com]: https://render.com/
 [Dashboard]: https://dashboard.render.com/
+
+## Feature Roadmap
+
+- [x] Primary Reviews
+    - [x] Create a primary review
+    - [x] Load all primary reviews
+    - [x] Update a current user's Primary Review
+    - [x] Delete a current user's Primary Review if there are not associated secondary reviews
+- [x] Secondary Reviews
+    - [x] Create a secondary review associated with a primary review
+    - [x] Load all secondary reviews associated with a primary review
+    - [x] Update a current user's secondary review
+    - [x] Delete a current user's secondary Review
+- [x] Search
+    - [x] Find a primary review based off of the dish name
+    - [x] If search finds no dish match the user is informed there are currently no reviews for that dish
+    - [x] When search matches with a primary dish the user is redirected to that dish page
+
+## Get in touch!
+
+- [GitHub](https://github.com/ebmorgansb)
+- [Linkedin](https://www.linkedin.com/in/evan-morgan-9a2723132/)
+
+
