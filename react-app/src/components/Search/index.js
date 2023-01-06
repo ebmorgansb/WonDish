@@ -73,7 +73,7 @@ export default function Search() {
           ></input>
       </div>
     </div>
-        <button className="button" disabled={errors.length > 0} type='submit'>Submit</button>
+        <button className="button" disabled={errors.length > 0} type='submit'>Search</button>
 
 
       </form>

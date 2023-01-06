@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 import './index.css'
+import { useEffect } from 'react';
 
 
 
@@ -37,16 +38,26 @@ const SignUpForm = () => {
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
+
+  useEffect(()=>{
+    const errors = []
+
+    if (password !== repeatPassword) {
+      errors.push('Password not matching')
+    }
+
+    setErrors(errors)
+  },[password, repeatPassword])
+
+
   const onSignUp = async (e) => {
     e.preventDefault();
-
     if (password === repeatPassword) {
       const data = await dispatch(signUp(username, email, password));
       if (data) {
         setErrors(data)
       }
     }
-    return setErrors(['Confirm Password field must be the same as the Password field']);
   };
 
   const updateUsername = (e) => {
