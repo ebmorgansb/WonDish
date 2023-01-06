@@ -13,7 +13,7 @@ export default function Search() {
     const history = useHistory()
     const [name, setName] = useState('');
     const [errors, setErrors] = useState([]);
-
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(()=>{
         dispatch(getAllPrimaryReviewsThunk());
@@ -25,6 +25,18 @@ export default function Search() {
 
     )
 
+
+
+    // function handleClick() {
+    //   setIsLoading(true);
+    //   setTimeout(() => {
+    //     // simulate a delay
+    //     return history.push(`/dish/${primaryReviews[i].id}`);
+    //   }, 1000);
+    // }
+
+
+
     const handleSubmit = async (e) => {
         // console.log(primaryReviews, 'test')
         e.preventDefault();
@@ -34,6 +46,7 @@ export default function Search() {
 
         for (let i = 0; i < primaryReviews.length; i++) {
           if (primaryReviews[i].name.split(" ").join("").toLowerCase() === payload.name.split(" ").join("").toLowerCase()) {
+
               return history.push(`/dish/${primaryReviews[i].id}`)
           }
           else {

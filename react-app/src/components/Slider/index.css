@@ -50,9 +50,9 @@
   }
 
   .sliderImages {
-    width: 600px;
-    height:25%;
-    max-width: 700px;
-    max-height: 400px;
+    width: 55vw;
+    height:30vw;
+    /* max-width: 700px;
+    max-height: 550px; */
     border-radius: 10px;
   }

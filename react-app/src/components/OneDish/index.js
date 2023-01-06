@@ -15,6 +15,7 @@ import inLogo from '../../allImages/in.png';
 export default function OneDish () {
   const [showModal, setShowModal] = useState(false);
   const [showModal2, setShowModal2] = useState(false);
+  const [ spinner, setSpinner ] = useState(true);
   let {dishId} = useParams()
   dishId = parseInt(dishId)
   const dispatch = useDispatch()
@@ -24,6 +25,14 @@ export default function OneDish () {
 
   const primaryDish = Object.values(useSelector(state => state.primaryReview))[0]
   const secondaryDishes = Object.values(useSelector(state => state.secondaryReview)).slice(0,6)
+
+
+
+
+
+  useEffect(() => {
+    setTimeout(() => setSpinner(false), 100)
+  }, []);
 
 
 
@@ -42,6 +51,7 @@ export default function OneDish () {
 
 return (
   <>
+  {!spinner &&
   <div className='totalOneDish'>
     <div className='primeDish'>
     <img
@@ -78,7 +88,9 @@ return (
       </div>
     </div>
     <div className='addReviewsAndTitle'>
+                  {secondaryDishes.length == 0 ? <h2 className='pushFooter'>More reviews coming soon!</h2> :
       <h2 className='addReview'>Additional Reviews</h2>
+                  }
       <div className='additionalReviews'>
       {secondaryDishes.map(secondaryDish =>
         <div className='secondaryDish'>
@@ -118,7 +130,10 @@ return (
       )}
     </div>
     </div>
+    <Footer/>
     </div>
+
+    }
     </>
 
 )

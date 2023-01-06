@@ -9,7 +9,7 @@ margin-top: 3%;
 }
 
 .totalOneDish {
-    height: 70%;
+    height: 100%;
 }
 
 .primeInfoAndButtons {
@@ -129,4 +129,11 @@ border-radius: 10px;
     width: 60%;
     border-radius: 10px;
     font-size: 14px;
+}
+
+.pushFooter {
+    margin: 5%;
+    text-align: center;
+    padding-top: 3%;
+    border-top: solid 1px rgb(14, 13, 12);
 }

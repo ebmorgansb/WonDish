@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 import './index.css'
 import { useEffect } from 'react';
+import Footer from '../Footer';
 
 
 
@@ -81,6 +82,7 @@ const SignUpForm = () => {
   }
 
   return (
+    <>
     <form className='authForms' onSubmit={onSignUp}>
       <h1>Sign Up</h1>
       <div className='errors'>
@@ -127,7 +129,8 @@ const SignUpForm = () => {
       </div>
       <button className='authSubmitButton' type='submit'>Sign Up</button>
     </form>
-
+    <Footer/>
+    </>
   );
 };
 

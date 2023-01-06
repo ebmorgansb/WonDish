@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
+import Footer from '../Footer';
 import './index.css'
 
 const LoginForm = () => {
@@ -34,6 +35,7 @@ const LoginForm = () => {
   }
 
   return (
+    <>
     <form className='authForms' onSubmit={onLogin}>
       <h1>Log in</h1>
       <div className='errors'>
@@ -65,6 +67,8 @@ const LoginForm = () => {
   onClick={()=>{setEmail("demo@aa.io");setPassword("password")}}>Demo Login</button>
       </div>
     </form>
+    <Footer/>
+    </>
   );
 };
 
