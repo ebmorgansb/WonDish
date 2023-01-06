@@ -13,7 +13,7 @@ export default function CreateADishModal() {
 
   return (
     <>
-    <button className='buttonFilter' onClick={() => setShowModal(true)}>Create a Dish Review</button>
+    <button className='button' onClick={() => setShowModal(true)}>Create a Dish Review</button>
     {showModal && (
     <Modal onClose={() => setShowModal(false)}>
         <CreateDishFilter setShowModal={setShowModal}/>

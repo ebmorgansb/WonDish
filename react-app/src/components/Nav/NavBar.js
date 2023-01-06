@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import symbol from '../../allImages/symbol.png'
+import './index.css'
 const NavBar = () => {
   const sessUser = useSelector(state => state.session.user)
 
@@ -20,8 +21,8 @@ const NavBar = () => {
     <nav className='navy'>
       <div className='smallNavy'>
         { !sessUser &&
-        <div className='profileLinkz'>
-          <NavLink to='/login' style={{ textDecoration: 'none' }} exact={true} activeClassName='active'>
+        <div>
+          <NavLink className='profileLinkz' to='/login' style={{ textDecoration: 'none' }} exact={true} activeClassName='active'>
             Login
           </NavLink>
         </div>

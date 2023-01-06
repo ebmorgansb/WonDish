@@ -102,9 +102,10 @@ const SignUpForm = () => {
       <div className='oneFormInput'>
         <label>Email</label>
         <input className='actualInput'
-          type='text'
+          type='email'
           name='email'
           onChange={updateEmail}
+          required
           value={email}
         ></input>
       </div>

@@ -17,6 +17,14 @@
     border-radius: 5px;
 }
 
+
+.authSubmitButton:hover {
+    background-color: rgb(215,4,102, .5);
+}
+
+
+
+
 .formInputs {
     display: flex;
     flex-direction: column;
