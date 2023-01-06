@@ -53,11 +53,11 @@ return (
 
       <div className='primeInfoAndButtons'>
         <div className='primeInfo'>
-          <h1>The Winning Dish</h1>
-        <div>Dish: {primaryDish?.name}</div>
-        <div>Description: {primaryDish?.description}</div>
-        <div>Address: {primaryDish?.address}</div>
-        <div>Rating: {primaryDish?.rating}</div>
+          <h1 className='oneDishTitle'>The Winning Dish:</h1>
+        <h2 className='oneDishTitle'>{primaryDish?.name.charAt(0).toUpperCase() + primaryDish.name.slice(1)}</h2>
+        <div className='primeText'>Description: {primaryDish?.description}</div>
+        <div className='primeText'>Address: {primaryDish?.address}</div>
+        <div className='primeText'>Rating: {primaryDish?.rating}</div>
         </div>
         { userId == primaryDish?.user_id &&
       <button className='oneDishButton' onClick={() => setShowModal(true)}>Edit your Dish</button>
@@ -92,13 +92,15 @@ return (
       </div>
           <div>
             <div className='secondReviewText'>
-              <div>{secondaryDish.name}</div>
-              <div>{secondaryDish.address}</div>
+              <div>Description:</div>
               <div>{secondaryDish.description}</div>
+              <div>Address:</div>
+              <div>Address: {secondaryDish.address}</div>
+              <div>Rating: {secondaryDish.rating}</div>
             </div>
             <div className='editAndDeleteSecond'>
               { userId == secondaryDish.user_id &&
-              <button className='oneDishButton' onClick={() =>setShowModal2(true)}
+              <button className='oneDishButton1' onClick={() =>setShowModal2(true)}
                 >Edit your Dish</button>
             }
               {showModal2 && (
@@ -107,7 +109,7 @@ return (
               </Modal>
               )}
               {userId == secondaryDish.user_id &&
-              <button className='oneDishButton' onClick={() => {
+              <button className='oneDishButton1' onClick={() => {
                 dispatch(deleteSecondaryReviewThunk(secondaryDish.id)) }}>Delete Review</button>
             }
               </div>
