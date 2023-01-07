@@ -5,6 +5,7 @@ import { createPrimaryReviewThunk } from "../../store/primaryReview"
 import { useLocation } from "react-router-dom"
 import React from 'react';
 import './index.css'
+import Footer from "../Footer"
 
 export default function CreateDish() {
   const location = useLocation();
@@ -17,7 +18,7 @@ export default function CreateDish() {
     const [category, setCategory] = useState('');
     const [image, setImage] = useState('')
     const [address, setAddress] = useState('');
-    const [rating, setRating] = useState('');
+    const [rating, setRating] = useState('' || 6);
     const [errors, setErrors] = useState([]);
 
 
@@ -151,6 +152,7 @@ export default function CreateDish() {
     </div>
         <button className="spotSubmitButton" disabled={errors.length > 0} type='submit'>Submit</button>
       </form>
+      <Footer/>
     </>
     )
 }

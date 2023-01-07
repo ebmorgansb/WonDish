@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { useHistory } from "react-router-dom"
 import { createSecondaryReviewThunk } from "../../store/secondaryReview"
 import './index.css'
+import Footer from "../Footer";
 export default function CreateSecondaryDish() {
 
     const location = useLocation();
@@ -18,7 +19,7 @@ export default function CreateSecondaryDish() {
     const [category, setCategory] = useState('');
     const [image, setImage] = useState('')
     const [address, setAddress] = useState('');
-    const [rating, setRating] = useState(6);
+    const [rating, setRating] = useState('' || 6);
     const [errors, setErrors] = useState([]);
 
 
@@ -153,6 +154,7 @@ export default function CreateSecondaryDish() {
     </div>
         <button className="spotSubmitButton" disabled={errors.length > 0} type='submit'>Submit</button>
       </form>
+      <Footer/>
     </>
     )
 }

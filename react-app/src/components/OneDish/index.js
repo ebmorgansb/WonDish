@@ -22,6 +22,7 @@ export default function OneDish () {
 
   const user = useSelector(state => state.session.user)
   const userId = user?.id
+  console.log('what is user',user)
 
   const primaryDish = Object.values(useSelector(state => state.primaryReview))[0]
   const secondaryDishes = Object.values(useSelector(state => state.secondaryReview)).slice(0,6)
@@ -69,7 +70,7 @@ return (
         <div className='primeText'>Address: {primaryDish?.address}</div>
         <div className='primeText'>Rating: {primaryDish?.rating}</div>
         </div>
-        { userId == primaryDish?.user_id &&
+        {user != null && userId == primaryDish?.user_id &&
       <button className='oneDishButton' onClick={() => setShowModal(true)}>Edit your Dish</button>
         }
       {showModal && (
@@ -77,7 +78,7 @@ return (
           <EditDish setShowModal={setShowModal} />
         </Modal>
       )}
-      {secondaryDishes.length == 0 &&
+      {secondaryDishes.length == 0 && userId == primaryDish?.user_id &&
         <NavLink to={`/`}>
           <button className='oneDishButton' onClick={() => {
             dispatch(deletePrimaryReviewThunk(dishId))

@@ -60,7 +60,6 @@ export default function Search() {
     return (
       <div className="searchForm">
      <form className="totalSearchForm" onSubmit={handleSubmit}>
-     <div className="subTitle">Find the winning dish!</div>
      <div className="errors">
   {errors.map((error) => (
         <div className="oneErrorSearch" key={`a${error}`}> {error}</div>))}
