@@ -68,7 +68,7 @@ def seed_secondaryreviews():
     review3b = SecondaryReview(
         name='Pad Thai',
         description='So unique and flavorful.',
-        image='https://media.istockphoto.com/id/475306578/photo/pad-thai-shrimp.jpg',
+        image='https://media-cldnry.s-nbcnews.com/image/upload/newscms/2022_04/1832538/pad-thai-kb-1x1-220124.jpg',
         address='805 lighthouse Ave, santa barbara, CA, 93101',
         rating=6,
         user_id=1,
