@@ -1,11 +1,13 @@
 
-
   .totalHome {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url(https://i.fbcd.co/products/original/d980008089477695e011ea6e0d5b105bacd85ab34db778bf1d4c658ffeedb331.jpg);
+    opacity: .8;
     /* justify-content: center; */
     width: 100%;
+    z-index: 0;
     /* height: 70%; */
   }
 
@@ -25,6 +27,7 @@
 
   .title1 {
     margin-top: 20px;
-    color: rgb(44, 64, 74);
+    color: rgb(2, 50, 73);
     font-size: 64px;
+    font-weight: bold;
   }

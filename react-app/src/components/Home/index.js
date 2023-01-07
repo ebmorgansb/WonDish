@@ -11,7 +11,7 @@ import Slider from '../Slider';
 import CreateADishModal from '../CreateDishFilter/CreateDishFilterModal'
 import Footer from '../Footer'
 import { clearPrimaryAction } from '../../store/primaryReview'
-
+import table from '../../allImages/TABLE.jpeg';
 
 export default function Home() {
   const dispatch = useDispatch()

@@ -10,13 +10,14 @@
 
 
 .button {
-    background-color: hsl(0, 0%, 50%, .04);
+    background-color: hsl(0, 0%, 100%);
     border: 1px solid black;
     border: 1px solid black;
     padding: 12px;
     margin: 8px;
     border-radius: 10px;
     font-size: 16px;
+    z-index: 10;
 }
 
 .button:hover {
@@ -37,4 +38,5 @@
     max-height: 42px;
     width: 100%;
     min-height: 40px;
+    z-index: 15;
 }
