@@ -78,3 +78,17 @@
         font-style: italic;
         font-weight: bold;
     }
+
+    .buttonFilterRound {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        display:block;
+        height: 75px;
+        width: 75px;
+        border-radius: 50%;
+        border: 1px solid black;
+    }
+
+    .buttonFilterRound:hover {
+        background-color: rgb(103, 178, 197, .2);
+    }

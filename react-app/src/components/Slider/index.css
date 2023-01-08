@@ -57,4 +57,5 @@
     max-height: 550px; */
     border-radius: 10px;
     box-shadow: 0 0 50px 50px white inset;
+    object-fit: cover
   }

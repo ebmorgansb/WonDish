@@ -43,6 +43,7 @@ const LoginForm = () => {
           <div className='oneError' key={ind}>{error}</div>
         ))}
       </div>
+      <div className='formInputs'>
       <div className='oneFormInput'>
         <label htmlFor='email'>Email</label>
         <input className='actualInput'
@@ -62,10 +63,11 @@ const LoginForm = () => {
           value={password}
           onChange={updatePassword}
         />
+        </div>
+        </div>
         <button className='authSubmitButton' type='submit'>Login</button>
         <button className='authSubmitButton' type="submit"
   onClick={()=>{setEmail("demo@aa.io");setPassword("password")}}>Demo Login</button>
-      </div>
     </form>
     <Footer/>
     </>

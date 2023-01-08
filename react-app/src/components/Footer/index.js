@@ -9,7 +9,7 @@ export default function Footer() {
 
 <footer className='footer'>
 <div>
-A website where you can always find your favorite dish
+Always find your favorite dish
 </div>
 <div>
               <div>

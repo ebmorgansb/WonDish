@@ -29,3 +29,9 @@
     font-size: 64px;
     font-weight: bold;
   }
+
+  .mission {
+    width: 44vw;
+    margin-top: 2%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }

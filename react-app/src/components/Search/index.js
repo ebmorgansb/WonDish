@@ -50,7 +50,7 @@ export default function Search() {
               return history.push(`/dish/${primaryReviews[i].id}`)
           }
           else {
-            setErrors(['We do not have a review for that dish!'])
+            setErrors(['We do not have a review for that dish yet.'])
           }
 
       }
@@ -64,9 +64,9 @@ export default function Search() {
   {errors.map((error) => (
         <div className="oneErrorSearch" key={`a${error}`}> {error}</div>))}
       </div>
-      <div>
-      <div className="oneFormInput">
-        <input className="actualInput"
+      <div className="alignSearch">
+      <div className="oneFormInputSearch">
+        <input className="actualInputSearch"
           placeholder="Dish Examples: Tacos, Pizza, Curry, Ice Cream..."
           type="text"
           value={name}
@@ -74,9 +74,10 @@ export default function Search() {
           required
           ></input>
       </div>
-    </div>
-        <button className="button" disabled={errors.length > 0} type='submit'>Search</button>
-
+      <div className="buttonContainer">
+        <button className="buttonSearch" disabled={errors.length > 0} type='submit'>Search</button>
+      </div>
+      </div>
 
       </form>
     </div>
