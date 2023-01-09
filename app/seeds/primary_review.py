@@ -2,10 +2,20 @@ from app.models import db, PrimaryReview, environment, SCHEMA
 
 
 def seed_primaryreviews():
+
+    review11 = PrimaryReview(
+        name='chicken',
+        description='So tender will come back shortly!',
+        image='https://www.simplyrecipes.com/thmb/WXzv7XkTQvFEpYnyyk4x5HRMtVc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Grilled-Chicken-LEAD-SEO-Horizontal-1b86ef1e115444ba8b6fb216f2810c7c.jpg',
+        address='5002 forest street',
+        rating=6,
+        user_id=1)
+
+
     review1 = PrimaryReview(
         name='burrito',
         description='Definitely solid',
-        image='https://static.wixstatic.com/media/e82dd7_366ee2ec761a4c70a910db016b1efcde~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Burrito%204.jpg',
+        image='https://cdn.foodbeast.com/wp-content/uploads/2017/08/CAM4186.jpg',
         address='216 Ocean Ave',
         rating=7,
         user_id=1)
@@ -82,13 +92,6 @@ def seed_primaryreviews():
         rating=10,
         user_id=1)
 
-    review11 = PrimaryReview(
-        name='chicken',
-        description='So tender will come back shortly!',
-        image='https://www.simplyrecipes.com/thmb/WXzv7XkTQvFEpYnyyk4x5HRMtVc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Grilled-Chicken-LEAD-SEO-Horizontal-1b86ef1e115444ba8b6fb216f2810c7c.jpg',
-        address='5002 forest street',
-        rating=6,
-        user_id=2)
 
     review12 = PrimaryReview(
         name='sushi',
