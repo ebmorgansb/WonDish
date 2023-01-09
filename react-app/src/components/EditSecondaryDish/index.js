@@ -61,7 +61,7 @@ export default function EditSecondaryDish({setShowModal2, secondaryDishId}) {
     return (
       <>
      <form className="editDishForm" onSubmit={handleSubmit}>
-     <h2 className="title">Edit a Secondary Review</h2>
+     <h2 className="title">Edit your review</h2>
      <div className="errors">
   {errors.map((error) => (
         <div className="oneError" key={`a${error}`}> {error}</div>))}

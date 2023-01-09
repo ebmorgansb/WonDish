@@ -62,8 +62,6 @@ export default function CreateDishFilter() {
       <>
      <form className="createFilterForm" onSubmit={handleSubmit}>
      <h1 className="title">Create a review for a dish</h1>
-     <div className="instruct">If the dish has not been reviewed a new post will be created.</div>
-     <div className="instruct">If a review exists for your dish, your review will be tagged on to the existing dish post.</div>
      <div className="errors">
   {errors.map((error) => (
         <div className="oneError" key={`a${error}`}> {error}</div>))}
@@ -84,6 +82,7 @@ export default function CreateDishFilter() {
       </div>
     </div>
         <button className="button" disabled={errors.length > 0} type='submit'>Submit</button>
+        <div className="instruct">All reviews belonging to the same dish will be grouped together*</div>
       </form>
     </>
     )

@@ -3,9 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 40vw;
     width: 100%;
-    background-color: rgba(220, 225, 224, 0.3);
 }
 
 .spotSubmitButton {

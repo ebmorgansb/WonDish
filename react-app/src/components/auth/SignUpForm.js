@@ -90,6 +90,7 @@ const SignUpForm = () => {
           <div className='oneError' key={ind}>{error}</div>
         ))}
       </div>
+      <div className='formInputs'>
       <div className='oneFormInput'>
         <label>User Name</label>
         <input className='actualInput'
@@ -127,6 +128,7 @@ const SignUpForm = () => {
           value={repeatPassword}
           required={true}
         ></input>
+      </div>
       </div>
       <button className='authSubmitButton' type='submit'>Sign Up</button>
     </form>

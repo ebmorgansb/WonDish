@@ -66,10 +66,10 @@ export default function CreateSecondaryDish() {
       <>
      <form className="secondaryReviewForm" onSubmit={handleSubmit}>
      <h2 className="title">Add to the conversation on {name}'s!</h2>
-     <ul className="errors">
+     <div className="errors">
   {errors.map((error) => (
-        <li className="oneError" key={`a${error}`}> {error}</li>))}
-      </ul>
+        <div className="oneError" key={`a${error}`}> {error}</div>))}
+      </div>
       <div className="formInputs">
       <div className="oneFormInput">
         <div className="formPadding">
