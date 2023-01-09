@@ -1,7 +1,7 @@
 import {useDispatch, useSelector} from 'react-redux'
 import {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
-import { deletePrimaryReviewThunk, getOnePrimaryReviewThunk } from '../../store/primaryReview'
+import { clearPrimaryAction, deletePrimaryReviewThunk, getOnePrimaryReviewThunk } from '../../store/primaryReview'
 import { getAllSecondaryReviewsThunk } from '../../store/secondaryReview'
 import EditDish from '../EditDish'
 import Footer from '../Footer'
@@ -10,6 +10,7 @@ import EditSecondaryDish from '../EditSecondaryDish'
 import { deleteSecondaryReviewThunk } from '../../store/secondaryReview'
 import { Modal } from '../../context/modal'
 import './index.css'
+// import { clearPrimaryAction } from '../../store/primaryReview'
 import gitLogo from '../../allImages/github-logo.png';
 import inLogo from '../../allImages/in.png';
 export default function OneDish () {
@@ -29,8 +30,6 @@ export default function OneDish () {
 
 
 
-
-
   useEffect(() => {
     setTimeout(() => setSpinner(false), 100)
   }, []);
@@ -40,6 +39,8 @@ export default function OneDish () {
   useEffect(() => {
     dispatch(getOnePrimaryReviewThunk(dishId))
     dispatch(getAllSecondaryReviewsThunk(dishId))
+
+    return (() => dispatch(clearPrimaryAction()))
   }, [dispatch, dishId])
 
   if (!primaryDish) {

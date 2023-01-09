@@ -15,6 +15,12 @@ import table from '../../allImages/TABLE.jpeg';
 
 export default function Home() {
   const dispatch = useDispatch()
+  const [ spinner, setSpinner ] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setSpinner(false), 200)
+  }, []);
+
 
   useEffect(() => {
 
@@ -24,6 +30,8 @@ export default function Home() {
 
 return (
   <>
+  {!spinner &&
+  <div>
 <div className='totalHome'>
   <div className='title1'>WonDish</div>
   <div className='mission'>
@@ -34,8 +42,9 @@ return (
     <CreateADishModal/>
 </div>
 <Footer/>
+</div>
+}
 </>
-
 )
 
 }
