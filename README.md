@@ -16,9 +16,7 @@ WonDish is a Full Stack web application where you can always find favorite dish.
 
 -[Feature List](https://github.com/ebmorgansb/WonDish/wiki/Feature-List)
 
--[User Stories(https://github.com/ebmorgansb/WonDish/wiki/User-Stories)
-
--[Redux Shape]()
+-[User Stories](https://github.com/ebmorgansb/WonDish/wiki/User-Stories)
 
 
 #### Frameworks, Platforms, & Libraries:
