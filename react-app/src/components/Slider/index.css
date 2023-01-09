@@ -11,6 +11,8 @@
   .arrow-button-left {
     position: relative;
     background-color: transparent;
+    /* height: 4%;
+    width: 4%; */
     border: None;
   }
 
@@ -19,11 +21,11 @@
     position: absolute;
     width: 0;
     height: 0;
-    border-width: 10px;
-    border-color: transparent black transparent transparent;
+    border-width: 25px;
+    border-color: transparent rgb(0, 0, 0, .3) transparent transparent;
     border-style: solid;
-    left: -10px;
-    bottom: -10px;
+    left: -40px;
+    bottom: -40px;
   }
 
   .arrow-button-right {
@@ -37,11 +39,13 @@
     position: absolute;
     width: 0;
     height: 0;
-    border-width: 10px;
-    border-color: transparent transparent transparent black;
+    border-width: 25px;
+    border-color: transparent transparent transparent rgb(0, 0, 0, .3);
     border-style: solid;
-    right: -10px;
+    right: -40px;
+
   }
+
 
   .homeTitle {
     font-size: 44px;

@@ -5,6 +5,7 @@ import { logout } from '../../store/session';
 
 const LogoutButton = () => {
   const dispatch = useDispatch()
+  // csdjod
   const onLogout = async (e) => {
     await dispatch(logout());
   };

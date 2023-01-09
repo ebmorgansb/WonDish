@@ -108,8 +108,9 @@ return (
               <div>Description:</div>
               <div>{secondaryDish.description}</div>
               <div>Address:</div>
-              <div>Address: {secondaryDish.address}</div>
-              <div>Rating: {secondaryDish.rating}</div>
+              <div>{secondaryDish.address}</div>
+              <div>Rating:</div>
+              <div>{secondaryDish.rating}</div>
             </div>
             <div className='editAndDeleteSecond'>
               { userId == secondaryDish.user_id &&

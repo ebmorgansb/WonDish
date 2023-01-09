@@ -68,9 +68,10 @@ export default function CreateDishFilter() {
       </div>
       <div className="formInputs">
       <div className="oneFormInput">
-     <label>
-        Dish Name
+     {/* <label>
+        Dish Name */}
         <div className="formPadding">
+          <div>Dish Name</div>
         <input className="actualInput"
           type="text"
           value={name}
@@ -78,7 +79,7 @@ export default function CreateDishFilter() {
           required
         />
         </div>
-     </label>
+     {/* </label> */}
       </div>
     </div>
         <button className="button" disabled={errors.length > 0} type='submit'>Submit</button>

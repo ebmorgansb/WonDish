@@ -85,7 +85,7 @@
 }
 
 .buttonSearch:hover {
-  color: rgb(121, 144, 150);
+  background-color: rgb(103, 178, 197, .2);
 }
 
 .buttonContainer {

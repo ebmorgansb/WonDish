@@ -28,11 +28,11 @@ const NavBar = () => {
         </div>
         }
         { !sessUser &&
-      <div className='profileLinkz'>
-          <NavLink to='/sign-up' style={{ textDecoration: 'none' }} exact={true} activeClassName='active'>
+      // <div className='profileLinkz'>
+          <NavLink className='profileLinkz' to='/sign-up' style={{ textDecoration: 'none' }} exact={true} activeClassName='active'>
             Sign Up
           </NavLink>
-       </div>
+      //  </div>
 }
        {sessUser && <div style={{ textDecoration: 'none' }} className='profileLinkz'>
           <LogoutButton />
