@@ -13,6 +13,7 @@ import OneDish from './components/OneDish';
 import Home from './components/Home';
 import CreateDish from './components/CreateDish';
 import CreateSecondaryDish from './components/CreateSecondaryDish';
+import EditSecondaryDish from './components/EditSecondaryDish';
 import Footer from './components/Footer';
 
 function App() {
@@ -49,6 +50,10 @@ function App() {
         <Route path='/dishes' exact={true} >
           <Dishes/>
         </Route>
+        {/* <Route path='/secondarydish/:secondarydishid/edit' exact={true} >
+          <EditSecondaryDish/>
+          <h1>woefw</h1>
+        </Route> */}
         <Route path='/primarydish/create' exact={true} >
           <CreateDish/>
         </Route>

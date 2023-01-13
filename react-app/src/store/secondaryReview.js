@@ -82,16 +82,17 @@ export const getAllSecondaryReviewsThunk = (primaryReviewId) => async (dispatch)
 
 
 // Update a secondary review
-export const editSecondaryReviewThunk = (secondaryReview) => async (dispatch) => {
+export const editSecondaryReviewThunk = (secondaryReview, secondaryReviewId) => async (dispatch) => {
     const {id, description, category, rating} = secondaryReview
-    console.log('in the update', secondaryReview)
-    const response = await fetch(`/api/secondaryreviews/edit/${id}`, {
+    console.log('in the update', secondaryReviewId)
+    const response = await fetch(`/api/secondaryreviews/edit/${secondaryReviewId}`, {
         method: 'PUT',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({
             description,
             category,
-            rating
+            rating,
+            id: secondaryReviewId
         })
     });
 
@@ -111,7 +112,7 @@ export const deleteSecondaryReviewThunk = (secondaryReviewId) => async (dispatch
     }
 };
 
-/* ___________ Primary Review Reducer   ___________ */
+/* ___________ Seconadary Review Reducer   ___________ */
 
 export default function secondaryReviewsReducer(state = {}, action) {
     let newState = {};

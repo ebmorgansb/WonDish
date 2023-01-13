@@ -9,7 +9,7 @@ import './index.css'
 
 
 
-export default function EditSecondaryDish({setShowModal2, secondaryDishId}) {
+export default function EditSecondaryDish({setShowModal2, secondaryDish, secondaryDishId}) {
     let {dishId} = useParams()
     dishId = parseInt(dishId)
     const sessUser = useSelector(state => state.session.user)
@@ -54,7 +54,7 @@ export default function EditSecondaryDish({setShowModal2, secondaryDishId}) {
             id: secondaryDishId
         };
 
-        const editPrimaryReview = await dispatch(editSecondaryReviewThunk(payload))
+        const editPrimaryReview = await dispatch(editSecondaryReviewThunk(payload, secondaryDish.id))
           setShowModal2(false)
       }
 
