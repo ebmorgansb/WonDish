@@ -12,6 +12,7 @@ import './index.css'
 export default function EditSecondaryDish({setShowModal2, secondaryDish, secondaryDishId}) {
     let {dishId} = useParams()
     dishId = parseInt(dishId)
+    // secondaryDishId = parseInt(secondaryDishId)
     const sessUser = useSelector(state => state.session.user)
     const des = useSelector(state => state.secondaryReview)
     console.log(des, 'testwfeheubofwbuoefobuiewipfewinpefonw[ef')
@@ -51,10 +52,10 @@ export default function EditSecondaryDish({setShowModal2, secondaryDish, seconda
             description,
             category,
             rating,
-            id: secondaryDishId
+            // id: secondaryDishId
         };
 
-        const editPrimaryReview = await dispatch(editSecondaryReviewThunk(payload, secondaryDish.id))
+        const editPrimaryReview = await dispatch(editSecondaryReviewThunk(payload, secondaryDishId))
           setShowModal2(false)
       }
 

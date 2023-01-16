@@ -18,6 +18,8 @@ export default function OneDish () {
   const [showModal, setShowModal] = useState(false);
   const [showModal2, setShowModal2] = useState(false);
   const [ spinner, setSpinner ] = useState(true);
+  const [secondaryDishId, setSecondaryDishId ] = useState();
+  const [Description, setDescription] = useState();
   let {dishId} = useParams()
   const history = useHistory()
   dishId = parseInt(dishId)
@@ -116,19 +118,20 @@ return (
               <div>{secondaryDish.rating}</div>
             </div>
             <div className='editAndDeleteSecond'>
-              {/* { userId == secondaryDish.user_id &&
-              <button className='oneDishButton1' onClick={() =>setShowModal2(true)}
+              { userId == secondaryDish.user_id &&
+              <button className='oneDishButton1' onClick={() => {
+                setSecondaryDishId(secondaryDish.id)
+                setDescription(secondaryDish.description)
+                setShowModal2(true)
+              }
+              }
                 >Edit your Dish</button>
               }
               {showModal2 && (
               <Modal onClose={() => setShowModal2(false)}>
-                <EditSecondaryDish secondaryDish={secondaryDish} secondaryDishId={secondaryDish.id} setShowModal2={setShowModal2} />
+                <EditSecondaryDish description={Description} secondaryDish={secondaryDish} secondaryDishId={secondaryDishId} setShowModal2={setShowModal2} />
               </Modal>
-              )} */}
-              {/* { userId == secondaryDish.user_id &&
-              <button className='oneDishButton1' onClick={() =>history.push(`secondarydish/${secondaryDish.id}/edit`)}
-                >Edit your Dish</button>
-              } */}
+              )}
               {userId == secondaryDish.user_id &&
               <button className='oneDishButton1' onClick={() => {
                 dispatch(deleteSecondaryReviewThunk(secondaryDish.id)) }}>Delete Review</button>
