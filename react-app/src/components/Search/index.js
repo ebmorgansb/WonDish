@@ -3,17 +3,15 @@ import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { getAllPrimaryReviewsThunk } from "../../store/primaryReview"
 import './index.css'
-import { clearPrimaryAction } from '../../store/primaryReview'
 
 export default function Search() {
     const sessUser = useSelector(state => state.session.user)
     const primaryReviews = Object.values(useSelector(state => state.primaryReview))
-    console.log(primaryReviews, 'in searh')
+    console.log(primaryReviews, 'in search')
     const dispatch = useDispatch()
     const history = useHistory()
     const [name, setName] = useState('');
     const [errors, setErrors] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(()=>{
         dispatch(getAllPrimaryReviewsThunk());
@@ -27,18 +25,8 @@ export default function Search() {
 
 
 
-    // function handleClick() {
-    //   setIsLoading(true);
-    //   setTimeout(() => {
-    //     // simulate a delay
-    //     return history.push(`/dish/${primaryReviews[i].id}`);
-    //   }, 1000);
-    // }
-
-
 
     const handleSubmit = async (e) => {
-        // console.log(primaryReviews, 'test')
         e.preventDefault();
         const payload = {
             name
