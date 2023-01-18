@@ -14,11 +14,13 @@ class PrimaryReview(db.Model):
     address = db.Column(db.String(255))
     rating = db.Column(db.Integer,)
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')))
+    restaurant_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('restaurants.id')))
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     updated_at = db.Column(db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
 
     primaryreview_to_user = db.relationship('User', back_populates='user_to_primaryreview')
     primaryreview_to_secondaryreview = db.relationship('SecondaryReview', back_populates='secondaryreview_to_primaryreview')
+    primaryreview_to_restaurant = db.relationship('Restaurant', back_populates='restaurant_to_primaryreview')
 
     def to_dict(self):
         return{
@@ -30,6 +32,7 @@ class PrimaryReview(db.Model):
             'address':self.address,
             'rating':self.rating,
             'user_id':self.user_id,
+            'restaurant_id':self.restaurant_id,
             'created_at':self.created_at,
             'updated_at':self.updated_at
         }

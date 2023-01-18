@@ -10,4 +10,5 @@ class PrimaryReviewForm(FlaskForm):
   address = StringField('Address', validators=[DataRequired()])
   rating = IntegerField('Rating', validators=[DataRequired()])
   user_id = IntegerField('User_id', validators=[DataRequired()])
+  restaurant_id = IntegerField('Restaurant_id', validators=[DataRequired()])
   submit = SubmitField("Create Primary Review")
