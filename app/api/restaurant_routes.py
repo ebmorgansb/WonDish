@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, jsonify, request
 from flask_login import login_required, current_user
-from app.models import PrimaryReview, SecondaryReview, Restaurant, db, Image
+# from app.models import PrimaryReview, SecondaryReview, Restaurant, db, Image
+from app.models import PrimaryReview, SecondaryReview, Restaurant, db
 from app.forms.restaurant import RestaurantForm
 
 
@@ -23,3 +24,22 @@ def restaurant(restaurant_id):
     return {'errors': ['This restaurant does not exist']}, 401
   restaurant = query.to_dict()
   return jsonify(restaurant)
+
+#create new restaurant
+@restaurant_routes.route('/create', methods=['POST'])
+@login_required
+def create_restaurant():
+  form = RestaurantForm()
+  form['csrf_token'].data = request.cookies['csrf_token']
+  data = form.data
+
+  if form.validate_on_submit():
+    restaurant = Restaurant(
+      name = data['name'],
+      address = data['address'],
+      user_id = data['user_id']
+    )
+    db.session.add(restaurant)
+    db.session.commit()
+    return jsonify(restaurant.to_dict())
+  return jsonify(form.errors)

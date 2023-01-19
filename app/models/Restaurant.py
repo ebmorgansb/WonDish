@@ -13,7 +13,7 @@ class Restaurant(db.Model):
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     updated_at = db.Column(db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
 
-    restaurant_to_user = db.relationship('User', back_populates='user_to_primaryreview')
+    restaurant_to_user = db.relationship('User', back_populates='user_to_restaurant')
     restaurant_to_primaryreview = db.relationship('PrimaryReview', back_populates='primaryreview_to_restaurant')
 
     def to_dict(self):
