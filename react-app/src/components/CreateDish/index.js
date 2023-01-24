@@ -19,7 +19,7 @@ export default function CreateDish() {
     const [image, setImage] = useState('')
     // const [image, setImage] = useState(null);
     // const [imageLoading, setImageLoading] = useState(false);
-    const [address, setAddress] = useState('');
+    const [address, setAddress] = useState(data.address);
     const [rating, setRating] = useState('' || 6);
     const [errors, setErrors] = useState([]);
 
@@ -65,7 +65,7 @@ export default function CreateDish() {
     return (
       <>
      <form className="createDishForm" onSubmit={handleSubmit}>
-     <h2 className="title">Be the first to review the {name}!</h2>
+     <h2 className="title">Be the first to review {name} at {address}!</h2>
      <div className="errors">
   {errors.map((error) => (
         <div className="oneError" key={`a${error}`}> {error}</div>))}
@@ -121,17 +121,15 @@ export default function CreateDish() {
         </label>
         </div>
         <div className="oneFormInput">
-        <label>
-        Address
         <div className="formPadding">
         <input className="actualInput"
           type="text"
           value={address}
-          onChange={(e) => setAddress(e.target.value)}
+          // onChange={(e) => setAddress(e.target.value)}
+          hidden
           required
         />
         </div>
-        </label>
         </div>
         <div className="oneFormInput">
         <label>

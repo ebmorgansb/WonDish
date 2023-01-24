@@ -14,6 +14,7 @@ import Home from './components/Home';
 import CreateDish from './components/CreateDish';
 import CreateSecondaryDish from './components/CreateSecondaryDish';
 import EditSecondaryDish from './components/EditSecondaryDish';
+import Restaurants from './components/Restaurants';
 import Footer from './components/Footer';
 
 function App() {
@@ -52,16 +53,18 @@ function App() {
         </Route>
         {/* <Route path='/secondarydish/:secondarydishid/edit' exact={true} >
           <EditSecondaryDish/>
-          <h1>woefw</h1>
         </Route> */}
         <Route path='/primarydish/create' exact={true} >
           <CreateDish/>
         </Route>
-        <Route path='/secondarydish/create' exact={true} >
+        {/* <Route path='/secondarydish/create' exact={true} >
           <CreateSecondaryDish/>
-        </Route>
+        </Route> */}
         <Route path='/dish/:dishId' exact={true} >
           <OneDish/>
+        </Route>
+        <Route path='/restaurants' exact={true} >
+          <Restaurants/>
         </Route>
         <Route path='/' exact={true} >
           <Home/>

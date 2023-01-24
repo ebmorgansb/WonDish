@@ -11,6 +11,7 @@ import Slider from '../Slider';
 import CreateADishModal from '../CreateDishFilter/CreateDishFilterModal'
 import Footer from '../Footer'
 import { clearPrimaryAction } from '../../store/primaryReview'
+import Google from '../GoogleAuto/GoogleAuto'
 import table from '../../allImages/TABLE.jpeg';
 
 export default function Home() {
@@ -37,6 +38,7 @@ return (
   <div className='mission'>
     Welcome to WonDish - a peer review destination to help find the best restaurant to satisfy your craving. Browse existing reviews for top notch locations or contribute by adding your own
   </div>
+    <Google/>
     <Search/>
     <Slider/>
     <CreateADishModal/>
