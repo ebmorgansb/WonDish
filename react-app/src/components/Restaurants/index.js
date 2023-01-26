@@ -18,7 +18,8 @@ export default function Restaurants() {
   console.log('what is user',user)
 
 //   const primaryDish = Object.values(useSelector(state => state.primaryReview))[0]
-  const restaurants = Object.values(useSelector(state => state.restaurant))[0]
+  const restaurants = Object.values(useSelector(state => state.restaurant))
+  console.log(restaurants, 'hmm')
 
 
 

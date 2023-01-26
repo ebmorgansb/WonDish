@@ -45,7 +45,6 @@ export default function CreateDish() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-
         const payload = {
             name,
             description,
@@ -53,14 +52,17 @@ export default function CreateDish() {
             image,
             address,
             rating,
-            user_id: sessUser.id
+            user_id: sessUser.id,
+            restaurant_id: data.restaurantId
         };
 
         const newPrimaryReview = await dispatch(createPrimaryReviewThunk(payload))
         if (newPrimaryReview) {
           history.push(`/dish/${newPrimaryReview.id}`)
         }
-      }
+
+
+    }
 
     return (
       <>

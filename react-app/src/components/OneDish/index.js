@@ -3,12 +3,12 @@ import {useEffect, useState} from 'react'
 import { useHistory } from 'react-router-dom'
 import {useParams} from 'react-router-dom'
 import { clearPrimaryAction, deletePrimaryReviewThunk, getOnePrimaryReviewThunk } from '../../store/primaryReview'
-import { getAllSecondaryReviewsThunk } from '../../store/secondaryReview'
+// import { getAllSecondaryReviewsThunk } from '../../store/secondaryReview'
 import EditDish from '../EditDish'
 import Footer from '../Footer'
 import { NavLink } from 'react-router-dom'
-import EditSecondaryDish from '../EditSecondaryDish'
-import { deleteSecondaryReviewThunk } from '../../store/secondaryReview'
+// import EditSecondaryDish from '../EditSecondaryDish'
+// import { deleteSecondaryReviewThunk } from '../../store/secondaryReview'
 import { Modal } from '../../context/modal'
 import './index.css'
 // import { clearPrimaryAction } from '../../store/primaryReview'
@@ -18,7 +18,7 @@ export default function OneDish () {
   const [showModal, setShowModal] = useState(false);
   const [showModal2, setShowModal2] = useState(false);
   const [ spinner, setSpinner ] = useState(true);
-  const [secondaryDishId, setSecondaryDishId ] = useState();
+  // const [secondaryDishId, setSecondaryDishId ] = useState();
   const [Description, setDescription] = useState();
   let {dishId} = useParams()
   const history = useHistory()
@@ -30,7 +30,7 @@ export default function OneDish () {
   console.log('what is user',user)
 
   const primaryDish = Object.values(useSelector(state => state.primaryReview))[0]
-  const secondaryDishes = Object.values(useSelector(state => state.secondaryReview)).slice(0,6)
+  // const secondaryDishes = Object.values(useSelector(state => state.secondaryReview)).slice(0,6)
 
 
 
@@ -42,18 +42,18 @@ export default function OneDish () {
 
   useEffect(() => {
     dispatch(getOnePrimaryReviewThunk(dishId))
-    dispatch(getAllSecondaryReviewsThunk(dishId))
+    // dispatch(getAllSecondaryReviewsThunk(dishId))
 
-    return (() => dispatch(clearPrimaryAction()))
+    // return (() => dispatch(clearPrimaryAction()))
   }, [dispatch, dishId])
 
   if (!primaryDish) {
     return null
   }
 
-  if (!secondaryDishes) {
-    return null
-  }
+  // if (!secondaryDishes) {
+  //   return null
+  // }
 
 return (
   <>
@@ -83,7 +83,7 @@ return (
           <EditDish setShowModal={setShowModal} />
         </Modal>
       )}
-      {secondaryDishes.length == 0 && userId == primaryDish?.user_id &&
+      {userId == primaryDish?.user_id &&
         <NavLink to={`/`}>
           <button className='oneDishButton' onClick={() => {
             dispatch(deletePrimaryReviewThunk(dishId))
@@ -93,7 +93,7 @@ return (
         }
       </div>
     </div>
-    <div className='addReviewsAndTitle'>
+    {/* <div className='addReviewsAndTitle'>
                   {secondaryDishes.length == 0 ? <h2 className='pushFooter'>More reviews coming soon!</h2> :
       <h2 className='addReview'>Additional Reviews</h2>
                   }
@@ -141,7 +141,7 @@ return (
         </div>
       )}
     </div>
-    </div>
+    </div> */}
     <Footer/>
     </div>
 

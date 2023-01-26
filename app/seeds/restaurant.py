@@ -4,8 +4,8 @@ from app.models import db, Restaurant, environment, SCHEMA
 def seed_restaurants():
 
     restaurant1 = Restaurant(
-        name='The Chicken Ranch',
-        address='5002 forest street',
+        name='Taqueria El Buen Gusto',
+        address='Taqueria El Buen Gusto, North Milpas Street, Santa Barbara, CA, USA',
         user_id=1)
 
     db.session.add(restaurant1)

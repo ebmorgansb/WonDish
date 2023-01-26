@@ -54,6 +54,7 @@ export const clearPrimaryAction = () => {
 
 // Create a Primary Review
 export const createPrimaryReviewThunk = (primaryReview) => async (dispatch) => {
+    console.log(primaryReview, 'gugugug')
     const response = await fetch('/api/primaryreviews/create', {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
@@ -61,6 +62,7 @@ export const createPrimaryReviewThunk = (primaryReview) => async (dispatch) => {
     });
     if (response.ok) {
         const primaryReview = await response.json();
+        console.log(primaryReview, '----------------------------------------')
         dispatch(createPrimaryReviewAction(primaryReview))
         return primaryReview
     };
@@ -78,6 +80,7 @@ export const getOnePrimaryReviewThunk = (primaryReviewId) => async (dispatch) =>
 
 // Get all primary reviews
 export const getAllPrimaryReviewsThunk = () => async (dispatch) => {
+    console.log('we in the get all primary')
     const response = await fetch('/api/primaryreviews/all');
     if (response.ok) {
         const primaryReviews = await response.json();

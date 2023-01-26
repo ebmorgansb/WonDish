@@ -2,6 +2,8 @@ import { useSelector, useDispatch } from "react-redux"
 import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { getAllPrimaryReviewsThunk } from "../../store/primaryReview"
+import { getAllRestaurantsThunk } from "../../store/restaurant"
+import { createRestaurantThunk } from "../../store/restaurant"
 import { Modal } from "../../context/modal"
 import './index.css'
 import PlacesAutocomplete, {
@@ -10,17 +12,18 @@ import PlacesAutocomplete, {
 } from 'react-places-autocomplete';
 
 export default function CreateDishFilter() {
+    const dispatch = useDispatch()
     const sessUser = useSelector(state => state.session.user)
     const primaryDishes = Object.values(useSelector(state => state.primaryReview))
     const restaurants = Object.values(useSelector(state => state.restaurant))
-    console.log(primaryDishes, 'hey there jack cool guy')
     const primaryDishNames = []
     const primaryDishAddresses = []
     const restaurantNames = []
+    const restaurantAddresses = []
     const history = useHistory()
     const [name, setName] = useState('');
     const [errors, setErrors] = useState([]);
-    const [ address, setAddress ] = useState('');
+    const [address, setAddress] = useState('');
     const [coordinates, setCoordinates] = useState({
         lat:null,
         lng: null
@@ -34,16 +37,20 @@ export default function CreateDishFilter() {
     }
 
 
-    // for (let i = 0; i < primaryDishes.length-1; i++) {
       primaryDishes.forEach(primaryDish => {
         let primaryDishName = primaryDish.name.split(" ").join("")
         primaryDishNames.push(primaryDishName.toLowerCase())
-})
+      })
 
-      restaurants.forEach(restauarant => {
+      restaurants.forEach(restaurant => {
         let restaurantName = restaurant.name
         restaurantNames.push(restaurantName)
-})
+      })
+
+      restaurants.forEach(restaurant => {
+        let restaurantAddress = restaurant.address
+        restaurantAddresses.push(restaurantAddress)
+      })
 
 
 
@@ -52,30 +59,34 @@ export default function CreateDishFilter() {
       if(!sessUser) errors.push("Must be logged in to create a review");
       if(name.length > 19) errors.push("Name must be less than 20 characters");
       if(!name) errors.push("Dish Name is required");
+      if(!address) errors.push("Address is required")
 
-      getAllPrimaryReviewsThunk()
+      dispatch(getAllPrimaryReviewsThunk())
+      dispatch(getAllRestaurantsThunk())
       setErrors(errors)
-    },[name, sessUser])
+    },[name, address, sessUser])
 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        const restData = {
+          name: address.split(',')[0],
+          address,
+          user_id: sessUser.id
+        }
 
-        const payload = {
-            name,
-            address,
-            user_id: sessUser.id
-        };
-
-        //   if (primaryDishNames.includes(name.split(" ").join("").toLowerCase())) {
-        //   let idx = primaryDishNames.indexOf(name.split(" ").join("").toLowerCase())
-        //   let primaryReviewId = primaryDishes[idx].id
-        //   history.push(`/secondarydish/create`, {name, primaryReviewId})
-        // }
-        if (restaurants.includes(name.split(" ").join("").toLowerCase()))
-          history.push(`/primarydish/create`, {name, address})
-
+        if (restaurantAddresses.includes(address)) {
+          let idx = restaurantAddresses.indexOf(address)
+          let restaurantId = restaurants[idx].id
+          history.push(`/primarydish/create`, {name, address, restaurantId})
+        }
+        else {
+          dispatch(createRestaurantThunk(restData))
+            let restaurantId = restaurants[restaurants.length-1].id +1
+          history.push(`/primarydish/create`, {name, address, restaurantId})
+        }
+      }
 
 
     return (
@@ -100,12 +111,10 @@ export default function CreateDishFilter() {
       </div>
       <div className="oneFormInput">
         <div className="formPadding">
-          {/* <div>Address</div> */}
         <input className="actualInput"
           type="text"
           value={address}
           hidden
-          // onChange={(e) => setAddress(e.target.value)}
           required
         />
         </div>
@@ -119,6 +128,7 @@ export default function CreateDishFilter() {
   value={address}
   onChange={setAddress}
   onSelect={handleSelect}
+
 >
   {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
     <div>
@@ -163,10 +173,7 @@ src={`https://www.google.com/maps/embed/v1/search?key=AIzaSyDzNAUy0rhFEfpmMD7UvA
 allowfullscreen>
 </iframe>
 
-
-
         <button className="button" disabled={errors.length > 0} type='submit'>Submit</button>
-        <div className="instruct">All reviews belonging to the same dish will be grouped together*</div>
       </form>
     </>
     )

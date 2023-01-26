@@ -58,9 +58,11 @@ export const getOneRestaurantThunk = (restaurantId) => async (dispatch) => {
 
 // Get all restaurants
 export const getAllRestaurantsThunk = () => async (dispatch) => {
+    console.log('we in the get all restaurant?')
     const response = await fetch('/api/restaurants/all');
     if (response.ok) {
         const restaurants = await response.json();
+        console.log('in restaurant tunk', restaurants)
         dispatch(getAllRestaurantsAction(restaurants));
     };
 };
