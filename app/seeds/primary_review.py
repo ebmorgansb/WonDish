@@ -49,41 +49,113 @@ def seed_primaryreviews():
         user_id=2,
         restaurant_id=1)
 
-    review1 = PrimaryReview(
+    review2 = PrimaryReview(
         name='burrito',
-        description='Definitely solid',
+        description='Slaps 100%',
         image='https://cdn.foodbeast.com/wp-content/uploads/2017/08/CAM4186.jpg',
-        address='Taqueria El Buen Gusto, North Milpas Street, Santa Barbara, CA, USA',
-        rating=7,
+        address="Mony's Mexican Food, Anacapa Street, Santa Barbara, CA, USA",
+        rating=10,
         user_id=1,
-        restaurant_id=1)
+        restaurant_id=2)
 
-    review1a = PrimaryReview(
+    review2a = PrimaryReview(
         name='burrito',
         description='It was a solid burrito',
         image='https://static.wixstatic.com/media/e82dd7_366ee2ec761a4c70a910db016b1efcde~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Burrito%204.jpg',
-        address='Taqueria El Buen Gusto, North Milpas Street, Santa Barbara, CA, USA',
-        rating=8,
+        address="Mony's Mexican Food, Anacapa Street, Santa Barbara, CA, USA",
+        rating=10,
         user_id=1,
-        restaurant_id=1)
+        restaurant_id=2)
 
-    review1b = PrimaryReview(
+    review2b = PrimaryReview(
         name='burrito',
         description='It was delicious but not traditional',
         image='https://www.shutterstock.com/image-photo/mexican-beef-burrito-260nw-1349138753.jpg',
-        address='Taqueria El Buen Gusto, North Milpas Street, Santa Barbara, CA, USA',
-        rating=9,
+        address="Mony's Mexican Food, Anacapa Street, Santa Barbara, CA, USA",
+        rating=10,
         user_id=1,
-        restaurant_id=1)
+        restaurant_id=2)
 
-    review1c = PrimaryReview(
+    review2c = PrimaryReview(
         name='burrito',
         description='This may have been the best burrito I have ever had',
         image='https://www.mexicanplease.com/wp-content/uploads/2022/09/Easy-Ground-Beef-Burritos-5.jpg',
-        address='Taqueria El Buen Gusto, North Milpas Street, Santa Barbara, CA, USA',
+        address="Mony's Mexican Food, Anacapa Street, Santa Barbara, CA, USA",
         rating=10,
         user_id=2,
-        restaurant_id=1)
+        restaurant_id=2)
+
+    review3 = PrimaryReview(
+        name='burrito',
+        description='Slaps 100%',
+        image='https://cdn.foodbeast.com/wp-content/uploads/2017/08/CAM4186.jpg',
+        address="Taqueria El Bajio, North Milpas Street, Santa Barbara, CA, USA",
+        rating=9,
+        user_id=1,
+        restaurant_id=3)
+
+    review3a = PrimaryReview(
+        name='burrito',
+        description='It was a solid burrito',
+        image='https://static.wixstatic.com/media/e82dd7_366ee2ec761a4c70a910db016b1efcde~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Burrito%204.jpg',
+        address="Taqueria El Bajio, North Milpas Street, Santa Barbara, CA, USA",
+        rating=9,
+        user_id=1,
+        restaurant_id=3)
+
+    review3b = PrimaryReview(
+        name='burrito',
+        description='It was delicious but not traditional',
+        image='https://www.shutterstock.com/image-photo/mexican-beef-burrito-260nw-1349138753.jpg',
+        address="Taqueria El Bajio, North Milpas Street, Santa Barbara, CA, USA",
+        rating=9,
+        user_id=1,
+        restaurant_id=3)
+
+    review3c = PrimaryReview(
+        name='burrito',
+        description='This may have been the best burrito I have ever had',
+        image='https://www.mexicanplease.com/wp-content/uploads/2022/09/Easy-Ground-Beef-Burritos-5.jpg',
+        address="Taqueria El Bajio, North Milpas Street, Santa Barbara, CA, USA",
+        rating=9,
+        user_id=1,
+        restaurant_id=3)
+
+    review4 = PrimaryReview(
+        name='burrito',
+        description='Slaps 100%',
+        image='https://cdn.foodbeast.com/wp-content/uploads/2017/08/CAM4186.jpg',
+        address="Super Cucas, West Micheltorena Street, Santa Barbara, CA, USA",
+        rating=6,
+        user_id=1,
+        restaurant_id=4)
+
+    review4a = PrimaryReview(
+        name='burrito',
+        description='It was a solid burrito',
+        image='https://static.wixstatic.com/media/e82dd7_366ee2ec761a4c70a910db016b1efcde~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Burrito%204.jpg',
+        address="Super Cucas, West Micheltorena Street, Santa Barbara, CA, USA",
+        rating=6,
+        user_id=1,
+        restaurant_id=4)
+
+    review4b = PrimaryReview(
+        name='burrito',
+        description='It was delicious but not traditional',
+        image='https://www.shutterstock.com/image-photo/mexican-beef-burrito-260nw-1349138753.jpg',
+        address="Super Cucas, West Micheltorena Street, Santa Barbara, CA, USA",
+        rating=6,
+        user_id=1,
+        restaurant_id=4)
+
+    review4c = PrimaryReview(
+        name='burrito',
+        description='This may have been the best burrito I have ever had',
+        image='https://www.mexicanplease.com/wp-content/uploads/2022/09/Easy-Ground-Beef-Burritos-5.jpg',
+        address="Super Cucas, West Micheltorena Street, Santa Barbara, CA, USA",
+        rating=6,
+        user_id=1,
+        restaurant_id=4)
 
     # review2 = PrimaryReview(
     #     name='Chicken Parm',
@@ -225,7 +297,18 @@ def seed_primaryreviews():
     db.session.add(review1a)
     db.session.add(review1b)
     db.session.add(review1c)
-    db.session.add(review1)
+    db.session.add(review2)
+    db.session.add(review2a)
+    db.session.add(review2b)
+    db.session.add(review2c)
+    db.session.add(review3)
+    db.session.add(review3a)
+    db.session.add(review3b)
+    db.session.add(review3c)
+    db.session.add(review4)
+    db.session.add(review4a)
+    db.session.add(review4b)
+    db.session.add(review4c)
     # db.session.add(review2)
     # db.session.add(review3)
     # db.session.add(review4)

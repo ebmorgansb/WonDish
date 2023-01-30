@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, jsonify, request
 from flask_login import login_required, current_user
-# from app.models import PrimaryReview, SecondaryReview, Restaurant, db, Image
-from app.models import PrimaryReview, SecondaryReview, Restaurant, db
+# from app.models import PrimaryReview, Restaurant, db, Image
+from app.models import PrimaryReview, Restaurant, db
 from app.forms.restaurant import RestaurantForm
 
 

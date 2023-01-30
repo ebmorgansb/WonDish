@@ -19,7 +19,6 @@ class PrimaryReview(db.Model):
     updated_at = db.Column(db.DateTime, server_default=db.func.now(), server_onupdate=db.func.now())
 
     primaryreview_to_user = db.relationship('User', back_populates='user_to_primaryreview')
-    primaryreview_to_secondaryreview = db.relationship('SecondaryReview', back_populates='secondaryreview_to_primaryreview')
     primaryreview_to_restaurant = db.relationship('Restaurant', back_populates='restaurant_to_primaryreview')
 
     def to_dict(self):

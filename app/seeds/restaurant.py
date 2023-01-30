@@ -8,7 +8,26 @@ def seed_restaurants():
         address='Taqueria El Buen Gusto, North Milpas Street, Santa Barbara, CA, USA',
         user_id=1)
 
+    restaurant2 = Restaurant(
+        name="Mony's Mexican Food",
+        address="Mony's Mexican Food, Anacapa Street, Santa Barbara, CA, USA",
+        user_id=1)
+
+    restaurant3 = Restaurant(
+        name="Taqueria El Bajio",
+        address="Taqueria El Bajio, North Milpas Street, Santa Barbara, CA, USA",
+        user_id=1)
+
+    restaurant4 = Restaurant(
+        name="Super Cucas",
+        address="Super Cucas, West Micheltorena Street, Santa Barbara, CA, USA",
+        user_id=1)
+
+
     db.session.add(restaurant1)
+    db.session.add(restaurant2)
+    db.session.add(restaurant3)
+    db.session.add(restaurant4)
     db.session.commit()
 
 
