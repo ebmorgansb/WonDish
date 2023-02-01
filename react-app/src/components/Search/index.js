@@ -35,7 +35,9 @@ export default function Search() {
         for (let i = 0; i < primaryReviews.length; i++) {
           if (primaryReviews[i].name.split(" ").join("").toLowerCase() === payload.name.split(" ").join("").toLowerCase()) {
 
-              return history.push(`/dish/${primaryReviews[i].id}`)
+              // return history.push(`/dish/${primaryReviews[i].id}`)
+              let dishName = primaryReviews[i].name
+              return history.push(`/dish/${dishName}`)
           }
           else {
             setErrors(['We do not have a review for that dish yet.'])

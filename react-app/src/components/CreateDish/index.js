@@ -16,12 +16,12 @@ export default function CreateDish() {
     const [name, setName] = useState(data.name);
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
-    const [image, setImage] = useState('')
-    // const [image, setImage] = useState(null);
-    // const [imageLoading, setImageLoading] = useState(false);
+    const [image, setImage] = useState(null);
+    const [imageLoading, setImageLoading] = useState(false);
     const [address, setAddress] = useState(data.address);
     const [rating, setRating] = useState('' || 6);
     const [errors, setErrors] = useState([]);
+
 
 
     useEffect(()=>{
@@ -42,8 +42,32 @@ export default function CreateDish() {
       setErrors(errors)
     },[address, name, description, sessUser, category, rating, image])
 
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const formData = new FormData();
+        formData.append("image", image);
+
+        // aws uploads can be a bit slow—displaying
+        // some sort of loading message is a good idea
+        setImageLoading(true);
+
+        const res = await fetch('/api/images', {
+            method: "POST",
+            body: formData,
+        });
+        if (res.ok) {
+            await res.json();
+            setImageLoading(false);
+            // history.push("/images");
+        }
+        else {
+            setImageLoading(false);
+            // a real app would probably use more advanced
+            // error handling
+            console.log("error");
+        }
 
         const payload = {
             name,
@@ -63,6 +87,11 @@ export default function CreateDish() {
 
 
     }
+
+    const updateImage = (e) => {
+      const file = e.target.files[0];
+      setImage(file);
+  }
 
     return (
       <>
@@ -110,17 +139,13 @@ export default function CreateDish() {
         </label>
         </div>
         <div className="oneFormInput">
-        <label>
-        Image
-        <div className="formPadding">
-        <input className="actualInput"
-          type="url"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
-          required
-        />
-        </div>
-        </label>
+        <input
+              type="file"
+              accept="image/*"
+              onChange={updateImage}
+            />
+            <button type="submit">Submit</button>
+            {(imageLoading)&& <p>Loading...</p>}
         </div>
         <div className="oneFormInput">
         <div className="formPadding">
