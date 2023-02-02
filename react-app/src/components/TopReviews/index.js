@@ -42,9 +42,19 @@ if (!topReviews) {
 
 return (
   <div>
-    <div>{currDishName}</div>
+    <h1>{topReviewsFilter[0].name} reviews at {topReviewsFilter[0].address.split(',')[0]}</h1>
     {topReviewsFilter.map(review =>
-  <div>{review.name}</div>
+    <>
+    <div>{review.description}</div>
+    <img
+    className='primeImage'
+    src={review?.image}
+    alt="image description for screen readers"
+    onError={e => { e.currentTarget.src ="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930"; }}
+  />
+    </>
     )}
 </div>
-    )}
+    )
+
+  }
