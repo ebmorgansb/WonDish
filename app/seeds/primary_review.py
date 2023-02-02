@@ -157,6 +157,176 @@ def seed_primaryreviews():
         user_id=1,
         restaurant_id=4)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    review5 = PrimaryReview(
+        name='tacos',
+        description='Definitely solid',
+        image='https://www.acouplecooks.com/wp-content/uploads/2021/07/Plant-based-vegan-street-tacos-005.jpg',
+        address='Taqueria El Buen Gusto, North Milpas Street, Santa Barbara, CA, USA',
+        rating=7,
+        user_id=2,
+        restaurant_id=1)
+
+    review5a = PrimaryReview(
+        name='tacos',
+        description='It was solid tacos',
+        image='https://www.dontsweattherecipe.com/wp-content/uploads/2015/10/streettaco06.jpg',
+        address='Taqueria El Buen Gusto, North Milpas Street, Santa Barbara, CA, USA',
+        rating=8,
+        user_id=1,
+        restaurant_id=1)
+
+    review5b = PrimaryReview(
+        name='tacos',
+        description='It was delicious but not traditional',
+        image='https://i0.wp.com/www.imbored-letsgo.com/wp-content/uploads/2015/04/Carne-Asada-Street-Tacos.jpg',
+        address='Taqueria El Buen Gusto, North Milpas Street, Santa Barbara, CA, USA',
+        rating=9,
+        user_id=1,
+        restaurant_id=1)
+
+    review5c = PrimaryReview(
+        name='tacos',
+        description='This may have been the best tacos I have ever had',
+        image='https://www.eatingonadime.com/wp-content/uploads/2020/10/carne-asada-5.jpg',
+        address='Taqueria El Buen Gusto, North Milpas Street, Santa Barbara, CA, USA',
+        rating=10,
+        user_id=2,
+        restaurant_id=1)
+
+    review6 = PrimaryReview(
+        name='tacos',
+        description='Slaps 100%',
+        image='https://images.ctfassets.net/hhv516v5f7sj/64JlXlOvlLZ2j3mObrVr9/a15defb20aed27983792291a32b8610c/IMPOSSIBLE__STREET_TACOS_.jpeg',
+        address="Mony's Mexican Food, Anacapa Street, Santa Barbara, CA, USA",
+        rating=10,
+        user_id=1,
+        restaurant_id=2)
+
+    review6a = PrimaryReview(
+        name='tacos',
+        description='It was solid tacos',
+        image='https://www.clovermeadowsbeef.com/wp-content/uploads/2022/06/street-tacos-carne-asada-easy-clover-meadows-beef.png',
+        address="Mony's Mexican Food, Anacapa Street, Santa Barbara, CA, USA",
+        rating=10,
+        user_id=1,
+        restaurant_id=2)
+
+    review6b = PrimaryReview(
+        name='tacos',
+        description='It was delicious but not traditional',
+        image='https://nerdymamma.com/wp-content/uploads/2016/09/shredded-chicken-street-taco-recipe-fea-480x360.jpg',
+        address="Mony's Mexican Food, Anacapa Street, Santa Barbara, CA, USA",
+        rating=10,
+        user_id=2,
+        restaurant_id=2)
+
+    review6c = PrimaryReview(
+        name='tacos',
+        description='This may have been the best tacos I have ever had',
+        image='https://www.lecremedelacrumb.com/wp-content/uploads/2014/01/santa-monica-street-tacos-91.jpg',
+        address="Mony's Mexican Food, Anacapa Street, Santa Barbara, CA, USA",
+        rating=10,
+        user_id=2,
+        restaurant_id=2)
+
+    review7 = PrimaryReview(
+        name='tacos',
+        description='Slaps 100%',
+        image='https://www.fromvalerieskitchen.com/wordpress/wp-content/uploads/2020/04/Pork-Street-Tacos-1828.jpg',
+        address="Taqueria El Bajio, North Milpas Street, Santa Barbara, CA, USA",
+        rating=9,
+        user_id=1,
+        restaurant_id=3)
+
+    review7a = PrimaryReview(
+        name='tacos',
+        description='It was solid tacos',
+        image='https://tornadoughalli.com/wp-content/uploads/2017/05/Slow-cooker-street-tacos-20-of-21.jpg',
+        address="Taqueria El Bajio, North Milpas Street, Santa Barbara, CA, USA",
+        rating=9,
+        user_id=2,
+        restaurant_id=3)
+
+    review7b = PrimaryReview(
+        name='tacos',
+        description='It was delicious but not traditional',
+        image='https://cdn.momsdish.com/wp-content/uploads/2020/04/Carne-Asada-Street-Tacos-19-scaled.jpg',
+        address="Taqueria El Bajio, North Milpas Street, Santa Barbara, CA, USA",
+        rating=9,
+        user_id=1,
+        restaurant_id=3)
+
+    review7c = PrimaryReview(
+        name='tacos',
+        description='This may have been the best tacos I have ever had',
+        image='https://www.productosreal.com/wp-content/uploads/2020/10/AdobeStock_378032494-1024x650.jpeg',
+        address="Taqueria El Bajio, North Milpas Street, Santa Barbara, CA, USA",
+        rating=9,
+        user_id=1,
+        restaurant_id=3)
+
+    review8 = PrimaryReview(
+        name='tacos',
+        description='Slaps 100%',
+        image='https://elmariachiparkersburg.com/wp-content/uploads/2021/04/blog-10-1024x577.jpg',
+        address="Super Cucas, West Micheltorena Street, Santa Barbara, CA, USA",
+        rating=6,
+        user_id=3,
+        restaurant_id=4)
+
+    review8a = PrimaryReview(
+        name='tacos',
+        description='It was solid tacos',
+        image='https://blog.assets.triptrivia.com/2019/05/Tacos.jpg',
+        address="Super Cucas, West Micheltorena Street, Santa Barbara, CA, USA",
+        rating=6,
+        user_id=1,
+        restaurant_id=4)
+
+    review8b = PrimaryReview(
+        name='tacos',
+        description='It was delicious but not traditional',
+        image='https://images.heb.com/is/image/HEBGrocery/recipe-hm-large/al-pastor-street-tacos-recipe.jpg',
+        address="Super Cucas, West Micheltorena Street, Santa Barbara, CA, USA",
+        rating=6,
+        user_id=1,
+        restaurant_id=4)
+
+    review8c = PrimaryReview(
+        name='tacos',
+        description='This may have been the best tacos I have ever had',
+        image='https://bluejeanchef.com/uploads/2019/03/street-taco-3-for-web-e1588278150321-480x600.jpg',
+        address="Super Cucas, West Micheltorena Street, Santa Barbara, CA, USA",
+        rating=6,
+        user_id=3,
+        restaurant_id=4)
     # review2 = PrimaryReview(
     #     name='Chicken Parm',
     #     description='literally the best',
@@ -309,22 +479,22 @@ def seed_primaryreviews():
     db.session.add(review4a)
     db.session.add(review4b)
     db.session.add(review4c)
-    # db.session.add(review2)
-    # db.session.add(review3)
-    # db.session.add(review4)
-    # db.session.add(review5)
-    # db.session.add(review6)
-    # db.session.add(review7)
-    # db.session.add(review8)
-    # db.session.add(review9)
-    # db.session.add(review10)
-    # db.session.add(review11)
-    # db.session.add(review12)
-    # db.session.add(review13)
-    # db.session.add(review14)
-    # db.session.add(review15)
-    # db.session.add(review16)
-    # db.session.add(review17)
+    db.session.add(review5)
+    db.session.add(review5a)
+    db.session.add(review5b)
+    db.session.add(review5c)
+    db.session.add(review6)
+    db.session.add(review6a)
+    db.session.add(review6b)
+    db.session.add(review6c)
+    db.session.add(review7)
+    db.session.add(review7a)
+    db.session.add(review7b)
+    db.session.add(review7c)
+    db.session.add(review8)
+    db.session.add(review8a)
+    db.session.add(review8b)
+    db.session.add(review8c)
     db.session.commit()
 
 

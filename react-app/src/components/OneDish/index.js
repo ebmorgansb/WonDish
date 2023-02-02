@@ -107,14 +107,14 @@ return (
           <EditDish setShowModal={setShowModal} />
         </Modal>
       )}
-      {/* {userId == dish?.user_id &&
+      {userId == dish?.user_id &&
         <NavLink to={`/`}>
           <button className='oneDishButton' onClick={() => {
-            dispatch(deletePrimaryReviewThunk(dishId))
+            dispatch(deletePrimaryReviewThunk(dish.id))
           }
             }>Delete Review</button>
         </NavLink>
-        } */}
+        }
       </div>
     </div>
 )}

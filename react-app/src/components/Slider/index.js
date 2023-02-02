@@ -10,8 +10,19 @@ import { getAllPrimaryReviewsThunk } from '../../store/primaryReview';
 export default function Slider() {
   const dispatch = useDispatch()
   const [currentIndex, setCurrentIndex] = useState(0);
-  const primaryDishes = Object.values(useSelector(state => state.primaryReview))
-  console.log(primaryDishes, 'in slider')
+  const primaryDishesAll = Object.values(useSelector(state => state.primaryReview))
+  // const primaryDishes = primaryDishesTotal.filter(dish => dish.)
+
+
+
+  let primaryDishes = primaryDishesAll.reduce(function(acc, current) {
+    let match = acc.findIndex(dish => dish.name === current.name);
+    if (match === -1) {
+      acc.push(current);
+    }
+    return acc;
+  }, []);
+  console.log(primaryDishes, 'hmm')
 
   useEffect(() => {
     dispatch(getAllPrimaryReviewsThunk())
@@ -41,7 +52,7 @@ return (
     <>
     <div className='allCar'>
       <button className='arrow-button-left' onClick={handlePrevious}></button>
-      <NavLink to={`/dish/${primaryDishes[currentIndex]?.id}`}>
+      <NavLink to={`/dish/${primaryDishes[currentIndex]?.name}`}>
       <img
       className='sliderImages'
       src={primaryDishes[currentIndex]?.image}
