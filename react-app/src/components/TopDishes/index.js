@@ -67,6 +67,7 @@ if (!sortedDishes) {
 
 return (
 <div className='totalOneDish'>
+<div className='topDishTitle'>The Top {sortedDishes[0]?.name.charAt(0).toUpperCase() + sortedDishes[0]?.name.slice(1)}'s</div>
 {sortedDishes.map((dish, index) =>
   <div className='primeDish'>
   <img
@@ -78,14 +79,8 @@ return (
     <div className='primeInfoAndButtons'>
       <div className='primeInfo'>
         <h1 className='oneDishTitle'>{dishArrayTitles[index]}</h1>
-      <h2 className='oneDishTitle'>{dish?.name.charAt(0).toUpperCase() + dish.name.slice(1)}</h2>
       <div className='primeText'>Description: {dish?.description}</div>
-      <div className='primeText'>Address: {dish?.address}</div>
-
-
-
-
-
+      <div className='primeText'>Rating: {dish?.rating}</div>
 
       <PlacesAutocomplete
   value={dish.address}
@@ -95,12 +90,12 @@ return (
 >
   {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
     <div>
-      <input
+      {/* <input
         {...getInputProps({
           placeholder: 'Search Places ...',
           className: 'location-search-input',
         })}
-      />
+      /> */}
       <div className="autocomplete-dropdown-container">
         {loading && <div>Loading...</div>}
         {suggestions.map(suggestion => {
@@ -127,6 +122,7 @@ return (
   )}
 </PlacesAutocomplete>
 <iframe
+className='test'
 width="450"
 height="250"
 frameborder="0"
@@ -135,13 +131,8 @@ referrerpolicy="no-referrer-when-downgrade"
 src={`https://www.google.com/maps/embed/v1/search?key=AIzaSyDzNAUy0rhFEfpmMD7UvAShcRXzBnDh7aQ&q=${dish.address}}`}
 allowfullscreen>
 </iframe>
+<div className='primeText'>Address: {dish?.address}</div>
 
-
-
-
-
-
-      <div className='primeText'>Rating: {dish?.rating}</div>
       </div>
       {user != null && userId == dish?.user_id &&
     <button className='oneDishButton' onClick={() => setShowModal(true)}>Edit your Dish</button>
