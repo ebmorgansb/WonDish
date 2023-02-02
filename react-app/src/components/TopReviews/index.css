@@ -1,0 +1,28 @@
+.topReviewTitle {
+    font-size: 64px;
+    text-align: center;
+    padding: 3%
+}
+
+.topReviewCard {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    height: 40vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.topReviewCards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.topReviewImg {
+    width: 20vw;
+    height: 20vh;
+    padding: 2%;
+}

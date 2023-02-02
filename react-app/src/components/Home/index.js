@@ -42,7 +42,7 @@ return (
     <Slider/>
     <CreateADishModal/>
 </div>
-<Footer/>
+{/* <Footer/> */}
 </div>
 }
 </>

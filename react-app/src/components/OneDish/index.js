@@ -66,7 +66,7 @@ return (
   {!spinner &&
   <TopDishes/>
 }
-  <Footer/>
+  {/* <Footer/> */}
   </>
 )
 }

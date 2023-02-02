@@ -12,6 +12,13 @@ import { Modal } from '../../context/modal'
 import gitLogo from '../../allImages/github-logo.png';
 import inLogo from '../../allImages/in.png';
 
+import PlacesAutocomplete, {
+  geocodeByAddress,
+  getLatLng
+} from 'react-places-autocomplete';
+
+
+
 export default function TopDishes () {
 const [showModal, setShowModal] = useState(false);
 const [showModal2, setShowModal2] = useState(false);
@@ -20,12 +27,12 @@ let dishName = useParams()
 dishName = Object.values(dishName)
 const history = useHistory()
 const dispatch = useDispatch()
-
 const user = useSelector(state => state.session.user)
 const userId = user?.id
 const primaryDishObj = {}
 const primaryDishes = Object.values(useSelector(state => state.primaryReview))
 const specificDishes = primaryDishes.filter(primaryDish => primaryDish.name == dishName[0])
+const dishArrayTitles = ['The Winning Dish', "Almost Won", 'Still Winning']
 specificDishes.forEach(specificDish => {
   let key = specificDish.address
   let newRating = specificDish.rating
@@ -60,7 +67,7 @@ if (!sortedDishes) {
 
 return (
 <div className='totalOneDish'>
-{sortedDishes.map(dish =>
+{sortedDishes.map((dish, index) =>
   <div className='primeDish'>
   <img
     className='primeImage'
@@ -70,10 +77,70 @@ return (
   />
     <div className='primeInfoAndButtons'>
       <div className='primeInfo'>
-        <h1 className='oneDishTitle'>The Winning Dish:</h1>
+        <h1 className='oneDishTitle'>{dishArrayTitles[index]}</h1>
       <h2 className='oneDishTitle'>{dish?.name.charAt(0).toUpperCase() + dish.name.slice(1)}</h2>
       <div className='primeText'>Description: {dish?.description}</div>
       <div className='primeText'>Address: {dish?.address}</div>
+
+
+
+
+
+
+      <PlacesAutocomplete
+  value={dish.address}
+  // onChange={setAddress}
+  // onSelect={handleSelect}
+
+>
+  {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+    <div>
+      <input
+        {...getInputProps({
+          placeholder: 'Search Places ...',
+          className: 'location-search-input',
+        })}
+      />
+      <div className="autocomplete-dropdown-container">
+        {loading && <div>Loading...</div>}
+        {suggestions.map(suggestion => {
+          const className = suggestion.active
+            ? 'suggestion-item--active'
+            : 'suggestion-item';
+          // inline style for demonstration purpose
+          const style = suggestion.active
+            ? { backgroundColor: '#fafafa', cursor: 'pointer' }
+            : { backgroundColor: '#ffffff', cursor: 'pointer' };
+          return (
+            <div
+              {...getSuggestionItemProps(suggestion, {
+                className,
+                style,
+              })}
+            >
+              <span>{suggestion.description}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  )}
+</PlacesAutocomplete>
+<iframe
+width="450"
+height="250"
+frameborder="0"
+style={{border:0}}
+referrerpolicy="no-referrer-when-downgrade"
+src={`https://www.google.com/maps/embed/v1/search?key=AIzaSyDzNAUy0rhFEfpmMD7UvAShcRXzBnDh7aQ&q=${dish.address}}`}
+allowfullscreen>
+</iframe>
+
+
+
+
+
+
       <div className='primeText'>Rating: {dish?.rating}</div>
       </div>
       {user != null && userId == dish?.user_id &&
