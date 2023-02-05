@@ -15,7 +15,6 @@ export default function TopReviews () {
 const location = useLocation();
 const data = location.state;
 const {restaurantId} = useParams()
-console.log(data.dishName, 'is it here buigweubo')
 const history = useHistory()
 const dispatch = useDispatch()
 const user = useSelector(state => state.session.user)
@@ -23,8 +22,7 @@ const userId = user?.id
 const [showModal, setShowModal] = useState(false);
 const [showModal2, setShowModal2] = useState(false);
 const [currId, setCurrId] = useState('')
-const [currDishName, setCurrDishName] = useState(data.dishName);
-// console.log('meowcats', data)
+const [currDishName, setCurrDishName] = useState("" || data.dishName);
 const topReviews = Object.values(useSelector(state => state.primaryReview))
 const users = Object.values(useSelector(state => state.users))
 const topReviewsFilter = topReviews.filter((primaryDish) =>  primaryDish.name === currDishName && primaryDish.restaurant_id == restaurantId)
@@ -67,6 +65,7 @@ return (
     onError={e => { e.currentTarget.src ="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930"; }}
   />
   <div>{review.description}</div>
+  <div>
   {user != null && userId == review?.user_id &&
     <button className='oneDishButton' onClick={() => {
     setShowModal(true)
@@ -89,6 +88,7 @@ return (
           }>Delete Review</button>
       </NavLink>
       }
+      </div>
   </div>
     </>
     )}

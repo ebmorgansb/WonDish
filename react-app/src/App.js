@@ -16,7 +16,7 @@ import CreateSecondaryDish from './components/CreateSecondaryDish';
 import EditSecondaryDish from './components/EditSecondaryDish';
 import Restaurants from './components/Restaurants';
 import Footer from './components/Footer';
-import TopReviews from './components/TopReviews';
+import TopReviewsPage from './components/TopReviews/index2';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -50,7 +50,7 @@ function App() {
           <User />
         </ProtectedRoute>
         <Route path='/dish/reviews/:restaurantId' exact={true}>
-          <TopReviews/>
+          <TopReviewsPage/>
         </Route>
         <Route path='/dishes' exact={true} >
           <Dishes/>

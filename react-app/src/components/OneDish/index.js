@@ -14,59 +14,35 @@ import gitLogo from '../../allImages/github-logo.png';
 import inLogo from '../../allImages/in.png';
 
 export default function OneDish () {
-  // const [showModal, setShowModal] = useState(false);
-  // const [showModal2, setShowModal2] = useState(false);
-  const [ spinner, setSpinner ] = useState(true);
-  // const [Description, setDescription] = useState();
-  // let dishName = useParams()
-  // dishName = Object.values(dishName)
-  // const history = useHistory()
-  // const dispatch = useDispatch()
 
-  // const user = useSelector(state => state.session.user)
-  // const userId = user?.id
-  // const primaryDishObj = {}
-  // const primaryDishes = Object.values(useSelector(state => state.primaryReview))
-  // const specificDishes = primaryDishes.filter(primaryDish => primaryDish.name == dishName[0])
-  // specificDishes.forEach(specificDish => {
-  //   let key = specificDish.address
-  //   let newRating = specificDish.rating
-  //   if (!primaryDishObj[key]) {
-  //     let ratingArr = [newRating]
-  //     specificDish.rating = ratingArr
-  //     primaryDishObj[key] = specificDish
-  //   }
-  //   else {
-  //     console.log('hmm')
-  //     primaryDishObj[key].rating.push(newRating)
-  //   }
-  // })
-  // let finalArr = Object.values(primaryDishObj)
-  // finalArr.forEach(dish => {
-  //   let testArr = dish.rating
-  //   let total = testArr.reduce((a,b)=>a+b)
-  //   dish.rating = total
-  // })
-  // let sortedDishes = finalArr.sort((a, b) => b.rating - a.rating).slice(0,3)
+  const [ spinner, setSpinner ] = useState(true);
+
 
   useEffect(() => {
-    setTimeout(() => setSpinner(false), 300)
+    setTimeout(() => setSpinner(false), 500)
   }, []);
 
 
 
-  // useEffect(() => {
-  //   dispatch(getAllPrimaryReviewsThunk())
-
-  // }, [dispatch])
-
 
 return (
   <>
-  {!spinner &&
+  {spinner ?
+  <div class="center">
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+</div>
+  :
   <TopDishes/>
 }
-  {/* <Footer/> */}
   </>
 )
 }

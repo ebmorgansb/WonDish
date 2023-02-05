@@ -12,15 +12,15 @@ export default function EditDish({setShowModal, dishId}) {
     // let {dishId} = useParams()
     // dishId = parseInt(dishId)
     const sessUser = useSelector(state => state.session.user)
-    // const oldPrimaryReview = Object.values(useSelector(state => state.primaryReview))[0]
+    const oldPrimaryReview = Object.values(useSelector(state => state.primaryReview))[0]
     const dispatch = useDispatch()
     const history = useHistory()
     // const [name, setName] = useState('');
-    const [description, setDescription] = useState('');
+    const [description, setDescription] = useState('' || oldPrimaryReview.description);
     const [category, setCategory] = useState('');
     // const [image, setImage] = useState('')
     // const [address, setAddress] = useState('');
-    const [rating, setRating] = useState('');
+    const [rating, setRating] = useState('' || 8);
     const [errors, setErrors] = useState([]);
 
 
