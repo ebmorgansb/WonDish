@@ -15,15 +15,18 @@ export default function TopReviews () {
 const location = useLocation();
 const data = location.state;
 const {restaurantId} = useParams()
-console.log(restaurantId, 'is it here buigweubo')
+console.log(data.dishName, 'is it here buigweubo')
 const history = useHistory()
 const dispatch = useDispatch()
-console.log('meowcats', data.dishName)
+const user = useSelector(state => state.session.user)
+const userId = user?.id
+const [showModal, setShowModal] = useState(false);
+const [showModal2, setShowModal2] = useState(false);
+const [currId, setCurrId] = useState('')
 const [currDishName, setCurrDishName] = useState(data.dishName);
+// console.log('meowcats', data)
 const topReviews = Object.values(useSelector(state => state.primaryReview))
-console.log(topReviews, 'huh')
 const users = Object.values(useSelector(state => state.users))
-console.log(users, 'lol')
 const topReviewsFilter = topReviews.filter((primaryDish) =>  primaryDish.name === currDishName && primaryDish.restaurant_id == restaurantId)
 
 
@@ -48,10 +51,15 @@ return (
   <div>
     <div className='topReviewTitle'>{topReviewsFilter[0]?.name[0].toUpperCase()+topReviewsFilter[0]?.name.slice(1)} reviews at {topReviewsFilter[0]?.address.split(',')[0]}</div>
     <div className='topReviewCards'>
+    {showModal && (
+      <Modal onClose={() => setShowModal(false)}>
+        <EditDish dishId={currId} setShowModal={setShowModal} />
+      </Modal>
+    )}
     {topReviewsFilter.map(review =>
     <>
     <div className='topReviewCard'>
-    <div>{users.find(user => user.id == review.user_id)?.username}</div>
+    <div>{users.find(user => user?.id == review.user_id)?.username}</div>
     <img
     className='topReviewImg'
     src={review?.image}
@@ -59,11 +67,35 @@ return (
     onError={e => { e.currentTarget.src ="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930"; }}
   />
   <div>{review.description}</div>
+  {user != null && userId == review?.user_id &&
+    <button className='oneDishButton' onClick={() => {
+    setShowModal(true)
+    setCurrId(review.id)
+    }
+    }>
+      Edit your Dish</button>
+      }
+    {/* {showModal && (
+      <Modal onClose={() => setShowModal(false)}>
+        <EditDish dishId={currId} setShowModal={setShowModal} />
+      </Modal>
+    )} */}
+    {userId == review?.user_id &&
+      // <NavLink to={`/dish/reviews/${review.restaurant_id}`}>
+          <NavLink to={`/`}>
+        <button className='oneDishButton' onClick={() => {
+          dispatch(deletePrimaryReviewThunk(review?.id))
+        }
+          }>Delete Review</button>
+      </NavLink>
+      }
   </div>
     </>
     )}
     </div>
 </div>
     )
+
+
 
   }

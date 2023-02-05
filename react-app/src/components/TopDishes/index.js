@@ -20,8 +20,6 @@ import PlacesAutocomplete, {
 
 
 export default function TopDishes () {
-const [showModal, setShowModal] = useState(false);
-const [showModal2, setShowModal2] = useState(false);
 const [Description, setDescription] = useState();
 let dishName = useParams()
 dishName = Object.values(dishName)
@@ -61,6 +59,10 @@ useEffect(() => {
 }, [dispatch])
 
 
+if (!primaryDishes) {
+  return null
+}
+
 if (!sortedDishes) {
   return null
 }
@@ -79,8 +81,9 @@ return (
     <div className='primeInfoAndButtons'>
       <div className='primeInfo'>
         <h1 className='oneDishTitle'>{dishArrayTitles[index]}</h1>
-      <div className='primeText'>Description: {dish?.description}</div>
-      <div className='primeText'>Rating: {dish?.rating}</div>
+        <div className='primeText'>Rating: {dish?.rating}</div>
+      {/* <div className='primeText'>Description: {dish?.description}</div> */}
+
 
       <PlacesAutocomplete
   value={dish.address}
@@ -122,7 +125,7 @@ return (
   )}
 </PlacesAutocomplete>
 <iframe
-className='test'
+className='topDishFrame'
 width="450"
 height="250"
 frameborder="0"
@@ -134,28 +137,14 @@ allowfullscreen>
 <div className='primeText'>Address: {dish?.address}</div>
 
       </div>
-      {user != null && userId == dish?.user_id &&
-    <button className='oneDishButton' onClick={() => setShowModal(true)}>Edit your Dish</button>
-      }
-    {showModal && (
-      <Modal onClose={() => setShowModal(false)}>
-        <EditDish setShowModal={setShowModal} />
-      </Modal>
-    )}
-    {userId == dish?.user_id &&
-      <NavLink to={`/`}>
-        <button className='oneDishButton' onClick={() => {
-          dispatch(deletePrimaryReviewThunk(dish.id))
-        }
-          }>Delete Review</button>
-      </NavLink>
-      }
+      <div className='buttonsTop'>
       <button className='oneDishButton' onClick={() => {
           let dishName = dish.name
           console.log(dishName, 'hm')
           history.push(`/dish/reviews/${dish.restaurant_id}`, {dishName})
         }
           }>See all Reviews</button>
+    </div>
     </div>
   </div>
 )}

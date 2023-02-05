@@ -1,0 +1,33 @@
+.restaurantMaps {
+width: 25vw;
+height: 35vh;
+}
+
+.restaurantCards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.restaurantCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    box-shadow: inset 2px 2px 30px rgba(0, 0, 0, 0.1);
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.restTitle {
+    font-size:2em
+}
+
+.totalRestTitle {
+    padding-top: 2%;
+    font-size: 4em;
+    text-align: center;
+}

@@ -107,12 +107,10 @@ def edit_primaryreview(primaryreview_id):
 @primaryreviews_routes.route('/delete/<int:primaryreview_id>', methods=['DELETE'])
 @login_required
 def delete_primaryreviews(primaryreview_id):
-    allSecondaryReviews = SecondaryReview.query.filter(primaryreview_id == SecondaryReview.primaryreview_id).all()
-    if len(allSecondaryReviews) == 0:
-      onePrimaryReview = PrimaryReview.query.get(primaryreview_id)
-      if not onePrimaryReview:
-        return {'errors': ['That list does not exist']}, 401
-      db.session.delete(onePrimaryReview)
-      db.session.commit()
-      return jsonify('Successfully deleted a primary review that does not have associated secondary reviews')
-    return jsonify('You cannot delete a Primary Review that has associated Secondary Reviews')
+  onePrimaryReview = PrimaryReview.query.get(primaryreview_id)
+  if not onePrimaryReview:
+    return {'errors': ['That list does not exist']}, 401
+  db.session.delete(onePrimaryReview)
+  db.session.commit()
+  return jsonify('Successfully deleted a primary review')
+

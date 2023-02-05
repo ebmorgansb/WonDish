@@ -20,6 +20,9 @@ const NavBar = () => {
     <div className='totalNav'>
     <nav className='navy'>
       <div className='smallNavy'>
+      <NavLink className='profileLinkz' to='/restaurants' style={{ textDecoration: 'none' }} exact={true} activeClassName='active'>
+    Restaurants
+    </NavLink>
         { !sessUser &&
         <div>
           <NavLink className='profileLinkz' to='/login' style={{ textDecoration: 'none' }} exact={true} activeClassName='active'>

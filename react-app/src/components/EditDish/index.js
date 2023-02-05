@@ -8,19 +8,19 @@ import './index.css'
 
 
 
-export default function EditDish({setShowModal}) {
-    let {dishId} = useParams()
-    dishId = parseInt(dishId)
+export default function EditDish({setShowModal, dishId}) {
+    // let {dishId} = useParams()
+    // dishId = parseInt(dishId)
     const sessUser = useSelector(state => state.session.user)
-    const oldPrimaryReview = Object.values(useSelector(state => state.primaryReview))[0]
+    // const oldPrimaryReview = Object.values(useSelector(state => state.primaryReview))[0]
     const dispatch = useDispatch()
     const history = useHistory()
     // const [name, setName] = useState('');
-    const [description, setDescription] = useState('' || oldPrimaryReview.description);
-    const [category, setCategory] = useState('' || oldPrimaryReview.category);
+    const [description, setDescription] = useState('');
+    const [category, setCategory] = useState('');
     // const [image, setImage] = useState('')
     // const [address, setAddress] = useState('');
-    const [rating, setRating] = useState('' || oldPrimaryReview.rating);
+    const [rating, setRating] = useState('');
     const [errors, setErrors] = useState([]);
 
 
@@ -46,7 +46,7 @@ export default function EditDish({setShowModal}) {
             rating,
             id: dishId
         };
-
+        console.log('dishIdwow', dishId)
         const editPrimaryReview = await dispatch(editPrimaryReviewThunk(payload))
         // if (editPrimaryReview) {
           // history.push(`/dish/${editPrimaryReview.id}`)

@@ -34,7 +34,7 @@ export default function CreateDish() {
       if(!address) errors.push("Street address is required");
       if(address.length > 99) errors.push("Street address must be less than 100 characters");
       if(!image) errors.push("Image is required");
-      if(image.length > 254) errors.push("Image link must be less than 255 characters");
+      // if(image.length > 254) errors.push("Image link must be less than 255 characters");
       if(category && category.length > 19) errors.push("Category must be less than 20 characters");
       if(!rating) errors.push("Rating is required");
 
@@ -45,53 +45,26 @@ export default function CreateDish() {
 
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        const formData = new FormData();
-        formData.append("image", image);
-
-        // aws uploads can be a bit slow—displaying
-        // some sort of loading message is a good idea
-        setImageLoading(true);
-
-        const res = await fetch('/api/images', {
-            method: "POST",
-            body: formData,
-        });
-        if (res.ok) {
-            await res.json();
-            setImageLoading(false);
-            // history.push("/images");
-        }
-        else {
-            setImageLoading(false);
-            // a real app would probably use more advanced
-            // error handling
-            console.log("error");
-        }
-
-        const payload = {
-            name,
-            description,
-            category,
-            image,
-            address,
-            rating,
-            user_id: sessUser.id,
-            restaurant_id: data.restaurantId
-        };
-
-        const newPrimaryReview = await dispatch(createPrimaryReviewThunk(payload))
-        if (newPrimaryReview) {
-          history.push(`/dish/${newPrimaryReview.id}`)
-        }
+      e.preventDefault();
 
 
+      const payload = {
+          name,
+          description,
+          category,
+          image,
+          address,
+          rating,
+          user_id: sessUser.id,
+          restaurant_id: data.restaurantId
+      };
+      let dishName = payload.name
+
+      const newPrimaryReview = await dispatch(createPrimaryReviewThunk(payload))
+      if (newPrimaryReview) {
+        history.push(`/dish/reviews/${payload.restaurant_id}`, {dishName})
+      }
     }
-
-    const updateImage = (e) => {
-      const file = e.target.files[0];
-      setImage(file);
-  }
 
     return (
       <>
@@ -139,6 +112,18 @@ export default function CreateDish() {
         </label>
         </div>
         <div className="oneFormInput">
+        <label>
+        Image
+        <div className="formPadding">
+        <input className="actualInput"
+          type="text"
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
+        />
+        </div>
+        </label>
+        </div>
+        {/* <div className="oneFormInput">
         <input
               type="file"
               accept="image/*"
@@ -146,7 +131,7 @@ export default function CreateDish() {
             />
             <button type="submit">Submit</button>
             {(imageLoading)&& <p>Loading...</p>}
-        </div>
+        </div> */}
         <div className="oneFormInput">
         <div className="formPadding">
         <input className="actualInput"

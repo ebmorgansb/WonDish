@@ -50,7 +50,7 @@ export default function OneDish () {
   // let sortedDishes = finalArr.sort((a, b) => b.rating - a.rating).slice(0,3)
 
   useEffect(() => {
-    setTimeout(() => setSpinner(false), 100)
+    setTimeout(() => setSpinner(false), 300)
   }, []);
 
 
