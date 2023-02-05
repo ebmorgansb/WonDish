@@ -47,7 +47,9 @@ if (!users) {
 
 return (
   <div>
+    {topReviewsFilter[0]?.name &&
     <div className='topReviewTitle'>{topReviewsFilter[0]?.name[0].toUpperCase()+topReviewsFilter[0]?.name.slice(1)} reviews at {topReviewsFilter[0]?.address.split(',')[0]}</div>
+}
     <div className='topReviewCards'>
     {showModal && (
       <Modal onClose={() => setShowModal(false)}>
@@ -64,25 +66,21 @@ return (
     alt="image description for screen readers"
     onError={e => { e.currentTarget.src ="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930"; }}
   />
-  <div>{review.description}</div>
-  <div>
+  <div>Rating: {review.rating}</div>
+  <div className='topReviewText'>{review.description}</div>
+  <div className='topReviewButtons'>
   {user != null && userId == review?.user_id &&
-    <button className='oneDishButton' onClick={() => {
+    <button className='topReviewButton' onClick={() => {
     setShowModal(true)
     setCurrId(review.id)
     }
     }>
       Edit your Dish</button>
       }
-    {/* {showModal && (
-      <Modal onClose={() => setShowModal(false)}>
-        <EditDish dishId={currId} setShowModal={setShowModal} />
-      </Modal>
-    )} */}
+
     {userId == review?.user_id &&
-      // <NavLink to={`/dish/reviews/${review.restaurant_id}`}>
-          <NavLink to={`/`}>
-        <button className='oneDishButton' onClick={() => {
+          <NavLink style={{ textDecoration: 'none' }}  to={`/`}>
+        <button className='topReviewButton' onClick={() => {
           dispatch(deletePrimaryReviewThunk(review?.id))
         }
           }>Delete Review</button>

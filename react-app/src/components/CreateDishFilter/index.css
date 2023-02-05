@@ -20,7 +20,7 @@
     }
 
     #modal-content {
-        height: 70vh;
+        height: 80vh;
     }
 
     .authSubmitButton {
@@ -39,8 +39,8 @@
         flex-direction: column;
     }
 
-    .oneFormInput {
-        padding: 4px;
+    .oneFormInputFilter {
+        padding: 1%;
     }
 
     .textAreaInputCreate {
@@ -61,9 +61,12 @@
         border: 1px solid black;
     }
 
-    .title {
-        margin-left: 35px;
+    .filterTitle {
+        /* margin-left: 35px; */
         /* margin-bottom:20px */
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
     }
 
     .errors {
@@ -98,3 +101,14 @@
     .buttonFilterRound:hover {
         background-color: rgb(103, 178, 197, .2);
     }
+
+.filterAddress {
+    padding: 0%;
+    margin: 1%;
+}
+
+.filterFrame {
+    height:60%;
+    width: 70%;
+    margin-top: 4%;
+}

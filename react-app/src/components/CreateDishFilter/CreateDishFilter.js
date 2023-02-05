@@ -28,13 +28,21 @@ export default function CreateDishFilter() {
         lat:null,
         lng: null
     })
+    const [selectedAddress, setSelectedAddress] = useState(false);
+    const [selectedSuggestion, setSelectedSuggestion] = useState("");
 
     const handleSelect = async value => {
         const results = await geocodeByAddress(value)
         const ll = await getLatLng(results[0])
         setAddress(value)
         setCoordinates(ll)
+        setSelectedSuggestion(value.description)
+        setSelectedAddress(true)
     }
+
+
+
+
 
 
       primaryDishes.forEach(primaryDish => {
@@ -69,6 +77,7 @@ export default function CreateDishFilter() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (address === selectedSuggestion) {
 
         const restData = {
           name: address.split(',')[0],
@@ -88,17 +97,23 @@ export default function CreateDishFilter() {
         }
       }
 
+        else {
+          errors.push('Please use a valid address')
+        }
+
+      }
+
 
     return (
       <>
      <form className="createFilterForm" onSubmit={handleSubmit}>
-     <h1 className="title">Create a review for a dish</h1>
+     <div className="filterTitle">Create a review for a dish</div>
      <div className="errors">
   {errors.map((error) => (
         <div className="oneError" key={`a${error}`}> {error}</div>))}
       </div>
       <div className="formInputs">
-      <div className="oneFormInput">
+      <div className="oneFormInputFilter">
         <div className="formPadding">
           <div>Dish Name</div>
         <input className="actualInput"
@@ -109,7 +124,7 @@ export default function CreateDishFilter() {
         />
         </div>
       </div>
-      <div className="oneFormInput">
+      <div>
         <div className="formPadding">
         <input className="actualInput"
           type="text"
@@ -122,13 +137,17 @@ export default function CreateDishFilter() {
     </div>
 
 
-    <p>Address: {address}</p>
+    <p className="filterAddress">Address: {address}</p>
 
 <PlacesAutocomplete
   value={address}
   onChange={setAddress}
   onSelect={handleSelect}
-
+  shouldFetchSuggestions={(value) => {
+    // Check if the user entered value is not equal to an empty string
+    // and is not equal to the previous value of the address state
+    return value !== '' && value !== address;
+  }}
 >
   {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
     <div>
@@ -164,8 +183,9 @@ export default function CreateDishFilter() {
   )}
 </PlacesAutocomplete>
 <iframe
-width="450"
-height="250"
+className="filterFrame"
+// width="450"
+// height="250"
 frameborder="0"
 style={{border:0}}
 referrerpolicy="no-referrer-when-downgrade"
@@ -173,7 +193,7 @@ src={`https://www.google.com/maps/embed/v1/search?key=AIzaSyDzNAUy0rhFEfpmMD7UvA
 allowfullscreen>
 </iframe>
 
-        <button className="button" disabled={errors.length > 0} type='submit'>Submit</button>
+        <button className="button" disabled={errors.length > 0 || !selectedAddress} type='submit'>Submit</button>
       </form>
     </>
     )

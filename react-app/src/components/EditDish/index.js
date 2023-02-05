@@ -12,15 +12,13 @@ export default function EditDish({setShowModal, dishId}) {
     // let {dishId} = useParams()
     // dishId = parseInt(dishId)
     const sessUser = useSelector(state => state.session.user)
-    const oldPrimaryReview = Object.values(useSelector(state => state.primaryReview))[0]
+    const oldPrimaryReview = Object.values(useSelector(state => state.primaryReview)).find(element => element.id === dishId);
+    console.log(oldPrimaryReview, 'hm')
     const dispatch = useDispatch()
     const history = useHistory()
-    // const [name, setName] = useState('');
-    const [description, setDescription] = useState('' || oldPrimaryReview.description);
+    const [description, setDescription] = useState(oldPrimaryReview.description || '');
     const [category, setCategory] = useState('');
-    // const [image, setImage] = useState('')
-    // const [address, setAddress] = useState('');
-    const [rating, setRating] = useState('' || 8);
+    const [rating, setRating] = useState(8 || '');
     const [errors, setErrors] = useState([]);
 
 
@@ -34,7 +32,7 @@ export default function EditDish({setShowModal, dishId}) {
       if(!rating) errors.push("Rating is required")
       setErrors(errors)
       },
-    [description, rating, category, sessUser])
+    [description, rating, category, sessUser, dishId])
 
 
     const handleSubmit = async (e) => {
@@ -48,11 +46,7 @@ export default function EditDish({setShowModal, dishId}) {
         };
         console.log('dishIdwow', dishId)
         const editPrimaryReview = await dispatch(editPrimaryReviewThunk(payload))
-        // if (editPrimaryReview) {
-          // history.push(`/dish/${editPrimaryReview.id}`)
           setShowModal(false)
-          // await dispatch(getSpotThunk(newSpot.id))
-        // }
       }
 
     return (

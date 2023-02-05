@@ -7,11 +7,11 @@
 .topReviewCard {
     display: flex;
     flex-direction: column;
-    width: 25%;
-    height: 25%;
+    width: 30%;
+    height: 55%;
     align-items: center;
     justify-content: center;
-    padding: 3%;
+    padding: 1%;
     margin: 1%;
     border-radius: 10px;
     box-shadow: inset 2px 2px 30px rgb(0 0 0 / 10%)
@@ -24,21 +24,52 @@
     justify-content: center;
     flex-wrap: wrap;
     height: 100vh;
+    width: 100vw;
 }
 
 .topReviewImg {
     /* width: 20vw; */
     /* height: 20vh; */
-    width: 75%;
-    height: 85%;
+    width: 70%;
+    height: 65%;
     padding: 2%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
+.topReviewButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(0, 0%, 50%, .04);
+  border: 1px solid black;
+  padding: 3%;
+  margin: 3%;
+  border-radius: 10px;
+  height: 30px;
+  width: 100px;
+  white-space: nowrap;
+  text-decoration: none;
 
+}
 
+.topReviewButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* height: 15%; */
+}
 
+.topReviewText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25%;
+  word-break: break-word;
+  overflow-y: auto;
+}
 
 
 
