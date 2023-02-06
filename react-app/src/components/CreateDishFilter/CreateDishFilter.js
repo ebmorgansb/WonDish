@@ -77,8 +77,8 @@ export default function CreateDishFilter() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (address === selectedSuggestion) {
-
+        // if (address === selectedSuggestion) {
+          setErrors([])
         const restData = {
           name: address.split(',')[0],
           address,
@@ -95,11 +95,11 @@ export default function CreateDishFilter() {
             let restaurantId = restaurants[restaurants.length-1].id +1
           history.push(`/primarydish/create`, {name, address, restaurantId})
         }
-      }
+      // }
 
-        else {
-          errors.push('Please use a valid address')
-        }
+      //   else {
+      //     errors.push('Please use a valid address')
+      //   }
 
       }
 
@@ -143,11 +143,11 @@ export default function CreateDishFilter() {
   value={address}
   onChange={setAddress}
   onSelect={handleSelect}
-  shouldFetchSuggestions={(value) => {
-    // Check if the user entered value is not equal to an empty string
-    // and is not equal to the previous value of the address state
-    return value !== '' && value !== address;
-  }}
+  // shouldFetchSuggestions={(value) => {
+  //   // Check if the user entered value is not equal to an empty string
+  //   // and is not equal to the previous value of the address state
+  //   return value !== '' && value !== address;
+  // }}
 >
   {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
     <div>
