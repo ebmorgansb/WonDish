@@ -29,28 +29,78 @@ def primaryreview(primaryreview_id):
   return jsonify(primaryreview)
 
 #create new primary review
+# @primaryreviews_routes.route('/create', methods=['POST'])
+# @login_required
+# def create_primaryreviews():
+#   form = PrimaryReviewForm()
+#   form['csrf_token'].data = request.cookies['csrf_token']
+#   data = form.data
+#   if form.validate_on_submit():
+#     primary_review = PrimaryReview(
+#       name = data['name'],
+#       description = data['description'],
+#       category = data['category'],
+#     # image = url,
+#       image = data['image'],
+#       address = data['address'],
+#       rating = data['rating'],
+#       user_id = data['user_id'],
+#       restaurant_id = data['restaurant_id']
+#       )
+#     db.session.add(primary_review)
+#     db.session.commit()
+#     return jsonify(primary_review.to_dict())
+#   return jsonify(form.errors)
+
+
+#create new primary review
 @primaryreviews_routes.route('/create', methods=['POST'])
 @login_required
 def create_primaryreviews():
+  print('umMMmM')
   form = PrimaryReviewForm()
   form['csrf_token'].data = request.cookies['csrf_token']
+  # if form.validate_on_submit():
+  if "image" not in request.files:
+    return {"errors": "image required"}, 400
+
+  image = request.files["image"]
+
+  if not allowed_file(image.filename):
+    return {"errors": "file type not permitted"}, 400
+
+  image.filename = get_unique_filename(image.filename)
+
+  upload = upload_file_to_s3(image)
+
+  if "url" not in upload:
+        # if the dictionary doesn't have a url key
+        # it means that there was an error when we tried to upload
+        # so we send back that error message
+      return upload, 400
+
+  url = upload["url"]
+    # flask_login allows us to get the current user from the request
   data = form.data
   if form.validate_on_submit():
     primary_review = PrimaryReview(
       name = data['name'],
       description = data['description'],
       category = data['category'],
-    # image = url,
-      image = data['image'],
+      image = url,
       address = data['address'],
       rating = data['rating'],
       user_id = data['user_id'],
       restaurant_id = data['restaurant_id']
-      )
+        )
+
     db.session.add(primary_review)
     db.session.commit()
     return jsonify(primary_review.to_dict())
   return jsonify(form.errors)
+
+
+
 
 #edit primary review by id
 @primaryreviews_routes.route('/edit/<int:primaryreview_id>', methods=['PUT'])

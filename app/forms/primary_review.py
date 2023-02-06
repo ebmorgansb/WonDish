@@ -6,7 +6,7 @@ class PrimaryReviewForm(FlaskForm):
   name = StringField('Name', validators=[DataRequired()])
   description = StringField('Description', validators=[DataRequired()])
   category = StringField('Category')
-  image = StringField('Image', validators=[DataRequired()])
+  image = StringField('Image')
   address = StringField('Address', validators=[DataRequired()])
   rating = IntegerField('Rating', validators=[DataRequired()])
   user_id = IntegerField('User_id', validators=[DataRequired()])
