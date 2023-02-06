@@ -67,7 +67,7 @@ export default function CreateDishFilter() {
       if(!sessUser) errors.push("Must be logged in to create a review");
       if(name.length > 19) errors.push("Name must be less than 20 characters");
       if(!name) errors.push("Dish Name is required");
-      if(!address) errors.push("A suggested address is required")
+      if(!address) errors.push("A Suggested Address is required")
 
       dispatch(getAllPrimaryReviewsThunk())
       dispatch(getAllRestaurantsThunk())
@@ -151,7 +151,7 @@ export default function CreateDishFilter() {
 >
   {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
     <div>
-      <input
+      <input id="autoInput" 
         {...getInputProps({
           placeholder: 'Search Places ...',
           className: 'location-search-input',

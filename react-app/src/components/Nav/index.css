@@ -62,10 +62,11 @@
 .profileLinkz {
     margin-right: 20px;
     margin-left: 20px;
-    font-size: 24px;
+    font-size: 22px;
     border: none;
     background-color:rgb(255, 255, 255, 0);
     color: rgb(91,34,143);
+    font-weight: bold;
 }
 
 .profileLinkz:hover {

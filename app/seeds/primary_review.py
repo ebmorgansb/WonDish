@@ -3,16 +3,6 @@ from app.models import db, PrimaryReview, environment, SCHEMA
 
 def seed_primaryreviews():
 
-    # review11 = PrimaryReview(
-    #     name='chicken',
-    #     description='So tender will come back shortly!',
-    #     image='https://www.simplyrecipes.com/thmb/WXzv7XkTQvFEpYnyyk4x5HRMtVc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Grilled-Chicken-LEAD-SEO-Horizontal-1b86ef1e115444ba8b6fb216f2810c7c.jpg',
-    #     address='5002 forest street',
-    #     rating=6,
-    #     user_id=1,
-    #     restaurant_id=1)
-
-
     review1 = PrimaryReview(
         name='burrito',
         description='Definitely solid',
@@ -34,7 +24,7 @@ def seed_primaryreviews():
     review1b = PrimaryReview(
         name='burrito',
         description='It was delicious but not traditional',
-        image='https://www.shutterstock.com/image-photo/mexican-beef-burrito-260nw-1349138753.jpg',
+        image='https://www.wellplated.com/wp-content/uploads/2014/07/Easy-Summer-Vegetable-and-Black-Bean-Burritos.jpg',
         address='Taqueria El Buen Gusto, North Milpas Street, Santa Barbara, CA, USA',
         rating=9,
         user_id=1,
@@ -52,7 +42,7 @@ def seed_primaryreviews():
     review2 = PrimaryReview(
         name='burrito',
         description='Slaps 100%',
-        image='https://cdn.foodbeast.com/wp-content/uploads/2017/08/CAM4186.jpg',
+        image='https://assets.bonappetit.com/photos/5aec939abc86f9377d4c189c/5:4/w_3514,h_2811,c_limit/roll-up-breakfast-burrito.jpg',
         address="Mony's Mexican Food, Anacapa Street, Santa Barbara, CA, USA",
         rating=10,
         user_id=1,
@@ -61,7 +51,7 @@ def seed_primaryreviews():
     review2a = PrimaryReview(
         name='burrito',
         description='It was a solid burrito',
-        image='https://static.wixstatic.com/media/e82dd7_366ee2ec761a4c70a910db016b1efcde~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Burrito%204.jpg',
+        image='https://www.spoonforkbacon.com/wp-content/uploads/2021/09/carnitas-burrito-recipe.jpg',
         address="Mony's Mexican Food, Anacapa Street, Santa Barbara, CA, USA",
         rating=10,
         user_id=1,
@@ -70,7 +60,7 @@ def seed_primaryreviews():
     review2b = PrimaryReview(
         name='burrito',
         description='It was delicious but not traditional',
-        image='https://www.shutterstock.com/image-photo/mexican-beef-burrito-260nw-1349138753.jpg',
+        image='https://thecheekychickpea.com/wp-content/uploads/2019/08/vegan-burrito-1.jpg',
         address="Mony's Mexican Food, Anacapa Street, Santa Barbara, CA, USA",
         rating=10,
         user_id=1,
@@ -79,7 +69,7 @@ def seed_primaryreviews():
     review2c = PrimaryReview(
         name='burrito',
         description='This may have been the best burrito I have ever had',
-        image='https://www.mexicanplease.com/wp-content/uploads/2022/09/Easy-Ground-Beef-Burritos-5.jpg',
+        image='https://res.cloudinary.com/hksqkdlah/image/upload/SFS_BreakfastBurritosBaconCrispyPotatoes-17_ohw8ql.jpg',
         address="Mony's Mexican Food, Anacapa Street, Santa Barbara, CA, USA",
         rating=10,
         user_id=2,
@@ -88,7 +78,7 @@ def seed_primaryreviews():
     review3 = PrimaryReview(
         name='burrito',
         description='Slaps 100%',
-        image='https://cdn.foodbeast.com/wp-content/uploads/2017/08/CAM4186.jpg',
+        image='https://easywraprecipes.com/wp-content/uploads/2020/01/easy-sausage-spinach-breakfast-burrito-meal-prep-2-735x1000.jpg',
         address="Taqueria El Bajio, North Milpas Street, Santa Barbara, CA, USA",
         rating=9,
         user_id=1,
@@ -97,7 +87,7 @@ def seed_primaryreviews():
     review3a = PrimaryReview(
         name='burrito',
         description='It was a solid burrito',
-        image='https://static.wixstatic.com/media/e82dd7_366ee2ec761a4c70a910db016b1efcde~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Burrito%204.jpg',
+        image='https://cdn.shopify.com/s/files/1/0386/0769/articles/breakfast_burrito_-8_2000x.jpg?v=1623785152',
         address="Taqueria El Bajio, North Milpas Street, Santa Barbara, CA, USA",
         rating=9,
         user_id=1,
@@ -106,7 +96,7 @@ def seed_primaryreviews():
     review3b = PrimaryReview(
         name='burrito',
         description='It was delicious but not traditional',
-        image='https://www.shutterstock.com/image-photo/mexican-beef-burrito-260nw-1349138753.jpg',
+        image='https://cdn.vox-cdn.com/thumbor/5vlrRX551d35WauPcYWJm1jvK-Q=/0x0:640x597/1200x900/filters:focal(279x109:381x211)/cdn.vox-cdn.com/uploads/chorus_image/image/71453845/s385612283885438808_p3_i3_w750.0.jpeg',
         address="Taqueria El Bajio, North Milpas Street, Santa Barbara, CA, USA",
         rating=9,
         user_id=1,
@@ -115,7 +105,7 @@ def seed_primaryreviews():
     review3c = PrimaryReview(
         name='burrito',
         description='This may have been the best burrito I have ever had',
-        image='https://www.mexicanplease.com/wp-content/uploads/2022/09/Easy-Ground-Beef-Burritos-5.jpg',
+        image='https://twokooksinthekitchen.com/wp-content/uploads/2022/06/breakfast-burritos-make-ahead-10.jpg',
         address="Taqueria El Bajio, North Milpas Street, Santa Barbara, CA, USA",
         rating=9,
         user_id=1,
@@ -133,7 +123,7 @@ def seed_primaryreviews():
     review4a = PrimaryReview(
         name='burrito',
         description='It was a solid burrito',
-        image='https://static.wixstatic.com/media/e82dd7_366ee2ec761a4c70a910db016b1efcde~mv2.jpg/v1/fill/w_300,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Burrito%204.jpg',
+        image='https://carlsbadcravings.com/wp-content/uploads/2015/09/Califorina-Burrito-new-1.jpg',
         address="Super Cucas, West Micheltorena Street, Santa Barbara, CA, USA",
         rating=6,
         user_id=1,
@@ -142,7 +132,7 @@ def seed_primaryreviews():
     review4b = PrimaryReview(
         name='burrito',
         description='It was delicious but not traditional',
-        image='https://www.shutterstock.com/image-photo/mexican-beef-burrito-260nw-1349138753.jpg',
+        image='https://www.africanbites.com/wp-content/uploads/2013/04/IMG_6458-2-1.jpg',
         address="Super Cucas, West Micheltorena Street, Santa Barbara, CA, USA",
         rating=6,
         user_id=1,
@@ -151,36 +141,11 @@ def seed_primaryreviews():
     review4c = PrimaryReview(
         name='burrito',
         description='This may have been the best burrito I have ever had',
-        image='https://www.mexicanplease.com/wp-content/uploads/2022/09/Easy-Ground-Beef-Burritos-5.jpg',
+        image='https://40aprons.com/wp-content/uploads/2021/05/chicken-burrito-6-scaled.jpg',
         address="Super Cucas, West Micheltorena Street, Santa Barbara, CA, USA",
         rating=6,
         user_id=1,
         restaurant_id=4)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -327,6 +292,28 @@ def seed_primaryreviews():
         rating=6,
         user_id=3,
         restaurant_id=4)
+
+
+    # review7 = PrimaryReview(
+    #     name='curry',
+    #     description='I could not get enough of this amazing spice',
+    #     image='https://www.allrecipes.com/thmb/j-UIY1oXZZWisuG5e5tRitsOvIs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/212721-Indian-Chicken-Curry-Murgh-Kari-mfs_005-8570fd9bcab845519550c6ff5c71e213.jpg',
+    #     address='11 casa road',
+    #     rating=6,
+    #     user_id=3,
+    #     restaurant_id=1)
+
+
+
+
+
+
+
+
+
+
+
+
     # review2 = PrimaryReview(
     #     name='Chicken Parm',
     #     description='literally the best',
@@ -363,14 +350,6 @@ def seed_primaryreviews():
     #     user_id=1,
     #     restaurant_id=1)
 
-    # review6 = PrimaryReview(
-    #     name='tacos',
-    #     description='The meat was cooked perfectly',
-    #     image='https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/birria-tacos-1648842127.jpg',
-    #     address='11 adobo street',
-    #     rating=7,
-    #     user_id=1,
-    #     restaurant_id=1)
 
     # review7 = PrimaryReview(
     #     name='curry',
