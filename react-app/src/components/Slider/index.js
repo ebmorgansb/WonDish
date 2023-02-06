@@ -11,7 +11,6 @@ export default function Slider() {
   const dispatch = useDispatch()
   const [currentIndex, setCurrentIndex] = useState(0);
   const primaryDishesAll = Object.values(useSelector(state => state.primaryReview))
-  // const primaryDishes = primaryDishesTotal.filter(dish => dish.)
 
 
 
@@ -22,7 +21,7 @@ export default function Slider() {
     }
     return acc;
   }, []);
-  console.log(primaryDishes, 'hmm')
+
 
   useEffect(() => {
     dispatch(getAllPrimaryReviewsThunk())
@@ -50,6 +49,7 @@ export default function Slider() {
 
 return (
     <>
+    {primaryDishes[currentIndex]?.image &&
     <div className='allCar'>
       <button className='arrow-button-left' onClick={handlePrevious}></button>
       <NavLink to={`/dish/${primaryDishes[currentIndex]?.name}`}>
@@ -62,6 +62,7 @@ return (
       </NavLink>
       <button className='arrow-button-right' onClick={handleNext}></button>
     </div>
+}
     </>
 
 )

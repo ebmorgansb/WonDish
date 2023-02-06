@@ -57,7 +57,7 @@ export default function Search() {
       <div className="alignSearch">
       <div className="oneFormInputSearch">
         <input className="actualInputSearch"
-          placeholder="Dish Examples: Tacos, Pizza, Curry, Ice Cream..."
+          placeholder="Dish Examples: Tacos, Burrito, Curry, Ice Cream..."
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}

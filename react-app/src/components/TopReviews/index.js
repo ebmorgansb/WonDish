@@ -46,7 +46,7 @@ if (!users) {
 
 
 return (
-  <div>
+  <div className='totalTopReviews'>
     {topReviewsFilter[0]?.name &&
     <div className='topReviewTitle'>{topReviewsFilter[0]?.name[0].toUpperCase()+topReviewsFilter[0]?.name.slice(1)} reviews at {topReviewsFilter[0]?.address.split(',')[0]}</div>
 }

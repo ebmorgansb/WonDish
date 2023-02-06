@@ -132,7 +132,6 @@ const SignUpForm = () => {
       </div>
       <button className='authSubmitButton' type='submit'>Sign Up</button>
     </form>
-    <Footer/>
     </>
   );
 };

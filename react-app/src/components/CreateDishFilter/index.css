@@ -114,7 +114,7 @@
 }
 
 #autoInput {
-    width: 30em;
+    width: 40em;
 }
 
 .suggestion-item {
@@ -124,5 +124,9 @@
 
 .suggestion-item:hover {
     border: 1px solid black;
-    background-color: grey;
+    background-color: #e6e2e2ed;
+}
+
+.suggestText {
+    font-size: 11px;
 }

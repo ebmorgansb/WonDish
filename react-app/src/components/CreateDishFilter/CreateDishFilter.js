@@ -29,14 +29,14 @@ export default function CreateDishFilter() {
         lng: null
     })
     const [selectedAddress, setSelectedAddress] = useState(false);
-    const [selectedSuggestion, setSelectedSuggestion] = useState("");
+    // const [selectedSuggestion, setSelectedSuggestion] = useState("");
 
     const handleSelect = async value => {
         const results = await geocodeByAddress(value)
         const ll = await getLatLng(results[0])
         setAddress(value)
         setCoordinates(ll)
-        setSelectedSuggestion(value.description)
+        // setSelectedSuggestion(value.description)
         setSelectedAddress(true)
     }
 
@@ -151,7 +151,7 @@ export default function CreateDishFilter() {
 >
   {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
     <div>
-      <input id="autoInput" 
+      <input id="autoInput"
         {...getInputProps({
           placeholder: 'Search Places ...',
           className: 'location-search-input',
@@ -165,7 +165,7 @@ export default function CreateDishFilter() {
             : 'suggestion-item';
           // inline style for demonstration purpose
           const style = suggestion.active
-            ? { backgroundColor: '#fafafa', cursor: 'pointer' }
+            ? { backgroundColor: '#e6e2e2ed', maxwidth: '40em', cursor: 'pointer' }
             : { backgroundColor: '#ffffff', cursor: 'pointer' };
           return (
             <div
@@ -174,7 +174,7 @@ export default function CreateDishFilter() {
                 style,
               })}
             >
-              <span>{suggestion.description}</span>
+              <span className="suggestText">{suggestion.description}</span>
             </div>
           );
         })}

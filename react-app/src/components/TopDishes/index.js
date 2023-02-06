@@ -69,8 +69,9 @@ if (!sortedDishes) {
 
 return (
 <div className='totalOneDish'>
-  {sortedDishes[0]?.name &&
-<div className='topDishTitle'>The Top {sortedDishes[0]?.name.charAt(0).toUpperCase() + sortedDishes[0]?.name.slice(1)}'s</div>
+  {sortedDishes[0]?.name && sortedDishes[0]?.name[sortedDishes[0]?.name.length-1] != 's' ?
+<div className='topDishTitle'>The Top {sortedDishes[0]?.name.charAt(0).toUpperCase() + sortedDishes[0]?.name.slice(1)}'s</div>:
+<div className='topDishTitle'>The Top {sortedDishes[0]?.name.charAt(0).toUpperCase() + sortedDishes[0]?.name.slice(1)}</div>
 }
 {sortedDishes.map((dish, index) =>
   <div className='primeDish'>
