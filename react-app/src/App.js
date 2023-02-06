@@ -65,7 +65,6 @@ function App() {
           <Home/>
         </Route>
       </Switch>
-      {/* <Footer/> */}
     </BrowserRouter>
   );
 }
