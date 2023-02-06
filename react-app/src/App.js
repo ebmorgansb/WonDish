@@ -12,11 +12,8 @@ import Dishes from './components/Dish';
 import OneDish from './components/OneDish';
 import Home from './components/Home';
 import CreateDish from './components/CreateDish';
-import CreateSecondaryDish from './components/CreateSecondaryDish';
-import EditSecondaryDish from './components/EditSecondaryDish';
-import Restaurants from './components/Restaurants';
-import Footer from './components/Footer';
 import TopReviewsPage from './components/TopReviews/index2';
+import TopRestaurantsPage from './components/Restaurants/index2';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -62,7 +59,7 @@ function App() {
           <OneDish/>
         </Route>
         <Route path='/restaurants' exact={true} >
-          <Restaurants/>
+          <TopRestaurantsPage/>
         </Route>
         <Route path='/' exact={true} >
           <Home/>
