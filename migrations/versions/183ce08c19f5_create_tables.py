@@ -1,19 +1,18 @@
-"""create restaurants
+"""create tables
 
-Revision ID: ea1ec831e88c
+Revision ID: 183ce08c19f5
 Revises:
-Create Date: 2023-01-30 13:48:42.050724
+Create Date: 2023-02-06 12:56:27.378857
 
 """
 from alembic import op
 import sqlalchemy as sa
-
 import os
 environment = os.getenv("FLASK_ENV")
 SCHEMA = os.environ.get("SCHEMA")
 
 # revision identifiers, used by Alembic.
-revision = 'ea1ec831e88c'
+revision = '183ce08c19f5'
 down_revision = None
 branch_labels = None
 depends_on = None
