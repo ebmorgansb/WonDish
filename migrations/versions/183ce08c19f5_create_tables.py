@@ -12,7 +12,7 @@ environment = os.getenv("FLASK_ENV")
 SCHEMA = os.environ.get("SCHEMA")
 
 # revision identifiers, used by Alembic.
-revision = '183ce08c19f5'
+revision = '5de6e157d589'
 down_revision = None
 branch_labels = None
 depends_on = None
