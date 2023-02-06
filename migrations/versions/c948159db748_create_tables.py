@@ -1,8 +1,8 @@
 """create tables
 
-Revision ID: 5de6e157d589
+Revision ID: c948159db748
 Revises:
-Create Date: 2023-02-06 15:03:31.221815
+Create Date: 2023-02-06 15:38:48.211865
 
 """
 from alembic import op
@@ -12,7 +12,7 @@ environment = os.getenv("FLASK_ENV")
 SCHEMA = os.environ.get("SCHEMA")
 
 # revision identifiers, used by Alembic.
-revision = '5de6e157d589'
+revision = 'c948159db748'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -29,9 +29,6 @@ def upgrade():
     sa.UniqueConstraint('email'),
     sa.UniqueConstraint('username')
     )
-    if environment == "production":
-        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
-
     op.create_table('restaurants',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=50), nullable=True),
@@ -42,9 +39,6 @@ def upgrade():
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
-    if environment == "production":
-        op.execute(f"ALTER TABLE restaurants SET SCHEMA {SCHEMA};")
-
     op.create_table('primary_reviews',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=50), nullable=True),
@@ -62,6 +56,8 @@ def upgrade():
     sa.PrimaryKeyConstraint('id')
     )
     if environment == "production":
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE restaurants SET SCHEMA {SCHEMA};")
         op.execute(f"ALTER TABLE primary_reviews SET SCHEMA {SCHEMA};")
     # ### end Alembic commands ###
 
