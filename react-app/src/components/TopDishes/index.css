@@ -1,0 +1,121 @@
+.primeDish {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 70%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    }
+
+    .totalOneDish {
+        height: 100%;
+    }
+
+    .primeInfoAndButtons {
+    height: 35em;
+    box-sizing: border-box;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 1%;
+    }
+
+    .primeInfo {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .primeText {
+        padding: 2%;
+        padding-left: 2%;
+        word-break: break-word;
+    }
+
+    .oneDishTitle {
+        text-align: center;
+        margin: 1%
+    }
+
+    .primeImage {
+    height: 35em;
+    width: 35em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: 10px;
+    margin-top: 20px; */
+    border-radius: 10px;
+    object-fit: cover
+
+    }
+
+    .addReviewsAndTitle {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .additionalReviews {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        /* overflow-y:scroll */
+    }
+
+
+
+    .addReview {
+        border-top: solid 1px rgb(143, 142, 142, .5);
+        text-align: center;
+        margin: 20px;
+        padding-top: 20px;
+    }
+
+
+
+    .oneDishButton1 {
+        background-color: hsl(0, 0%, 50%, .04);
+        border: 1px solid black;
+        border: 1px solid black;
+        padding: 3%;
+        margin: 3%;
+        height: 10%;
+        width: 60%;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+
+    .pushFooter {
+        margin: 5%;
+        text-align: center;
+        padding-top: 3%;
+        border-top: solid 1px rgb(14, 13, 12);
+    }
+
+    .topDishFrame {
+        padding: 3%;
+        width: 90%;
+        height: 100%;
+    }
+
+    .topDishTitle {
+        font-size: 44px;
+        text-align: center;
+        padding: 3%;
+    }
+
+    .buttonsTop {
+        display: flex;
+        flex-direction: row;
+    }

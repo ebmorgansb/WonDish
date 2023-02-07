@@ -7,7 +7,7 @@ import EditDish from '../EditDish'
 import Footer from '../Footer'
 import { NavLink } from 'react-router-dom'
 import { Modal } from '../../context/modal'
-// import './index.css'
+import './index.css'
 // import { clearPrimaryAction } from '../../store/primaryReview'
 import gitLogo from '../../allImages/github-logo.png';
 import inLogo from '../../allImages/in.png';
@@ -67,12 +67,23 @@ if (!sortedDishes) {
   return null
 }
 
+let name = 'Loading.....'
+if (sortedDishes[0]?.name[sortedDishes[0]?.name.length-1] != 's') {
+  name = sortedDishes[0]?.name.charAt(0).toUpperCase() + sortedDishes[0]?.name.slice(1)+"'s"
+    }
+  else {
+  name = sortedDishes[0]?.name.charAt(0).toUpperCase() + sortedDishes[0]?.name.slice(1)
+  }
+
+
 return (
-<div className='totalOneDish'>
-  {sortedDishes[0]?.name && sortedDishes[0]?.name[sortedDishes[0]?.name.length-1] != 's' ?
-<div className='topDishTitle'>The Top {sortedDishes[0]?.name.charAt(0).toUpperCase() + sortedDishes[0]?.name.slice(1)}'s</div>:
-<div className='topDishTitle'>The Top {sortedDishes[0]?.name.charAt(0).toUpperCase() + sortedDishes[0]?.name.slice(1)}</div>
-}
+  <>
+  <div className='totalOneDish'>
+    {sortedDishes[0]?.name ? (
+      <div className="topDishTitle">The Top {name}</div>
+    ) : (
+      <div className="topDishTitle">Loading...</div>
+    )}
 {sortedDishes.map((dish, index) =>
   <div className='primeDish'>
   <img
@@ -151,6 +162,8 @@ allowfullscreen>
     </div>
   </div>
 )}
+
 </div>
 
+</>
     )}
