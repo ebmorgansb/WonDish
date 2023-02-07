@@ -82,7 +82,7 @@ return (
     {sortedDishes[0]?.name ? (
       <div className="topDishTitle">The Top {name}</div>
     ) : (
-      <div className="topDishTitle">Loading...</div>
+      <div id='hm' className="topDishTitle">Loading...</div>
     )}
 {sortedDishes.map((dish, index) =>
   <div className='primeDish'>
