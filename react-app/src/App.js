@@ -49,9 +49,6 @@ function App() {
         <Route path='/dish/reviews/:restaurantId' exact={true}>
           <TopReviewsPage/>
         </Route>
-        <Route path='/dishes' exact={true} >
-          <Dishes/>
-        </Route>
         <Route path='/primarydish/create' exact={true} >
           <CreateDish/>
         </Route>
