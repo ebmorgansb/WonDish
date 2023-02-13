@@ -2,12 +2,14 @@ import { useSelector, useDispatch } from "react-redux"
 import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { getAllPrimaryReviewsThunk } from "../../store/primaryReview"
+import Autocomplete from 'react-autocomplete'
 import './index.css'
 
 export default function Search() {
     const sessUser = useSelector(state => state.session.user)
     const primaryReviews = Object.values(useSelector(state => state.primaryReview))
-    console.log(primaryReviews, 'in search')
+    const reviewNames = [...new Set(primaryReviews.map(ele => ele.name))]
+    console.log(reviewNames, 'in search')
     const dispatch = useDispatch()
     const history = useHistory()
     const [name, setName] = useState('');
@@ -34,8 +36,6 @@ export default function Search() {
 
         for (let i = 0; i < primaryReviews.length; i++) {
           if (primaryReviews[i].name.split(" ").join("").toLowerCase() === payload.name.split(" ").join("").toLowerCase()) {
-
-              // return history.push(`/dish/${primaryReviews[i].id}`)
               let dishName = primaryReviews[i].name
               return history.push(`/dish/${dishName}`)
           }
@@ -46,6 +46,9 @@ export default function Search() {
       }
     }
 
+    if (!reviewNames) {
+      return null
+    }
 
     return (
       <div className="searchForm">
@@ -55,7 +58,7 @@ export default function Search() {
         <div className="oneErrorSearch" key={`a${error}`}> {error}</div>))}
       </div>
       <div className="alignSearch">
-      <div className="oneFormInputSearch">
+      {/* <div className="oneFormInputSearch">
         <input className="actualInputSearch"
           placeholder="Dish Examples: Tacos, Burrito, Curry, Ice Cream..."
           type="text"
@@ -63,7 +66,28 @@ export default function Search() {
           onChange={(e) => setName(e.target.value)}
           required
           ></input>
-      </div>
+      </div> */}
+
+
+
+
+
+<Autocomplete
+  getItemValue={(item) => item.label}
+  items={reviewNames}
+  renderItem={(item, isHighlighted) =>
+    <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
+      {item.label}
+    </div>
+  }
+  value={name}
+  onChange={(e) => setName(e.target.value)}
+  onSelect={(val) => name = val}
+/>
+
+
+
+
       <div className="buttonContainer">
         <button className="buttonSearch" disabled={errors.length > 0} type='submit'>Search</button>
       </div>
