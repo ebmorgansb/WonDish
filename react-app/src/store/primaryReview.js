@@ -57,9 +57,9 @@ export const createPrimaryReviewThunk = (primaryReview) => async (dispatch) => {
     console.log(primaryReview, 'gugugug')
     const response = await fetch('/api/primaryreviews/create', {
         method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify(primaryReview)
-        // body: primaryReview
+        // headers: {'Content-Type':'application/json'},
+        // body: JSON.stringify(primaryReview)
+        body: primaryReview
     });
     if (response.ok) {
         console.log('make it here?')

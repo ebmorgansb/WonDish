@@ -17,7 +17,7 @@ export default function CreateDish() {
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
     const [image, setImage] = useState(null);
-    // const [imageLoading, setImageLoading] = useState(false);
+    const [imageLoading, setImageLoading] = useState(false);
     const [address, setAddress] = useState(data.address);
     const [rating, setRating] = useState('' || 6);
     const [errors, setErrors] = useState([]);
@@ -44,68 +44,68 @@ export default function CreateDish() {
 
 
 
-//     const handleSubmit = async (e) => {
-//       e.preventDefault();
-//       console.log(name, image, description, data.restaurantId, sessUser.id, rating, address, category, 'what')
-//       const formData = new FormData();
-//       formData.append("image", image);
-//       formData.append('name', name);
-//       formData.append('description', description);
-//       formData.append('category', category);
-//       formData.append('address', address);
-//       formData.append('rating', rating);
-//       formData.append('user_id', sessUser.id);
-//       formData.append('restaurant_id', data.restaurantId);
-
-//       // aws uploads can be a bit slow—displaying
-//       // some sort of loading message is a good idea
-//       setImageLoading(true);
-
-//       const newPrimaryReview = await dispatch(createPrimaryReviewThunk(formData))
-//       if (newPrimaryReview) {
-//         if (newPrimaryReview.image) {
-//         setImageLoading(false);
-//         history.push(`/dish/reviews/${data.restaurant_id}`, {name})
-//         }
-//         else {
-//           setImageLoading(false);
-//           // a real app would probably use more advanced
-//           // error handling
-//           console.log("error");
-//       }
-//       }
-//   }
-
-//   const updateImage = (e) => {
-//     const file = e.target.files[0];
-//     console.log(file, 'file')
-//     setImage(file);
-// }
-
-
-
-
     const handleSubmit = async (e) => {
       e.preventDefault();
+      console.log(name, image, description, data.restaurantId, sessUser.id, rating, address, category, 'what')
+      const formData = new FormData();
+      formData.append("image", image);
+      formData.append('name', name);
+      formData.append('description', description);
+      formData.append('category', category);
+      formData.append('address', address);
+      formData.append('rating', rating);
+      formData.append('user_id', sessUser.id);
+      formData.append('restaurant_id', data.restaurantId);
 
+      // aws uploads can be a bit slow—displaying
+      // some sort of loading message is a good idea
+      setImageLoading(true);
 
-      const payload = {
-          name,
-          description,
-          category,
-          image,
-          address,
-          rating,
-          user_id: sessUser.id,
-          restaurant_id: data.restaurantId
-      };
-      let dishName = payload.name
-
-      const newPrimaryReview = await dispatch(createPrimaryReviewThunk(payload))
+      const newPrimaryReview = await dispatch(createPrimaryReviewThunk(formData))
       if (newPrimaryReview) {
-        history.push(`/dish/reviews/${payload.restaurant_id}`, {dishName})
+        if (newPrimaryReview.image) {
+        setImageLoading(false);
+        history.push(`/dish/reviews/${data.restaurantId}`, {name})
+        // history.push(`/dish/reviews/${payload.restaurant_id}`, {dishName})
+        }
+        else {
+          setImageLoading(false);
+          // a real app would probably use more advanced
+          // error handling
+          console.log("error");
       }
-    }
+      }
+  }
+
+  const updateImage = (e) => {
+    const file = e.target.files[0];
+    console.log(file, 'file')
+    setImage(file);
+}
+
+
+
+    // const handleSubmit = async (e) => {
+    //   e.preventDefault();
+
+
+    //   const payload = {
+    //       name,
+    //       description,
+    //       category,
+    //       image,
+    //       address,
+    //       rating,
+    //       user_id: sessUser.id,
+    //       restaurant_id: data.restaurantId
+    //   };
+    //   let dishName = payload.name
+
+    //   const newPrimaryReview = await dispatch(createPrimaryReviewThunk(payload))
+    //   if (newPrimaryReview) {
+    //     history.push(`/dish/reviews/${payload.restaurant_id}`, {dishName})
+    //   }
+    // }
 
     return (
       <>
@@ -152,7 +152,7 @@ export default function CreateDish() {
         </div>
         </label>
         </div>
-        <div className="oneFormInput">
+        {/* <div className="oneFormInput">
         <label>
         Image
         <div className="formPadding">
@@ -163,15 +163,15 @@ export default function CreateDish() {
         />
         </div>
         </label>
-        </div>
-        {/* <div className="oneFormInput">
+        </div> */}
+        <div className="oneFormInput">
           <input
               type="file"
               accept="image/*"
               onChange={updateImage}
             />
             {(imageLoading)&& <p>Loading...</p>}
-        </div> */}
+        </div>
         <div className="oneFormInput">
         <div className="formPadding">
         <input className="actualInput"
