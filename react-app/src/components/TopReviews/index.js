@@ -22,11 +22,11 @@ const userId = user?.id
 const [showModal, setShowModal] = useState(false);
 const [showModal2, setShowModal2] = useState(false);
 const [currId, setCurrId] = useState('')
-const [currDishName, setCurrDishName] = useState("" || data.name);
+const [currDishName, setCurrDishName] = useState("" || data.dishName);
 const topReviews = Object.values(useSelector(state => state.primaryReview))
 const users = Object.values(useSelector(state => state.users))
 const topReviewsFilter = topReviews.filter((primaryDish) =>  primaryDish.name === currDishName && primaryDish.restaurant_id == restaurantId)
-console.log(topReviewsFilter, 'dafuck')
+console.log(currDishName,    'dafuck')
 
 
 

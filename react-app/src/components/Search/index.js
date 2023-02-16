@@ -32,44 +32,44 @@ export default function Search() {
 
 
 
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     const payload = {
-    //         name
-    //     };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const payload = {
+            name
+        };
 
-    //     for (let i = 0; i < primaryReviews.length; i++) {
-    //       if (primaryReviews[i].name.split(" ").join("").toLowerCase() === payload.name.split(" ").join("").toLowerCase()) {
-    //           let dishName = primaryReviews[i].name
-    //           return history.push(`/dish/${dishName}`)
-    //       }
-    //       else {
-    //         setErrors(['We do not have a review for that dish yet.'])
-    //       }
+        for (let i = 0; i < primaryReviews.length; i++) {
+          if (primaryReviews[i].name.split(" ").join("").toLowerCase() === payload.name.split(" ").join("").toLowerCase()) {
+              let dishName = primaryReviews[i].name
+              return history.push(`/dish/${dishName}`)
+          }
+          else {
+            setErrors(['We do not have a review for that dish yet.'])
+          }
 
-    //   }
+      }
+    }
+
+
+    // const handleOnSearch = (string, results) => {
+    //   // onSearch will have as the first callback parameter
+    //   // the string searched and for the second the results.
+    //   console.log(string, results)
     // }
 
+    // const handleOnHover = (result) => {
+    //   // the item hovered
+    //   console.log(result)
+    // }
 
-    const handleOnSearch = (string, results) => {
-      // onSearch will have as the first callback parameter
-      // the string searched and for the second the results.
-      console.log(string, results)
-    }
+    // const handleOnSelect = (item) => {
+    //   // the item selected
+    //   console.log(item)
+    // }
 
-    const handleOnHover = (result) => {
-      // the item hovered
-      console.log(result)
-    }
-
-    const handleOnSelect = (item) => {
-      // the item selected
-      console.log(item)
-    }
-
-    const handleOnFocus = () => {
-      console.log('Focused')
-    }
+    // const handleOnFocus = () => {
+    //   console.log('Focused')
+    // }
 
     // const formatResult = (item) => {
     //   return (
@@ -116,40 +116,28 @@ export default function Search() {
 
 
   return (
-<>
-<div>test</div>
-</>
+      <div className="searchForm">
+     <form className="totalSearchForm" onSubmit={handleSubmit}>
+     <div className="errors">
+  {errors.map((error) => (
+        <div className="oneErrorSearch" key={`a${error}`}> {error}</div>))}
+      </div>
+      <div className="alignSearch">
+      <div className="oneFormInputSearch">
+        <input className="actualInputSearch"
+          placeholder="Dish Examples: Tacos, Burrito, Curry, Ice Cream..."
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+          ></input>
+      </div>
+      <div className="buttonContainer">
+        <button className="buttonSearch" disabled={errors.length > 0} type='submit'>Search</button>
+      </div>
+      </div>
 
-  //     <div className="searchForm">
-  //    <form className="totalSearchForm" onSubmit={handleSubmit}>
-  //    <div className="errors">
-  // {errors.map((error) => (
-  //       <div className="oneErrorSearch" key={`a${error}`}> {error}</div>))}
-  //     </div>
-  //     <div className="alignSearch">
-  //     <div className="oneFormInputSearch">
-  //       <input className="actualInputSearch"
-  //         placeholder="Dish Examples: Tacos, Burrito, Curry, Ice Cream..."
-  //         type="text"
-  //         value={name}
-  //         onChange={(e) => setName(e.target.value)}
-  //         required
-  //         ></input>
-  //     </div>
-
-
-
-
-
-
-
-
-    //   <div className="buttonContainer">
-    //     <button className="buttonSearch" disabled={errors.length > 0} type='submit'>Search</button>
-    //   </div>
-    //   </div>
-
-    //   </form>
-    // </div>
+      </form>
+    </div>
   )
 }
