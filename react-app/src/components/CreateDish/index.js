@@ -34,7 +34,6 @@ export default function CreateDish() {
       if(!address) errors.push("Street address is required");
       if(address.length > 99) errors.push("Street address must be less than 100 characters");
       if(!image) errors.push("Image is required");
-      // if(image.length > 254) errors.push("Image link must be less than 255 characters");
       if(category && category.length > 19) errors.push("Category must be less than 20 characters");
       if(!rating) errors.push("Rating is required");
 
