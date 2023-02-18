@@ -36,6 +36,7 @@
         padding: 2%;
         padding-left: 2%;
         word-break: break-word;
+        text-align: center;
     }
 
     .oneDishTitle {
@@ -49,8 +50,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin: 10px;
-    margin-top: 20px; */
     border-radius: 10px;
     object-fit: cover
 
@@ -70,7 +69,6 @@
         justify-content: center;
         height: 100%;
         width: 100%;
-        /* overflow-y:scroll */
     }
 
 

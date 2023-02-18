@@ -21,6 +21,7 @@ const user = useSelector(state => state.session.user)
 const userId = user?.id
 const [showModal, setShowModal] = useState(false);
 const [showModal2, setShowModal2] = useState(false);
+const [showModal3, setShowModal3] = useState(false);
 const [currId, setCurrId] = useState('')
 const [currDishName, setCurrDishName] = useState(data.name);
 const topReviews = Object.values(useSelector(state => state.primaryReview))
@@ -56,6 +57,19 @@ return (
         <EditDish dishId={currId} setShowModal={setShowModal} />
       </Modal>
     )}
+        {showModal2 && (
+      <Modal onClose={() => setShowModal2(false)}>
+        <div className='deleteModal'>
+          <div>Are you sure you want to delete your review?</div>
+          <NavLink style={{ textDecoration: 'none' }}  to={`/`}>
+        <button className='topReviewButtonModal' onClick={() => {
+          dispatch(deletePrimaryReviewThunk(currId))
+        }
+          }>Delete</button>
+      </NavLink>
+        </div>
+      </Modal>
+    )}
     {topReviewsFilter.map(review =>
     <>
     <div className='topReviewCard'>
@@ -75,16 +89,25 @@ return (
     setCurrId(review.id)
     }
     }>
-      Edit your Dish</button>
+      Edit</button>
       }
 
-    {userId == review?.user_id &&
+    {/* {userId == review?.user_id &&
           <NavLink style={{ textDecoration: 'none' }}  to={`/`}>
+
         <button className='topReviewButton' onClick={() => {
           dispatch(deletePrimaryReviewThunk(review?.id))
         }
-          }>Delete Review</button>
+          }>Delete</button>
       </NavLink>
+      } */}
+          {userId == review?.user_id &&
+        <button className='topReviewButton' onClick={() => {
+          setShowModal2(true)
+          setCurrId(review.id)
+          // dispatch(deletePrimaryReviewThunk(review?.id))
+        }
+          }>Delete</button>
       }
       </div>
   </div>

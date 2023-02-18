@@ -91,7 +91,7 @@ export default function CreateDish() {
   {errors.map((error) => (
         <div className="oneError" key={`a${error}`}> {error}</div>))}
       </div>
-      <div className="formInputs">
+      <div className="formInputsCreate">
       <div className="oneFormInput">
         <div className="formPadding">
         <input className="actualInput"
@@ -103,52 +103,36 @@ export default function CreateDish() {
         />
         </div>
       </div>
-     <div className="oneFormInput">
-     <label>
-        Description
-        <div className="formPadding">
-        <input className="actualInput"
+     <div className="oneFormInputDescrip">
+        <div className="formPaddingDes">
+        <input className="actualInputDescrip"
           type="text"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
+          placeholder="Review Description"
         />
         </div>
-        </label>
         </div>
         <div className="oneFormInput">
-        <label>
-        Category
         <div className="formPadding">
         <input className="actualInput"
           type="text"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
+          placeholder='Category'
         />
         </div>
-        </label>
         </div>
-        {/* <div className="oneFormInput">
-        <label>
-        Image
-        <div className="formPadding">
-        <input className="actualInput"
-          type="text"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
-        />
-        </div>
-        </label>
-        </div> */}
         <div className="oneFormInput">
-          <input
+          <input className="imageInput"
               type="file"
               accept="image/*"
               onChange={updateImage}
             />
             {(imageLoading)&& <p>Loading...</p>}
         </div>
-        <div className="oneFormInput">
+        <div className="oneFormInputHidden">
         <div className="formPadding">
         <input className="actualInput"
           type="text"
@@ -160,8 +144,8 @@ export default function CreateDish() {
         </div>
         </div>
         <div className="oneFormInput">
-        <label>
-        Rating
+        <label className="oneFormInputRating">
+        Rating 
         <div className="formPadding">
         <select
                     onChange={(e) => setRating(e.target.value)}
@@ -180,7 +164,6 @@ export default function CreateDish() {
     </div>
         <button className="spotSubmitButton" disabled={errors.length > 0} type='submit'>Submit</button>
       </form>
-      <Footer/>
     </>
     )
 }

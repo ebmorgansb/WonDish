@@ -5,7 +5,7 @@
     align-items: center;
     height: 100vh;
     width: 100%;
-    background-color: rgba(220, 225, 224, 0.3);
+    /* background-color: rgba(220, 225, 224, 0.3); */
 }
 
 .spotSubmitButton {
@@ -19,13 +19,55 @@
     border-radius: 5px;
 }
 
-.formInputs {
+.formInputsCreate {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    align-items: center;
 }
 
 .oneFormInput {
+    padding: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.oneFormInputRating {
     padding: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.oneFormInputDescrip {
+    padding: 4px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: row;
+}
+
+.oneFormInputHidden {
+    height: 0px;
+}
+
+.imageInput {
+    /* display: flex;
+    flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    text-align: center;
+    margin: 2%;
+}
+
+.formPaddingDes {
+    padding: 3px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
 }
 
 .textAreaInputCreate {
@@ -45,6 +87,16 @@
     border-radius: 4px;
     border: 1px solid black;
 }
+
+.actualInputDescrip {
+    border-radius: 4px;
+    border: 1px solid black;
+    width: 50%;
+    height: 5vh;
+    word-break: break-word;
+    overflow-x:scroll
+}
+
 
 .title {
     margin-left: 35px;
