@@ -153,9 +153,9 @@ allowfullscreen>
       </div>
       <div className='buttonsTop'>
       <button className='oneDishButton' onClick={() => {
-          let dishName = dish.name
+          let name = dish.name
           console.log(dishName, 'hm')
-          history.push(`/dish/reviews/${dish.restaurant_id}`, {dishName})
+          history.push(`/dish/reviews/${dish.restaurant_id}`, {name})
         }
           }>See all Reviews</button>
     </div>
