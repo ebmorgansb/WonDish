@@ -84,29 +84,6 @@ export default function CreateDish() {
 }
 
 
-
-    // const handleSubmit = async (e) => {
-    //   e.preventDefault();
-
-
-    //   const payload = {
-    //       name,
-    //       description,
-    //       category,
-    //       image,
-    //       address,
-    //       rating,
-    //       user_id: sessUser.id,
-    //       restaurant_id: data.restaurantId
-    //   };
-    //   let dishName = payload.name
-
-    //   const newPrimaryReview = await dispatch(createPrimaryReviewThunk(payload))
-    //   if (newPrimaryReview) {
-    //     history.push(`/dish/reviews/${payload.restaurant_id}`, {dishName})
-    //   }
-    // }
-
     return (
       <>
      <form className="createDishForm" onSubmit={handleSubmit}>
