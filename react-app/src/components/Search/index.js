@@ -2,20 +2,13 @@ import { useSelector, useDispatch } from "react-redux"
 import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { getAllPrimaryReviewsThunk } from "../../store/primaryReview"
-import { ReactSearchAutocomplete } from 'react-search-autocomplete'
+import Autocomplete from 'react-autocomplete';
 import './index.css'
 
 export default function Search() {
     const sessUser = useSelector(state => state.session.user)
     const primaryReviews = Object.values(useSelector(state => state.primaryReview))
     const preReviewNames = [...new Set(primaryReviews.map(ele => ele.name))]
-    const reviewNames = preReviewNames.map((name, index) => {
-      return {
-        id: index,
-        name: name
-      };
-    })
-    console.log(reviewNames, 'in search')
     const dispatch = useDispatch()
     const history = useHistory()
     const [name, setName] = useState('');
@@ -28,9 +21,6 @@ export default function Search() {
 
       setErrors(errors)
     },[name, sessUser, dispatch])
-//test boto3 added
-
-
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -51,69 +41,22 @@ export default function Search() {
     }
 
 
-    // const handleOnSearch = (string, results) => {
-    //   // onSearch will have as the first callback parameter
-    //   // the string searched and for the second the results.
-    //   console.log(string, results)
-    // }
 
-    // const handleOnHover = (result) => {
-    //   // the item hovered
-    //   console.log(result)
-    // }
-
-    // const handleOnSelect = (item) => {
-    //   // the item selected
-    //   console.log(item)
-    // }
-
-    // const handleOnFocus = () => {
-    //   console.log('Focused')
-    // }
-
-    // const formatResult = (item) => {
-    //   return (
-    //     <>
-    //       <span style={{ display: 'block', textAlign: 'left' }}>id: {item.id}</span>
-    //       <span style={{ display: 'block', textAlign: 'left' }}>name: {item.name}</span>
-    //     </>
-    //   )
+    // if (!reviewNames) {
+    //   return null
     // }
 
 
-    if (!reviewNames) {
-      return null
-    }
-
-
-
-//  <Autocomplete
-//   getItemValue={(item) => item}
-//   items={reviewNames}
-//   renderItem={(item, isHighlighted) =>
-//     <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
-//       {item}
-//     </div>
-//   }
-//   value={name}
-//   onChange={(e) => setName(e.target.value)}
-//   // onSelect={(val) => name = val}
-//   onSelect={(val) => setName(val)}
-// />
-
-
-{/* <div style={{ width: 400 }}>
-          <ReactSearchAutocomplete
-            items={reviewNames}
-            onSearch={handleOnSearch}
-            onHover={handleOnHover}
-            onSelect={handleOnSelect}
-            onFocus={handleOnFocus}
-            autoFocus
-            formatResult={formatResult}
-          />
-</div> */}
-
+let stylelol = {
+  borderRadius: '3px',
+  boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
+  background: 'rgba(255, 255, 255, 0.9)',
+  padding: '2px 0',
+  fontSize: '90%',
+  position: 'static',
+  overflow: 'auto',
+  maxHeight: '50%', // TODO: don't cheat, let it flow to the bottom
+}
 
   return (
       <div className="searchForm">
@@ -123,18 +66,31 @@ export default function Search() {
         <div className="oneErrorSearch" key={`a${error}`}> {error}</div>))}
       </div>
       <div className="alignSearch">
-      <div className="oneFormInputSearch">
-        <input className="actualInputSearch"
-          placeholder="Dish Examples: Tacos, Burrito, Curry, Ice Cream..."
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          ></input>
-      </div>
+      <div className="inputAndBut">
+ <Autocomplete
+  getItemValue={(item) => item}
+  // items={preReviewNames}
+  // items={preReviewNames.filter((item) => item.includes(name))}
+  items={preReviewNames.filter((item) => {
+    const regex = new RegExp(`^${name}`, 'i');
+    return regex.test(item);
+  })}
+  renderItem={(item, isHighlighted) =>
+    <div  style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
+      {item}
+    </div>
+  }
+  inputProps={{ style: { borderRadius: 5, marginRight: '2%'} }}
+  value={name}
+  menuStyle={stylelol}
+  onChange={(e) => setName(e.target.value)}
+
+  onSelect={(val) => setName(val)}
+/>
       <div className="buttonContainer">
         <button className="buttonSearch" disabled={errors.length > 0} type='submit'>Search</button>
       </div>
+    </div>
       </div>
 
       </form>
