@@ -56,6 +56,7 @@ let stylelol = {
   position: 'static',
   overflow: 'auto',
   maxHeight: '50%', // TODO: don't cheat, let it flow to the bottom
+  borderRadius: '10px'
 }
 
   return (
@@ -76,11 +77,11 @@ let stylelol = {
     return regex.test(item);
   })}
   renderItem={(item, isHighlighted) =>
-    <div  style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
+    <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
       {item}
     </div>
   }
-  inputProps={{ style: { borderRadius: 5, marginRight: '2%'} }}
+  inputProps={{ style: { borderRadius: 5, width:'30vw'} }}
   value={name}
   menuStyle={stylelol}
   onChange={(e) => setName(e.target.value)}
