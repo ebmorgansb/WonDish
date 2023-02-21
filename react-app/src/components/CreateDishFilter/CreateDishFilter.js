@@ -108,10 +108,12 @@ export default function CreateDishFilter() {
       <>
      <form className="createFilterForm" onSubmit={handleSubmit}>
      <div className="filterTitle">Create a dish review!</div>
+     {errors.length > 0 &&
      <div className="errorsFilter">
   {errors.map((error) => (
         <div className="oneError" key={`a${error}`}> {error}</div>))}
       </div>
+}
       <div className="formInputs">
       <div className="oneFormInputFilter">
         <div className="formPadding">
