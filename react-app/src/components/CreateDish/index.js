@@ -81,7 +81,7 @@ export default function CreateDish() {
     console.log(file, 'file')
     setImage(file);
 }
-
+//test
 
     return (
       <>
@@ -145,7 +145,7 @@ export default function CreateDish() {
         </div>
         <div className="oneFormInput">
         <label className="oneFormInputRating">
-        Rating 
+        Rating
         <div className="formPadding">
         <select
                     onChange={(e) => setRating(e.target.value)}
