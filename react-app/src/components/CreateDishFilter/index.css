@@ -41,6 +41,7 @@
 
     .oneFormInputFilter {
         padding: 1%;
+        margin-top: 5%;
     }
 
     .textAreaInputCreate {
@@ -52,8 +53,10 @@
         border: 1px solid black;
     }
 
-    .formPadding {
-        padding: 3px;
+    .formPaddingFilter {
+        /* padding: 3px; */
+        width: 0px;
+        height: 0px;
     }
 
     .actualInput {
@@ -69,11 +72,15 @@
         text-align: center;
     }
 
-    .errors {
+    .errorsFilter {
         display: flex;
         flex-direction: column;
         justify-content:end;
         margin-top: 20px;
+        /* box-shadow: 2px 2px 30px rgba(141, 8, 8, 0.1); */
+        border: 1px solid rgb(255, 0, 0, .4);
+        border-radius: 10px;
+        padding: 2%;
     }
 
     .oneError {
@@ -104,17 +111,23 @@
 
 .filterAddress {
     padding: 0%;
-    margin: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    text-align: left;
 }
 
 .filterFrame {
     height:60%;
     width: 70%;
     margin-top: 4%;
+    border-radius: 10px;
 }
 
 #autoInput {
     width: 40em;
+    border-radius: 5px;
+    height: 20px;
+    border: 1px solid black;
 }
 
 .suggestion-item {
@@ -129,4 +142,13 @@
 
 .suggestText {
     font-size: 11px;
+}
+
+.addressAndAuto {
+    display: flex;
+    flex-direction: column;
+}
+
+.dishNameSpace {
+    margin-top: 3%;
 }

@@ -64,10 +64,10 @@ export default function CreateDishFilter() {
 
     useEffect(()=>{
       const errors = []
-      if(!sessUser) errors.push("Must be logged in to create a review");
+      if(!sessUser) errors.push("Login Required");
       if(name.length > 19) errors.push("Name must be less than 20 characters");
-      if(!name) errors.push("Dish Name is required");
-      if(!address) errors.push("A Suggested Address is required")
+      if(!name) errors.push("Dish Name required");
+      if(!address) errors.push("Address required")
 
       dispatch(getAllPrimaryReviewsThunk())
       dispatch(getAllRestaurantsThunk())
@@ -107,25 +107,26 @@ export default function CreateDishFilter() {
     return (
       <>
      <form className="createFilterForm" onSubmit={handleSubmit}>
-     <div className="filterTitle">Create a review for a dish</div>
-     <div className="errors">
+     <div className="filterTitle">Create a dish review!</div>
+     <div className="errorsFilter">
   {errors.map((error) => (
         <div className="oneError" key={`a${error}`}> {error}</div>))}
       </div>
       <div className="formInputs">
       <div className="oneFormInputFilter">
         <div className="formPadding">
-          <div>Dish Name</div>
+          {/* <div className="dishNameSpace">Dish Name:</div> */}
         <input className="actualInput"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
+          placeholder="Dish Name"
         />
         </div>
       </div>
       <div>
-        <div className="formPadding">
+        <div className="formPaddingFilter">
         <input className="actualInput"
           type="text"
           value={address}
@@ -136,8 +137,8 @@ export default function CreateDishFilter() {
       </div>
     </div>
 
-
-    <p className="filterAddress">Address: {address}</p>
+<div className="addressAndAuto">
+    {/* <p className="filterAddress">Address: {address}</p> */}
 
 <PlacesAutocomplete
   value={address}
@@ -182,6 +183,7 @@ export default function CreateDishFilter() {
     </div>
   )}
 </PlacesAutocomplete>
+</div>
 <iframe
 className="filterFrame"
 // width="450"
