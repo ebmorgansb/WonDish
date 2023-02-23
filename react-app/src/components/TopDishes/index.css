@@ -94,6 +94,10 @@
         font-size: 14px;
     }
 
+    .oneDishButton:hover {
+        background-color: rgb(103, 178, 197, .2);
+      }
+
     .pushFooter {
         margin: 5%;
         text-align: center;

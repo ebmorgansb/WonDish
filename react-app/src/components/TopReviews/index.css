@@ -56,6 +56,10 @@
 
 }
 
+.topReviewButton:hover {
+  background-color: rgb(103, 178, 197, .2);
+}
+
 .topReviewButtonModal {
   display: flex;
   align-items: center;
