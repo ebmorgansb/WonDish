@@ -40,7 +40,7 @@ return (
   </div>
     <Search/>
     <Slider/>
-    <CreateADishModal/>
+    {/* <CreateADishModal/> */}
 </div>
 {/* <Footer/> */}
 </div>

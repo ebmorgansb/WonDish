@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import symbol from '../../allImages/symbol.png'
 import './index.css'
+import CreateADishModal from '../CreateDishFilter/CreateDishFilterModal';
 const NavBar = () => {
   const sessUser = useSelector(state => state.session.user)
 
@@ -20,6 +21,7 @@ const NavBar = () => {
     <div className='totalNav'>
     <nav className='navy'>
       <div className='smallNavy'>
+        <CreateADishModal/>
       <NavLink className='profileLinkz' to='/restaurants' style={{ textDecoration: 'none' }} exact={true} activeClassName='active'>
     Restaurants
     </NavLink>

@@ -13,7 +13,7 @@ export default function CreateADishModal() {
 
   return (
     <>
-    <button className='buttonFilterRound' onClick={() => setShowModal(true)}>Create Dish Review</button>
+    <button className='profileLinkz' onClick={() => setShowModal(true)}>Create Review</button>
     {showModal && (
     <Modal onClose={() => setShowModal(false)}>
         <CreateDishFilter setShowModal={setShowModal}/>
