@@ -89,10 +89,12 @@ export default function CreateDish() {
       <>
      <form className="createDishForm" onSubmit={handleSubmit}>
      <h2 className="title">Be the first to review {name} at {address}!</h2>
+  {errors.length > 0 &&
      <div className="errorsCreate">
   {errors.map((error) => (
         <div className="oneError" key={`a${error}`}> {error}</div>))}
       </div>
+}
       <div className="formInputsCreate">
       <div className="oneFormInput">
         <div className="formPadding">
