@@ -15,7 +15,7 @@ export default function CreateDish() {
     const history = useHistory()
     const [name, setName] = useState(data.name);
     const [description, setDescription] = useState('');
-    const [category, setCategory] = useState('');
+    // const [category, setCategory] = useState('');
     const [image, setImage] = useState(null);
     const [imageLoading, setImageLoading] = useState(false);
     const [address, setAddress] = useState(data.address);
@@ -34,23 +34,25 @@ export default function CreateDish() {
       if(!address) errors.push("Street address is required");
       if(address.length > 99) errors.push("Street address must be less than 100 characters");
       if(!image) errors.push("Image is required");
-      if(category && category.length > 19) errors.push("Category must be less than 20 characters");
+      // if(category && category.length > 19) errors.push("Category must be less than 20 characters");
       if(!rating) errors.push("Rating is required");
 
 
       setErrors(errors)
-    },[address, name, description, sessUser, category, rating, image])
+    // },[address, name, description, sessUser, category, rating, image])
+  },[address, name, description, sessUser, rating, image])
+
 
 
 
     const handleSubmit = async (e) => {
       e.preventDefault();
-      console.log(name, image, description, data.restaurantId, sessUser.id, rating, address, category, 'what')
+      console.log(name, image, description, data.restaurantId, sessUser.id, rating, address, 'what')
       const formData = new FormData();
       formData.append("image", image);
       formData.append('name', name);
       formData.append('description', description);
-      formData.append('category', category);
+      // formData.append('category', category);
       formData.append('address', address);
       formData.append('rating', rating);
       formData.append('user_id', sessUser.id);
@@ -87,7 +89,7 @@ export default function CreateDish() {
       <>
      <form className="createDishForm" onSubmit={handleSubmit}>
      <h2 className="title">Be the first to review {name} at {address}!</h2>
-     <div className="errors">
+     <div className="errorsCreate">
   {errors.map((error) => (
         <div className="oneError" key={`a${error}`}> {error}</div>))}
       </div>
@@ -110,11 +112,11 @@ export default function CreateDish() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
-          placeholder="Review Description"
+          placeholder="How was the dish?"
         />
         </div>
         </div>
-        <div className="oneFormInput">
+        {/* <div className="oneFormInput">
         <div className="formPadding">
         <input className="actualInput"
           type="text"
@@ -123,7 +125,7 @@ export default function CreateDish() {
           placeholder='Category'
         />
         </div>
-        </div>
+        </div> */}
         <div className="oneFormInput">
           <input className="imageInput"
               type="file"

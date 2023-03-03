@@ -2,12 +2,14 @@ import './index.css'
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 import LogoutButton from '../auth/LogoutButton';
 import symbol from '../../allImages/symbol.png'
 import './index.css'
 import CreateADishModal from '../CreateDishFilter/CreateDishFilterModal';
 const NavBar = () => {
   const sessUser = useSelector(state => state.session.user)
+  const [showModal, setShowModal] = useState(false);
 
   return (
   <>

@@ -11,7 +11,7 @@ import PlacesAutocomplete, {
   getLatLng
 } from 'react-places-autocomplete';
 
-export default function CreateDishFilter() {
+export default function CreateDishFilter({setShowModal}) {
     const dispatch = useDispatch()
     const sessUser = useSelector(state => state.session.user)
     const primaryDishes = Object.values(useSelector(state => state.primaryReview))
@@ -89,11 +89,13 @@ export default function CreateDishFilter() {
           let idx = restaurantAddresses.indexOf(address)
           let restaurantId = restaurants[idx].id
           history.push(`/primarydish/create`, {name, address, restaurantId})
+          setShowModal(false)
         }
         else {
           dispatch(createRestaurantThunk(restData))
             let restaurantId = restaurants[restaurants.length-1].id +1
           history.push(`/primarydish/create`, {name, address, restaurantId})
+          setShowModal(false)
         }
       // }
 

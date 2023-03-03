@@ -36,13 +36,11 @@ return (
 <div className='totalHome'>
   <div className='title1'>WonDish</div>
   <div className='mission'>
-    Welcome to WonDish - a peer review destination to help find the best restaurant to satisfy your craving. Browse existing reviews for top notch locations or contribute by adding your own
+    Welcome to WonDish - a peer review destination to help find the best dish to satisfy your craving. Browse existing reviews for top notch locations or contribute by adding your own.
   </div>
     <Search/>
     <Slider/>
-    {/* <CreateADishModal/> */}
 </div>
-{/* <Footer/> */}
 </div>
 }
 </>
