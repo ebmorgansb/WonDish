@@ -13,6 +13,7 @@ import Footer from '../Footer'
 import { clearPrimaryAction } from '../../store/primaryReview'
 import Google from '../GoogleAuto/GoogleAuto'
 import table from '../../allImages/TABLE.jpeg';
+import HomeDishes from '../HomeDishes'
 
 export default function Home() {
   const dispatch = useDispatch()
@@ -39,7 +40,7 @@ return (
     Welcome to WonDish - a peer review destination to help find the best dish to satisfy your craving. Browse existing reviews for top notch locations or contribute by adding your own.
   </div>
     <Search/>
-    <Slider/>
+    <HomeDishes/>
 </div>
 </div>
 }
