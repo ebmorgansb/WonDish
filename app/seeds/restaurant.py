@@ -23,11 +23,17 @@ def seed_restaurants():
         address="Super Cucas, West Micheltorena Street, Santa Barbara, CA, USA",
         user_id=1)
 
+    restaurant5 = Restaurant(
+        name="Nick's Burgers",
+        address="Nick's Burgers, West Redlands Boulevard, Redlands, CA, USA",
+        user_id=2)
+
 
     db.session.add(restaurant1)
     db.session.add(restaurant2)
     db.session.add(restaurant3)
     db.session.add(restaurant4)
+    db.session.add(restaurant5)
     db.session.commit()
 
 
