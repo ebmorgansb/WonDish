@@ -296,7 +296,7 @@ def seed_primaryreviews():
     review9 = PrimaryReview(
         name='burgers',
         description='The burger was cooked to perfection and had a great flavor!',
-        image='https://www.pexels.com/photo/hamburger-with-tomatoes-and-lettuce-1633576/',
+        image='https://images.prismic.io/aboutredlandscom/038cac29091c6dfa8a3a78035b1103cf2682997d_darbys---bruce-herwig-large.jpg?auto=compress,formatq=65&auto=compress,format&fm=jpg',
         address="Burger Joint, Main Street, Anytown, USA",
         rating=8,
         user_id=4,
@@ -305,7 +305,7 @@ def seed_primaryreviews():
     review9a = PrimaryReview(
         name='burgers',
         description='The burger was good, but the bun was a bit dry',
-        image='https://www.pexels.com/photo/cheeseburger-with-fries-on-tray-1640771/',
+        image='https://hips.hearstapps.com/hmg-prod/images/copycat-western-bacon-cheeseburger-2-1651789305.jpeg',
         address="Burger Joint, Main Street, Anytown, USA",
         rating=6,
         user_id=2,
@@ -314,7 +314,7 @@ def seed_primaryreviews():
     review9b = PrimaryReview(
         name='burgers',
         description='The burger was okay, but nothing special',
-        image='https://www.pexels.com/photo/cheeseburger-on-bun-with-potato-wedges-1640775/',
+        image='https://www.thespruceeats.com/thmb/vf61j0CDD-RYdis4LVqmBV5NDzU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/all-american-burgers-480989-hero-05-6d4542f5661c4fd6889c16a445478e0c.jpg',
         address="Burger Joint, Main Street, Anytown, USA",
         rating=6,
         user_id=1,
@@ -323,7 +323,7 @@ def seed_primaryreviews():
     review9c = PrimaryReview(
         name='burgers',
         description='The burger was amazing! I would come back just for this burger',
-        image='https://www.pexels.com/photo/burger-and-fries-on-plate-1640773/',
+        image='https://www.thespruceeats.com/thmb/NoTJR2ugIq8DslHCaR-ZzOcLBGM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/garlic-burger-patties-333503-hero-01-e4df660ff27b4e5194fdff6d703a4f83.jpg',
         address="Burger Joint, Main Street, Anytown, USA",
         rating=9,
         user_id=5,
