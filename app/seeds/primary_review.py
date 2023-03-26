@@ -329,6 +329,43 @@ def seed_primaryreviews():
         user_id=5,
         restaurant_id=5)
 
+    review10 = PrimaryReview(
+        name='curry',
+        description='The curry had a perfect blend of spices and was delicious!',
+        image='https://images.kitchenstories.io/wagtailOriginalImages/R2675-final-photo-_2.jpg',
+        address="Curry House, Main Street, Anytown, USA",
+        rating=8,
+        user_id=1,
+        restaurant_id=7)
+
+    review10a = PrimaryReview(
+        name='curry',
+        description='The curry was good, but a bit too spicy for my taste',
+        image='https://www.simplyrecipes.com/thmb/px_fVY9ew0_BS1ipltJ81f9Yn_Y=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Guyanese-Chicken-Curry-LEAD-01-31bbe0db922e4e0cb63afbea2e4c3c3e.jpg',
+        address="Curry House, Main Street, Anytown, USA",
+        rating=7,
+        user_id=2,
+        restaurant_id=7)
+
+    review10b = PrimaryReview(
+        name='curry',
+        description='The curry was okay, but I\'ve had better elsewhere',
+        image='https://www.recipetineats.com/wp-content/uploads/2019/02/Thai-Green-Curry_5.jpg',
+        address="Curry House, Main Street, Anytown, USA",
+        rating=6,
+        user_id=3,
+        restaurant_id=7)
+
+    review10c = PrimaryReview(
+        name='curry',
+        description='The curry was amazing! I would definitely recommend it',
+        image='https://img.taste.com.au/Dv2EStdy/taste/2019/02/17-minute-creamy-japanese-chicken-curry-146697-2.jpg',
+        address="Curry House, Main Street, Anytown, USA",
+        rating=9,
+        user_id=1,
+        restaurant_id=7)
+
+
 
     db.session.add(review1)
     db.session.add(review1a)
@@ -366,6 +403,10 @@ def seed_primaryreviews():
     db.session.add(review9a)
     db.session.add(review9b)
     db.session.add(review9c)
+    db.session.add(review10)
+    db.session.add(review10a)
+    db.session.add(review10b)
+    db.session.add(review10c)
     db.session.commit()
 
 
