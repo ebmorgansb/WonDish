@@ -299,7 +299,7 @@ def seed_primaryreviews():
         image='https://images.prismic.io/aboutredlandscom/038cac29091c6dfa8a3a78035b1103cf2682997d_darbys---bruce-herwig-large.jpg?auto=compress,formatq=65&auto=compress,format&fm=jpg',
         address="Burger Joint, Main Street, Anytown, USA",
         rating=8,
-        user_id=4,
+        user_id=2,
         restaurant_id=5)
 
     review9a = PrimaryReview(
@@ -326,7 +326,7 @@ def seed_primaryreviews():
         image='https://www.thespruceeats.com/thmb/NoTJR2ugIq8DslHCaR-ZzOcLBGM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/garlic-burger-patties-333503-hero-01-e4df660ff27b4e5194fdff6d703a4f83.jpg',
         address="Burger Joint, Main Street, Anytown, USA",
         rating=9,
-        user_id=5,
+        user_id=3,
         restaurant_id=5)
 
     review10 = PrimaryReview(
