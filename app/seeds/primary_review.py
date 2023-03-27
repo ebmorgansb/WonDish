@@ -297,7 +297,7 @@ def seed_primaryreviews():
         name='burgers',
         description='The burger was cooked to perfection and had a great flavor!',
         image='https://images.prismic.io/aboutredlandscom/038cac29091c6dfa8a3a78035b1103cf2682997d_darbys---bruce-herwig-large.jpg?auto=compress,formatq=65&auto=compress,format&fm=jpg',
-        address="Burger Joint, Main Street, Anytown, USA",
+        address="Nick's Burgers, West Redlands Boulevard, Redlands, CA, USA",
         rating=8,
         user_id=2,
         restaurant_id=5)
@@ -306,7 +306,7 @@ def seed_primaryreviews():
         name='burgers',
         description='The burger was good, but the bun was a bit dry',
         image='https://hips.hearstapps.com/hmg-prod/images/copycat-western-bacon-cheeseburger-2-1651789305.jpeg',
-        address="Burger Joint, Main Street, Anytown, USA",
+        address="Nick's Burgers, West Redlands Boulevard, Redlands, CA, USA",
         rating=6,
         user_id=2,
         restaurant_id=5)
@@ -315,7 +315,7 @@ def seed_primaryreviews():
         name='burgers',
         description='The burger was okay, but nothing special',
         image='https://www.thespruceeats.com/thmb/vf61j0CDD-RYdis4LVqmBV5NDzU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/all-american-burgers-480989-hero-05-6d4542f5661c4fd6889c16a445478e0c.jpg',
-        address="Burger Joint, Main Street, Anytown, USA",
+        address="Nick's Burgers, West Redlands Boulevard, Redlands, CA, USA",
         rating=6,
         user_id=1,
         restaurant_id=5)
@@ -324,7 +324,7 @@ def seed_primaryreviews():
         name='burgers',
         description='The burger was amazing! I would come back just for this burger',
         image='https://www.thespruceeats.com/thmb/NoTJR2ugIq8DslHCaR-ZzOcLBGM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/garlic-burger-patties-333503-hero-01-e4df660ff27b4e5194fdff6d703a4f83.jpg',
-        address="Burger Joint, Main Street, Anytown, USA",
+        address="Nick's Burgers, West Redlands Boulevard, Redlands, CA, USA",
         rating=9,
         user_id=3,
         restaurant_id=5)
@@ -333,37 +333,37 @@ def seed_primaryreviews():
         name='curry',
         description='The curry had a perfect blend of spices and was delicious!',
         image='https://images.kitchenstories.io/wagtailOriginalImages/R2675-final-photo-_2.jpg',
-        address="Curry House, Main Street, Anytown, USA",
+        address="Thai House Restaurant, West Redlands Boulevard, Redlands, CA, USA",
         rating=8,
         user_id=1,
-        restaurant_id=7)
+        restaurant_id=6)
 
     review10a = PrimaryReview(
         name='curry',
         description='The curry was good, but a bit too spicy for my taste',
         image='https://www.simplyrecipes.com/thmb/px_fVY9ew0_BS1ipltJ81f9Yn_Y=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Guyanese-Chicken-Curry-LEAD-01-31bbe0db922e4e0cb63afbea2e4c3c3e.jpg',
-        address="Curry House, Main Street, Anytown, USA",
+        address="Thai House Restaurant, West Redlands Boulevard, Redlands, CA, USA",
         rating=7,
         user_id=2,
-        restaurant_id=7)
+        restaurant_id=6)
 
     review10b = PrimaryReview(
         name='curry',
         description='The curry was okay, but I\'ve had better elsewhere',
         image='https://www.recipetineats.com/wp-content/uploads/2019/02/Thai-Green-Curry_5.jpg',
-        address="Curry House, Main Street, Anytown, USA",
+        address="Thai House Restaurant, West Redlands Boulevard, Redlands, CA, USA",
         rating=6,
         user_id=3,
-        restaurant_id=7)
+        restaurant_id=6)
 
     review10c = PrimaryReview(
         name='curry',
         description='The curry was amazing! I would definitely recommend it',
         image='https://img.taste.com.au/Dv2EStdy/taste/2019/02/17-minute-creamy-japanese-chicken-curry-146697-2.jpg',
-        address="Curry House, Main Street, Anytown, USA",
+        address="Thai House Restaurant, West Redlands Boulevard, Redlands, CA, USA",
         rating=9,
         user_id=1,
-        restaurant_id=7)
+        restaurant_id=6)
 
 
 
