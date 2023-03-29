@@ -1,6 +1,6 @@
 from app.models import db, PrimaryReview, environment, SCHEMA
 
-
+#seed data test
 def seed_primaryreviews():
 
     review1 = PrimaryReview(
