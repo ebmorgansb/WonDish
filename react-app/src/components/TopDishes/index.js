@@ -44,14 +44,18 @@ specificDishes.forEach(specificDish => {
   }
 })
 let finalArr = Object.values(primaryDishObj)
-finalArr.forEach(dish => {
+let TEST = finalArr.map(dish => {
   let testArr = dish.rating
   let total = testArr.reduce((a,b)=>a+b)
+  console.log(total, 'UGH')
+  //total is correct, and shows value mapping to dish
+  //but Test does not save that key value pair
   dish.rating = total
+  dish.ratingLOL = total
+  console.log(dish, 'bruh')
 })
+console.log(TEST, 'TEST')
 let sortedDishes = finalArr.sort((a, b) => b.rating - a.rating).slice(0,3)
-
-
 
 useEffect(() => {
   dispatch(getAllPrimaryReviewsThunk())
@@ -95,8 +99,10 @@ return (
     <div className='primeInfoAndButtons'>
       <div className='primeInfo'>
         <h1 className='oneDishTitle'>{dishArrayTitles[index]}</h1>
-        <div className='primeText'>Rating: {dish?.rating}</div>
-      {/* <div className='primeText'>Description: {dish?.description}</div> */}
+        {/* <div className='primeText'>Rating: {dish?.rating}</div> */}
+        {/* <div className='primeText'>Rating: {dish?.rating/specificDishes.filter(primaryDish => primaryDish.restaurant_id == dish.restaurant_id).length}</div> */}
+        <div className='primeText'>Rating: {dish?.ratingLOL}</div>
+
 
 
       <PlacesAutocomplete
