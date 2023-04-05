@@ -50,6 +50,7 @@ let TEST = finalArr.map(dish => {
   console.log(total, 'UGH')
   //total is correct, and shows value mapping to dish
   //but Test does not save that key value pair
+  //Somehow I am getting inconssistent behavior with rating
   dish.rating = total
   dish.ratingLOL = total
   console.log(dish, 'bruh')
