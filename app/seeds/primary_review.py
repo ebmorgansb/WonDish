@@ -365,7 +365,41 @@ def seed_primaryreviews():
         user_id=1,
         restaurant_id=6)
 
+    review10 = PrimaryReview(
+        name='pizza',
+        description='The pizza was delicious and had the perfect amount of cheese!',
+        image='https://www.kingarthurbaking.com/sites/default/files/2020-03/thin-crust-pizza.jpg',
+        address="Bricks and Birch, Cajon Street, Redlands, CA, USA",
+        rating=9,
+        user_id=1,
+        restaurant_id=7)
 
+    review10a = PrimaryReview(
+        name='pizza',
+        description='The pizza was good, but the crust was a bit too thick for my liking',
+        image='https://www.allrecipes.com/thmb/x45iaJC4PvcS9QKU_fTrBBhTr9g=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4475700-6211dfa93fcb4473a42a08ba757bb915.jpg',
+        address="Bricks and Birch, Cajon Street, Redlands, CA, USA",
+        rating=7,
+        user_id=3,
+        restaurant_id=7)
+
+    review10b = PrimaryReview(
+        name='pizza',
+        description='The pizza was okay, but it was a bit bland for my taste',
+        image='https://bakingamoment.com/wp-content/uploads/2013/08/IMG_8669-pizza-dough-recipe.jpg',
+        address="Bricks and Birch, Cajon Street, Redlands, CA, USA",
+        rating=6,
+        user_id=2,
+        restaurant_id=7)
+
+    review10c = PrimaryReview(
+        name='pizza',
+        description='The pizza was amazing! I would definitely recommend this place to anyone',
+        image='https://artisanpizzakitchen.com/wp-content/uploads/2019/10/Thin-crust-Pizza-e1573656377416.jpg',
+        address="Bricks and Birch, Cajon Street, Redlands, CA, USA",
+        rating=10,
+        user_id=1,
+        restaurant_id=7)
 
     db.session.add(review1)
     db.session.add(review1a)

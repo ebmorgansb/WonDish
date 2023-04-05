@@ -33,12 +33,21 @@ def seed_restaurants():
         address="Thai House Restaurant, West Redlands Boulevard, Redlands, CA, USA",
         user_id=1)
 
+    restaurant7 = Restaurant(
+        name="Bricks and Birch",
+        address="Bricks and Birch, Cajon Street, Redlands, CA, USA",
+        user_id=1)
+
+
+
+
     db.session.add(restaurant1)
     db.session.add(restaurant2)
     db.session.add(restaurant3)
     db.session.add(restaurant4)
     db.session.add(restaurant5)
     db.session.add(restaurant6)
+    db.session.add(restaurant7)
     db.session.commit()
 
 
