@@ -443,7 +443,7 @@ def seed_primaryreviews():
     db.session.add(review10c)
     db.session.commit()
 
-#test
+#Fixed WSL for seed data
 def undo_primaryreviews():
     if environment == "production":
         db.session.execute(f"TRUNCATE table {SCHEMA}.primary_reviews RESTART IDENTITY CASCADE;")
