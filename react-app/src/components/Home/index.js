@@ -1,7 +1,9 @@
 import {useDispatch, useSelector} from 'react-redux'
 import React, {useEffect, useState} from 'react'
 import './index.css'
-import {useParams} from 'react-router-dom'
+import gitLogo from '../../allImages/github-logo.png';
+import inLogo from '../../allImages/in.png';
+import {NavLink, useParams} from 'react-router-dom'
 import CreateDish from '../CreateDish'
 // import { ModalProvider } from '../../context/modal'
 import { Modal } from '../../context/modal'
@@ -41,6 +43,16 @@ return (
   </div>
     <Search/>
     <HomeDishes/>
+    <div className='footerIsh'>
+      <NavLink className='footerItems' style={{ textDecoration: 'none'}} to='/about'>About WonDish</NavLink>
+    <a className='footerItems' target="_blank" href='https://github.com/ebmorgansb'>
+                <img className='gitLogo'  alt='githubLogo' src={gitLogo}></img>
+
+              </a>
+              <a className='footerItems' target="_blank" href='https://www.linkedin.com/in/evan-morgan-9a2723132/'>
+                <img className='inLogo' alt='inLogo' src={inLogo}></img>
+              </a>
+      </div>
 </div>
 </div>
 }

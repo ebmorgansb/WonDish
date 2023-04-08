@@ -401,6 +401,42 @@ def seed_primaryreviews():
         user_id=1,
         restaurant_id=7)
 
+    review11 = PrimaryReview(
+        name='sushi',
+        description='The sushi was fresh and the presentation was beautiful!',
+        image='https://peasandcrayons.com/wp-content/uploads/2012/10/homemade-sushi-tutorial-recipe-peas-and-crayons-1250.jpg',
+        address="Arigato Sushi, State Street, Santa Barbara, CA, USA",
+        rating=9,
+        user_id=3,
+        restaurant_id=7)
+
+    review11a = PrimaryReview(
+        name='sushi',
+        description='The sushi was good, but the rice was a bit too sticky',
+        image='https://japan.recipetineats.com/wp-content/uploads/2019/07/Take-away-sushi-rolls_3781NM.jpg',
+        address="Arigato Sushi, State Street, Santa Barbara, CA, USA",
+        rating=7,
+        user_id=1,
+        restaurant_id=7)
+
+    review11b = PrimaryReview(
+        name='sushi',
+        description='The sushi was okay, but nothing special',
+        image='https://media-cdn.tripadvisor.com/media/photo-s/18/ef/6b/01/photo0jpg.jpg',
+        address="Arigato Sushi, State Street, Santa Barbara, CA, USA",
+        rating=6,
+        user_id=2,
+        restaurant_id=7)
+
+    review11c = PrimaryReview(
+        name='sushi',
+        description='The sushi was excellent and I loved the variety of rolls!',
+        image='https://www.gimmesomeoven.com/wp-content/uploads/2020/05/How-To-Make-Sushi-Maki-Rolls-4-Closeup.jpg',
+        address="Arigato Sushi, State Street, Santa Barbara, CA, USA",
+        rating=10,
+        user_id=3,
+        restaurant_id=7)
+
     db.session.add(review1)
     db.session.add(review1a)
     db.session.add(review1b)
@@ -441,6 +477,10 @@ def seed_primaryreviews():
     db.session.add(review10a)
     db.session.add(review10b)
     db.session.add(review10c)
+    db.session.add(review11)
+    db.session.add(review11a)
+    db.session.add(review11b)
+    db.session.add(review11c)
     db.session.commit()
 
 #Fixed WSL for seed data

@@ -38,6 +38,11 @@ def seed_restaurants():
         address="Bricks and Birch, Cajon Street, Redlands, CA, USA",
         user_id=1)
 
+    restaurant8 = Restaurant(
+        name="Arigato Sushi",
+        address="Arigato Sushi, State Street, Santa Barbara, CA, USA",
+        user_id=1)
+
 
 
 
@@ -48,6 +53,7 @@ def seed_restaurants():
     db.session.add(restaurant5)
     db.session.add(restaurant6)
     db.session.add(restaurant7)
+    db.session.add(restaurant8)
     db.session.commit()
 
 
