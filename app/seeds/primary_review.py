@@ -408,7 +408,7 @@ def seed_primaryreviews():
         address="Arigato Sushi, State Street, Santa Barbara, CA, USA",
         rating=9,
         user_id=3,
-        restaurant_id=7)
+        restaurant_id=8)
 
     review11a = PrimaryReview(
         name='sushi',
@@ -417,7 +417,7 @@ def seed_primaryreviews():
         address="Arigato Sushi, State Street, Santa Barbara, CA, USA",
         rating=7,
         user_id=1,
-        restaurant_id=7)
+        restaurant_id=8)
 
     review11b = PrimaryReview(
         name='sushi',
@@ -426,7 +426,7 @@ def seed_primaryreviews():
         address="Arigato Sushi, State Street, Santa Barbara, CA, USA",
         rating=6,
         user_id=2,
-        restaurant_id=7)
+        restaurant_id=8)
 
     review11c = PrimaryReview(
         name='sushi',
@@ -435,7 +435,79 @@ def seed_primaryreviews():
         address="Arigato Sushi, State Street, Santa Barbara, CA, USA",
         rating=10,
         user_id=3,
-        restaurant_id=7)
+        restaurant_id=8)
+
+    review12 = PrimaryReview(
+        name='ice cream',
+        description='The ice cream was delicious and creamy!',
+        image='https://www.recipetineats.com/wp-content/uploads/2023/01/Rum-and-raisin-ice-cream-in-cone.jpg',
+        address='à la Minute Ice Cream, East Citrus Avenue, Redlands, CA, USA',
+        rating=8,
+        user_id=2,
+        restaurant_id=9)
+
+    review12a = PrimaryReview(
+        name='ice cream',
+        description='The ice cream was good, but the flavor was a bit plain',
+        image='https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2022-05/cookies-and-cream-ice-cream_0422.jpg',
+        address='à la Minute Ice Cream, East Citrus Avenue, Redlands, CA, USA',
+        rating=6,
+        user_id=1,
+        restaurant_id=9)
+
+    review12b = PrimaryReview(
+        name='ice cream',
+        description='The ice cream here was amazing! Loved the unique flavors',
+        image='https://www.southernliving.com/thmb/nD3X2rYcknTrEESFsScMhXs5Nqg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/gettyimages-200568779-001-2000-1cc6aab96884438288d77f210ccab84a.jpg',
+        address='à la Minute Ice Cream, East Citrus Avenue, Redlands, CA, USA',
+        rating=9,
+        user_id=3,
+        restaurant_id=9)
+
+    review12c = PrimaryReview(
+        name='ice cream',
+        description='The ice cream was okay, but it melted too quickly',
+        image='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Ube_Macapuno.jpg/800px-Ube_Macapuno.jpg',
+        address='à la Minute Ice Cream, East Citrus Avenue, Redlands, CA, USA',
+        rating=6,
+        user_id=2,
+        restaurant_id=9)
+
+    review13 = PrimaryReview(
+        name='boba',
+        description='The boba was delicious and chewy!',
+        image='https://teakandthyme.com/wp-content/uploads/2022/09/avocado-boba-DSC_0152-1x1-1200.jpg',
+        address='Boba Tea House, Barton Road, Loma Linda, CA, USA',
+        rating=8,
+        user_id=2,
+        restaurant_id=10)
+
+    review13a = PrimaryReview(
+        name='boba',
+        description='The boba was good, but the drink was too sweet',
+        image='https://www.honestfoodtalks.com/wp-content/uploads/2022/07/Coffee-boba-recipe-1.jpeg',
+        address='Boba Tea House, Barton Road, Loma Linda, CA, USA',
+        rating=6,
+        user_id=1,
+        restaurant_id=10)
+
+    review13b = PrimaryReview(
+        name='boba',
+        description='The boba here was amazing! So many flavors to choose from',
+        image='https://www.anediblemosaic.com/wp-content/uploads//2022/03/boba-milk-tea-featured-image.jpg',
+        address='Boba Tea House, Barton Road, Loma Linda, CA, USA',
+        rating=9,
+        user_id=3,
+        restaurant_id=10)
+
+    review13c = PrimaryReview(
+        name='boba',
+        description='The boba was okay, but the pearls were too hard',
+        image='https://whitekitchenredwine.com/wp-content/uploads/2022/07/StrawberryBobaTe3a-11-min-scaled.jpg',
+        address='Boba Tea House, Barton Road, Loma Linda, CA, USA',
+        rating=6,
+        user_id=2,
+        restaurant_id=10)
 
     db.session.add(review1)
     db.session.add(review1a)
@@ -481,6 +553,14 @@ def seed_primaryreviews():
     db.session.add(review11a)
     db.session.add(review11b)
     db.session.add(review11c)
+    db.session.add(review12)
+    db.session.add(review12a)
+    db.session.add(review12b)
+    db.session.add(review12c)
+    db.session.add(review13)
+    db.session.add(review13a)
+    db.session.add(review13b)
+    db.session.add(review13c)
     db.session.commit()
 
 #Fixed WSL for seed data

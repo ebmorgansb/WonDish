@@ -43,8 +43,15 @@ def seed_restaurants():
         address="Arigato Sushi, State Street, Santa Barbara, CA, USA",
         user_id=1)
 
+    restaurant9 = Restaurant(
+        name="à la Minute Ice Cream",
+        address="à la Minute Ice Cream, East Citrus Avenue, Redlands, CA, USA",
+        user_id=1)
 
-
+    restaurant10 = Restaurant(
+        name="Boba Tea House",
+        address="Boba Tea House, Barton Road, Loma Linda, CA, USA",
+        user_id=1)
 
     db.session.add(restaurant1)
     db.session.add(restaurant2)
@@ -54,6 +61,8 @@ def seed_restaurants():
     db.session.add(restaurant6)
     db.session.add(restaurant7)
     db.session.add(restaurant8)
+    db.session.add(restaurant9)
+    db.session.add(restaurant10)
     db.session.commit()
 
 
