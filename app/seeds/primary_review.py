@@ -509,6 +509,43 @@ def seed_primaryreviews():
         user_id=2,
         restaurant_id=10)
 
+
+    review14 = PrimaryReview(
+        name='dumplings',
+        description='The dumplings were so delicious and flavorful!',
+        image='https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Xiaolongbao-breakfast.jpg/1200px-Xiaolongbao-breakfast.jpg',
+        address='Dumpling Time, Warriors Way, San Francisco, CA, USA',
+        rating=9,
+        user_id=2,
+        restaurant_id=11)
+
+    review14a = PrimaryReview(
+        name='dumplings',
+        description='The dumplings were okay, but they could have been more flavorful',
+        image='https://hips.hearstapps.com/hmg-prod/images/delish-202210-soupdumplings-199-1665605386.jpg',
+        address='Dumpling Time, Warriors Way, San Francisco, CA, USA',
+        rating=6,
+        user_id=1,
+        restaurant_id=11)
+
+    review14b = PrimaryReview(
+        name='dumplings',
+        description='The dumplings here are the best I\'ve ever had!',
+        image='https://woonheng.com/wp-content/uploads/2021/05/Dumpling-Wrapper-Bun-4354-e1621658495403.jpg',
+        address='Dumpling Time, Warriors Way, San Francisco, CA, USA',
+        rating=10,
+        user_id=3,
+        restaurant_id=11)
+
+    review14c = PrimaryReview(
+        name='dumplings',
+        description='The dumplings were good, but they were a bit too greasy for my liking',
+        image='https://www.thespruceeats.com/thmb/q7EZ504cg0xjv566mB-EAbnDnnc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/traditional-czech-bread-dumplings-recipe-1135718-hero-01-b8c7772d5c564dd7bc6a3d7b59a2d6f3.jpg',
+        address='Dumpling Time, Warriors Way, San Francisco, CA, USA',
+        rating=7,
+        user_id=2,
+        restaurant_id=11)
+
     db.session.add(review1)
     db.session.add(review1a)
     db.session.add(review1b)
@@ -561,6 +598,10 @@ def seed_primaryreviews():
     db.session.add(review13a)
     db.session.add(review13b)
     db.session.add(review13c)
+    db.session.add(review14)
+    db.session.add(review14a)
+    db.session.add(review14b)
+    db.session.add(review14c)
     db.session.commit()
 
 #Fixed WSL for seed data

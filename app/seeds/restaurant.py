@@ -53,6 +53,11 @@ def seed_restaurants():
         address="Boba Tea House, Barton Road, Loma Linda, CA, USA",
         user_id=1)
 
+    restaurant11 = Restaurant(
+        name="Dumpling Time",
+        address="Dumpling Time, Warriors Way, San Francisco, CA, USA",
+        user_id=1)
+
     db.session.add(restaurant1)
     db.session.add(restaurant2)
     db.session.add(restaurant3)
@@ -63,6 +68,7 @@ def seed_restaurants():
     db.session.add(restaurant8)
     db.session.add(restaurant9)
     db.session.add(restaurant10)
+    db.session.add(restaurant11)
     db.session.commit()
 
 
