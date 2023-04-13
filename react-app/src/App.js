@@ -13,7 +13,8 @@ import Home from './components/Home';
 import CreateDish from './components/CreateDish';
 import TopReviewsPage from './components/TopReviews/index2';
 import TopRestaurantsPage from './components/Restaurants/index2';
-
+import About
+ from './components/about';
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -47,6 +48,9 @@ function App() {
         </ProtectedRoute>
         <Route path='/dish/reviews/:restaurantId' exact={true}>
           <TopReviewsPage/>
+        </Route>
+        <Route path='/about' exact={true}>
+          <About/>
         </Route>
         <Route path='/primarydish/create' exact={true} >
           <CreateDish/>
