@@ -1,0 +1,16 @@
+.aboutTotal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutTitle {
+    font-size: 48px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.aboutText {
+    width: 70%;
+}
