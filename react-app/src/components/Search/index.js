@@ -56,7 +56,9 @@ let stylelol = {
   position: 'static',
   overflow: 'auto',
   maxHeight: '50%', // TODO: don't cheat, let it flow to the bottom
-  borderRadius: '10px'
+  height: '100px',
+  borderRadius: '10px',
+  overflow: 'auto'
 }
 
   return (
@@ -70,14 +72,12 @@ let stylelol = {
       <div className="inputAndBut">
  <Autocomplete
   getItemValue={(item) => item}
-  // items={preReviewNames}
-  // items={preReviewNames.filter((item) => item.includes(name))}
   items={preReviewNames.filter((item) => {
     const regex = new RegExp(`^${name}`, 'i');
     return regex.test(item);
   })}
   renderItem={(item, isHighlighted) =>
-    <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
+    <div className='wowa' style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
       {item}
     </div>
   }
