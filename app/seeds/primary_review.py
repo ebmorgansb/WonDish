@@ -546,6 +546,43 @@ def seed_primaryreviews():
         user_id=2,
         restaurant_id=11)
 
+    review15 = PrimaryReview(
+        name='fries',
+        description='The fries were so delicious and flavorful!',
+        image='https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg',
+        address='The Habit Burger Grill, San Bernardino Avenue, Redlands, CA, USA',
+        rating=9,
+        user_id=2,
+        restaurant_id=12)
+
+    review15a = PrimaryReview(
+        name='fries',
+        description='The fries were okay, but they could have been more flavorful',
+        image='https://images.pexels.com/photos/115740/pexels-photo-115740.jpeg',
+        address='The Habit Burger Grill, San Bernardino Avenue, Redlands, CA, USA',
+        rating=6,
+        user_id=1,
+        restaurant_id=12)
+
+    review15b = PrimaryReview(
+        name='fries',
+        description='The fries here are the best I\'ve ever had!',
+        image='https://images.pexels.com/photos/2729710/pexels-photo-2729710.jpeg',
+        address='The Habit Burger Grill, San Bernardino Avenue, Redlands, CA, USA',
+        rating=10,
+        user_id=3,
+        restaurant_id=12)
+
+    review15c = PrimaryReview(
+        name='fries',
+        description='The fries were good, but they were a bit too greasy for my liking',
+        image='https://images.pexels.com/photos/2741461/pexels-photo-2741461.jpeg',
+        address='The Habit Burger Grill, San Bernardino Avenue, Redlands, CA, USA',
+        rating=7,
+        user_id=2,
+        restaurant_id=12)
+
+
     db.session.add(review1)
     db.session.add(review1a)
     db.session.add(review1b)
@@ -602,6 +639,10 @@ def seed_primaryreviews():
     db.session.add(review14a)
     db.session.add(review14b)
     db.session.add(review14c)
+    db.session.add(review15)
+    db.session.add(review15a)
+    db.session.add(review15b)
+    db.session.add(review15c)
     db.session.commit()
 
 #Fixed WSL for seed data

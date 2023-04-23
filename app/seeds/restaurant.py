@@ -58,6 +58,11 @@ def seed_restaurants():
         address="Dumpling Time, Warriors Way, San Francisco, CA, USA",
         user_id=1)
 
+    restaurant12 = Restaurant(
+        name="The Habit Burger Grill",
+        address="The Habit Burger Grill, San Bernardino Avenue, Redlands, CA, USA",
+        user_id=1)
+
     db.session.add(restaurant1)
     db.session.add(restaurant2)
     db.session.add(restaurant3)
@@ -69,6 +74,7 @@ def seed_restaurants():
     db.session.add(restaurant9)
     db.session.add(restaurant10)
     db.session.add(restaurant11)
+    db.session.add(restaurant12)
     db.session.commit()
 
 
