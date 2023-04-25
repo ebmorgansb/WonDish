@@ -644,7 +644,7 @@ def seed_primaryreviews():
     db.session.add(review15b)
     db.session.add(review15c)
     db.session.commit()
-
+# WSL
 #Fixed WSL for seed data
 def undo_primaryreviews():
     if environment == "production":
