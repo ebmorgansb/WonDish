@@ -15,6 +15,7 @@ import TopReviewsPage from './components/TopReviews/index2';
 import TopRestaurantsPage from './components/Restaurants/index2';
 import About
  from './components/about';
+import AboutPage from './components/about/index2';
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -50,7 +51,7 @@ function App() {
           <TopReviewsPage/>
         </Route>
         <Route path='/about' exact={true}>
-          <About/>
+          <AboutPage/>
         </Route>
         <Route path='/primarydish/create' exact={true} >
           <CreateDish/>
