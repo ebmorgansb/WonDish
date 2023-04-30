@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom'
 import About from '.'
 
 export default function AboutPage () {
-
+//Fixed 
     const [ spinner, setSpinner ] = useState(true);
     const { pathname } = useLocation();
 
