@@ -5,11 +5,12 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getAllPrimaryReviewsThunk } from '../../store/primaryReview';
 import { NavLink } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 export default function RestaurantDishes() {
   const dispatch = useDispatch()
   const primaryDishesAll = Object.values(useSelector(state => state.primaryReview))
-
+  let { restaurantId } = useParams();
   let primaryDishes = primaryDishesAll.reduce(function(acc, current) {
     let match = acc.findIndex(dish => dish.name === current.name);
     if (match === -1) {
@@ -21,7 +22,7 @@ export default function RestaurantDishes() {
   //We have all the dishes once now. Now we need to filter by the restaurant id which will be passed from the
   //Primary restaurant page
   let allRestDishes = primaryDishes.filter(dish => dish.restaurant_id = restaurantId)
-
+  console.log(allRestDishes, 'LOL')
   useEffect(() => {
     dispatch(getAllPrimaryReviewsThunk())
   }, [dispatch])

@@ -42,6 +42,7 @@ return (
         <div className='restaurantCards'>
             {restaurants.map(restaurant =>
             <>
+            <NavLink to={`/restaurants/${restaurant?.id}`}>
             <div className='restaurantCard'>
                 <div className='restTitle'>{restaurant.name}</div>
                 <div>
@@ -96,12 +97,12 @@ allowfullscreen>
 </iframe>
 </div>
 </div>
+</NavLink>
 </>
 
             )}
 
         </div>
-        {/* <Footer/> */}
     </div>
 )
 
