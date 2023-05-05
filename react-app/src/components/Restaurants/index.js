@@ -42,8 +42,8 @@ return (
         <div className='restaurantCards'>
             {restaurants.map(restaurant =>
             <>
-            <NavLink to={`/restaurants/${restaurant?.id}`}>
-            <div className='restaurantCard'>
+            <NavLink className='restaurantCard1' style={{ textDecoration: 'none'}} to={`/restaurants/${restaurant?.id}`}>
+            <div >
                 <div className='restTitle'>{restaurant.name}</div>
                 <div>
                 <PlacesAutocomplete
