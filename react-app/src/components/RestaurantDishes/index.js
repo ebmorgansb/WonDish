@@ -20,7 +20,7 @@ export default function RestaurantDishes() {
   }, []);
 
   //We have all the dishes once now. Now we need to filter by the restaurant id which will be passed from the
-  //Primary restaurant page
+  //Primary restaurant page//
   let allRestDishes = primaryDishes.filter(dish => dish.restaurant_id == restaurantId)
   console.log(allRestDishes, 'LOL')
   useEffect(() => {
