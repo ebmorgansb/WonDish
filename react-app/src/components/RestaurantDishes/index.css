@@ -1,0 +1,28 @@
+.allRestDish {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 80%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* .restDishName {
+    align
+} */
+
+.rd {
+    margin: 2%;
+    width: 20vw;
+    height: 30vh;
+    text-align: center;
+    margin-bottom: 4%;
+    }
+
+.tea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

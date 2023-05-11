@@ -18,7 +18,8 @@ export default function RestaurantDishes() {
     }
     return acc;
   }, []);
-
+  let restName = primaryDishes[0]
+  console.log(restName, 'ongod')
   //We have all the dishes once now. Now we need to filter by the restaurant id which will be passed from the
   //Primary restaurant page///
   let allRestDishes = primaryDishes.filter(dish => dish.restaurant_id == restaurantId)
@@ -32,9 +33,12 @@ export default function RestaurantDishes() {
   }
 
 return (
-<div className='allHomeDish'>
+<div className='tea'>
+<div className='allRestDish'>
+  <h2>{restName?.address}</h2>
     {primaryDishes.map((dish, index) =>
-        <div className='re'>
+        <div className='rd'>
+          <div className='restDishName'>{dish?.name.toUpperCase()[0]}{dish?.name.slice(1)}</div>
         <NavLink to={`/dish/${dish?.name}`}>
             <img
             className='oneHomeDish'
@@ -45,6 +49,7 @@ return (
         </NavLink>
          </div>
     )}
+</div>
 </div>
 )
 
