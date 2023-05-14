@@ -34,8 +34,8 @@ export default function RestaurantDishes() {
 
 return (
 <div className='tea'>
+<h2 className='restDishAdd'>{restName?.address}</h2>
 <div className='allRestDish'>
-  <h2>{restName?.address}</h2>
     {primaryDishes.map((dish, index) =>
         <div className='rd'>
           <div className='restDishName'>{dish?.name.toUpperCase()[0]}{dish?.name.slice(1)}</div>

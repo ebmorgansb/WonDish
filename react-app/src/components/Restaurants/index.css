@@ -30,6 +30,7 @@ height: 35vh;
 .restTitle {
     font-size:2em;
     padding: 2%;
+    text-align: center;
 }
 
 .totalRestTitle {
