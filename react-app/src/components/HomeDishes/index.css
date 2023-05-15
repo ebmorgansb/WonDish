@@ -17,6 +17,10 @@ border-radius: 20px;
 object-fit: cover
 }
 
+.oneHomeDish:hover {
+    border: blue 1px solid;
+  }
+
 .re {
 margin: 2%;
 width: 20vw;

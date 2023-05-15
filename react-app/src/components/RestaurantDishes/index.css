@@ -11,7 +11,14 @@
 
 .restDishAdd {
     margin-top: 3%;
-    color: rgb(2, 50, 73)
+    color: rgb(2, 50, 73);
+    font-size: 52px;
+}
+
+.restDishAdd2 {
+    margin-top: 3%;
+    color: rgb(2, 50, 73);
+    /* font-size: 52px; */
 }
 
 .rd {
@@ -27,4 +34,16 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.extraCreate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+    margin: 2%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 2%;
 }
