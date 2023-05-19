@@ -7,7 +7,6 @@ import {NavLink, useParams} from 'react-router-dom'
 import CreateDish from '../CreateDish'
 // import { ModalProvider } from '../../context/modal'
 import { Modal } from '../../context/modal'
-// import CreateDishFilter from '../CreateDishFilter/CreateDishFilter'
 import Search from '../Search';
 import Slider from '../Slider';
 import CreateADishModal from '../CreateDishFilter/CreateDishFilterModal'
