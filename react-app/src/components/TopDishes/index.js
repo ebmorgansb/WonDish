@@ -48,7 +48,7 @@ let TEST = finalArr.map(dish => {
   let testArr = dish.rating
   let total = testArr.reduce((a,b)=>a+b)
   console.log(total, 'UGH')
-  //total is correct, and shows value mapping to dish
+  //total is correct, and shows value mapping to dish//
   //but Test does not save that key value pair
   //Somehow I am getting inconssistent behavior with rating
   dish.rating = total
