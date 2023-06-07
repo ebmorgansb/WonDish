@@ -21,7 +21,7 @@ export default function CreateDish() {
     const [address, setAddress] = useState(data.address);
     const [rating, setRating] = useState('' || 6);
     const [errors, setErrors] = useState([]);
-//test///////
+//test/////////
 
 
     useEffect(()=>{
