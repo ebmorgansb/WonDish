@@ -15,7 +15,7 @@ export default function CreateDish() {
     const history = useHistory()
     const [name, setName] = useState(data.name);
     const [description, setDescription] = useState('');
-    // const [category, setCategory] = useState('');
+    // const [category, setCategory] = useState('');//
     const [image, setImage] = useState(null);
     const [imageLoading, setImageLoading] = useState(false);
     const [address, setAddress] = useState(data.address);
