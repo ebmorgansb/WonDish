@@ -10,7 +10,7 @@ export default function HomeDishes() {
   const dispatch = useDispatch()
   const primaryDishesAll = Object.values(useSelector(state => state.primaryReview))
 
-  let primaryDishes = primaryDishesAll.reduce(function(acc, current) {
+  let primaryDishesTotal = primaryDishesAll.reduce(function(acc, current) {
     let match = acc.findIndex(dish => dish.name === current.name);
     if (match === -1) {
       acc.push(current);
@@ -18,7 +18,7 @@ export default function HomeDishes() {
     return acc;
   }, []);
 
-
+  let primaryDishes = primaryDishesTotal.slice(0,9)
   useEffect(() => {
     dispatch(getAllPrimaryReviewsThunk())
   }, [dispatch])
