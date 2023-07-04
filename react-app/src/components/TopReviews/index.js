@@ -27,7 +27,7 @@ const [currDishName, setCurrDishName] = useState(data.name);
 const topReviews = Object.values(useSelector(state => state.primaryReview))
 const users = Object.values(useSelector(state => state.users))
 const topReviewsFilter = topReviews.filter((primaryDish) =>  primaryDish.name === currDishName && primaryDish.restaurant_id == restaurantId)
-console.log(currDishName,    'dafuck')
+console.log(currDishName,    'current dish name')
 
 
 
