@@ -1,6 +1,8 @@
 .restaurantMaps {
-width: 25vw;
+width: 12vw;
 height: 35vh;
+/* width: 50%;
+height: 100%; */
 }
 
 .restaurantCards {
@@ -13,13 +15,27 @@ height: 35vh;
 
 .restaurantCard1 {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: row; */
     align-items: center;
     justify-content: center;
     margin: 2%;
     box-shadow: inset 2px 2px 30px rgba(0, 0, 0, 0.1);
     padding: 2%;
     border-radius: 10px;
+}
+
+.splitImg {
+  /* height: 50%;
+  width: 50%; */
+  width: 12vw;
+  height: 35vh;
+  object-fit: cover
+}
+
+.splitGoogDish {
+  display: flex;
+  flex-direction: row;
+
 }
 
 .restaurantCard1:hover {

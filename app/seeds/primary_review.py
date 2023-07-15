@@ -365,7 +365,7 @@ def seed_primaryreviews():
         user_id=1,
         restaurant_id=6)
 
-    review10 = PrimaryReview(
+    review11 = PrimaryReview(
         name='pizza',
         description='The pizza was delicious and had the perfect amount of cheese!',
         image='https://www.kingarthurbaking.com/sites/default/files/2020-03/thin-crust-pizza.jpg',
@@ -374,7 +374,7 @@ def seed_primaryreviews():
         user_id=1,
         restaurant_id=7)
 
-    review10a = PrimaryReview(
+    review11a = PrimaryReview(
         name='pizza',
         description='The pizza was good, but the crust was a bit too thick for my liking',
         image='https://www.allrecipes.com/thmb/x45iaJC4PvcS9QKU_fTrBBhTr9g=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4475700-6211dfa93fcb4473a42a08ba757bb915.jpg',
@@ -383,7 +383,7 @@ def seed_primaryreviews():
         user_id=3,
         restaurant_id=7)
 
-    review10b = PrimaryReview(
+    review11b = PrimaryReview(
         name='pizza',
         description='The pizza was okay, but it was a bit bland for my taste',
         image='https://bakingamoment.com/wp-content/uploads/2013/08/IMG_8669-pizza-dough-recipe.jpg',
@@ -392,7 +392,7 @@ def seed_primaryreviews():
         user_id=2,
         restaurant_id=7)
 
-    review10c = PrimaryReview(
+    review11c = PrimaryReview(
         name='pizza',
         description='The pizza was amazing! I would definitely recommend this place to anyone',
         image='https://artisanpizzakitchen.com/wp-content/uploads/2019/10/Thin-crust-Pizza-e1573656377416.jpg',
@@ -401,7 +401,7 @@ def seed_primaryreviews():
         user_id=1,
         restaurant_id=7)
 
-    review11 = PrimaryReview(
+    review12 = PrimaryReview(
         name='sushi',
         description='The sushi was fresh and the presentation was beautiful!',
         image='https://peasandcrayons.com/wp-content/uploads/2012/10/homemade-sushi-tutorial-recipe-peas-and-crayons-1250.jpg',
@@ -410,7 +410,7 @@ def seed_primaryreviews():
         user_id=3,
         restaurant_id=8)
 
-    review11a = PrimaryReview(
+    review12a = PrimaryReview(
         name='sushi',
         description='The sushi was good, but the rice was a bit too sticky',
         image='https://japan.recipetineats.com/wp-content/uploads/2019/07/Take-away-sushi-rolls_3781NM.jpg',
@@ -419,7 +419,7 @@ def seed_primaryreviews():
         user_id=1,
         restaurant_id=8)
 
-    review11b = PrimaryReview(
+    review12b = PrimaryReview(
         name='sushi',
         description='The sushi was okay, but nothing special',
         image='https://media-cdn.tripadvisor.com/media/photo-s/18/ef/6b/01/photo0jpg.jpg',
@@ -428,7 +428,7 @@ def seed_primaryreviews():
         user_id=2,
         restaurant_id=8)
 
-    review11c = PrimaryReview(
+    review12c = PrimaryReview(
         name='sushi',
         description='The sushi was excellent and I loved the variety of rolls!',
         image='https://www.gimmesomeoven.com/wp-content/uploads/2020/05/How-To-Make-Sushi-Maki-Rolls-4-Closeup.jpg',
@@ -437,7 +437,7 @@ def seed_primaryreviews():
         user_id=3,
         restaurant_id=8)
 
-    review12 = PrimaryReview(
+    review13 = PrimaryReview(
         name='ice cream',
         description='The ice cream was delicious and creamy!',
         image='https://www.recipetineats.com/wp-content/uploads/2023/01/Rum-and-raisin-ice-cream-in-cone.jpg',
@@ -446,7 +446,7 @@ def seed_primaryreviews():
         user_id=2,
         restaurant_id=9)
 
-    review12a = PrimaryReview(
+    review13a = PrimaryReview(
         name='ice cream',
         description='The ice cream was good, but the flavor was a bit plain',
         image='https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/2022-05/cookies-and-cream-ice-cream_0422.jpg',
@@ -455,7 +455,7 @@ def seed_primaryreviews():
         user_id=1,
         restaurant_id=9)
 
-    review12b = PrimaryReview(
+    review13b = PrimaryReview(
         name='ice cream',
         description='The ice cream here was amazing! Loved the unique flavors',
         image='https://www.southernliving.com/thmb/nD3X2rYcknTrEESFsScMhXs5Nqg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/gettyimages-200568779-001-2000-1cc6aab96884438288d77f210ccab84a.jpg',
@@ -464,7 +464,7 @@ def seed_primaryreviews():
         user_id=3,
         restaurant_id=9)
 
-    review12c = PrimaryReview(
+    review13c = PrimaryReview(
         name='ice cream',
         description='The ice cream was okay, but it melted too quickly',
         image='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Ube_Macapuno.jpg/800px-Ube_Macapuno.jpg',
@@ -473,7 +473,7 @@ def seed_primaryreviews():
         user_id=2,
         restaurant_id=9)
 
-    review13 = PrimaryReview(
+    review14 = PrimaryReview(
         name='boba',
         description='The boba was delicious and chewy!',
         image='https://teakandthyme.com/wp-content/uploads/2022/09/avocado-boba-DSC_0152-1x1-1200.jpg',
@@ -482,7 +482,7 @@ def seed_primaryreviews():
         user_id=2,
         restaurant_id=10)
 
-    review13a = PrimaryReview(
+    review14a = PrimaryReview(
         name='boba',
         description='The boba was good, but the drink was too sweet',
         image='https://www.honestfoodtalks.com/wp-content/uploads/2022/07/Coffee-boba-recipe-1.jpeg',
@@ -491,7 +491,7 @@ def seed_primaryreviews():
         user_id=1,
         restaurant_id=10)
 
-    review13b = PrimaryReview(
+    review14b = PrimaryReview(
         name='boba',
         description='The boba here was amazing! So many flavors to choose from',
         image='https://www.anediblemosaic.com/wp-content/uploads//2022/03/boba-milk-tea-featured-image.jpg',
@@ -500,7 +500,7 @@ def seed_primaryreviews():
         user_id=3,
         restaurant_id=10)
 
-    review13c = PrimaryReview(
+    review14c = PrimaryReview(
         name='boba',
         description='The boba was okay, but the pearls were too hard',
         image='https://whitekitchenredwine.com/wp-content/uploads/2022/07/StrawberryBobaTe3a-11-min-scaled.jpg',
@@ -510,7 +510,7 @@ def seed_primaryreviews():
         restaurant_id=10)
 
 
-    review14 = PrimaryReview(
+    review15 = PrimaryReview(
         name='dumplings',
         description='The dumplings were so delicious and flavorful!',
         image='https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Xiaolongbao-breakfast.jpg/1200px-Xiaolongbao-breakfast.jpg',
@@ -519,7 +519,7 @@ def seed_primaryreviews():
         user_id=2,
         restaurant_id=11)
 
-    review14a = PrimaryReview(
+    review15a = PrimaryReview(
         name='dumplings',
         description='The dumplings were okay, but they could have been more flavorful',
         image='https://hips.hearstapps.com/hmg-prod/images/delish-202210-soupdumplings-199-1665605386.jpg',
@@ -528,7 +528,7 @@ def seed_primaryreviews():
         user_id=1,
         restaurant_id=11)
 
-    review14b = PrimaryReview(
+    review15b = PrimaryReview(
         name='dumplings',
         description='The dumplings here are the best I\'ve ever had!',
         image='https://woonheng.com/wp-content/uploads/2021/05/Dumpling-Wrapper-Bun-4354-e1621658495403.jpg',
@@ -537,7 +537,7 @@ def seed_primaryreviews():
         user_id=3,
         restaurant_id=11)
 
-    review14c = PrimaryReview(
+    review15c = PrimaryReview(
         name='dumplings',
         description='The dumplings were good, but they were a bit too greasy for my liking',
         image='https://www.thespruceeats.com/thmb/q7EZ504cg0xjv566mB-EAbnDnnc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/traditional-czech-bread-dumplings-recipe-1135718-hero-01-b8c7772d5c564dd7bc6a3d7b59a2d6f3.jpg',
@@ -546,7 +546,7 @@ def seed_primaryreviews():
         user_id=2,
         restaurant_id=11)
 
-    review15 = PrimaryReview(
+    review16 = PrimaryReview(
         name='fries',
         description='The fries were so delicious and flavorful!',
         image='https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg',
@@ -555,7 +555,7 @@ def seed_primaryreviews():
         user_id=2,
         restaurant_id=12)
 
-    review15a = PrimaryReview(
+    review16a = PrimaryReview(
         name='fries',
         description='The fries were okay, but they could have been more flavorful',
         image='https://images.pexels.com/photos/115740/pexels-photo-115740.jpeg',
@@ -564,7 +564,7 @@ def seed_primaryreviews():
         user_id=1,
         restaurant_id=12)
 
-    review15b = PrimaryReview(
+    review16b = PrimaryReview(
         name='fries',
         description='The fries here are the best I\'ve ever had!',
         image='https://images.pexels.com/photos/2729710/pexels-photo-2729710.jpeg',
@@ -573,7 +573,7 @@ def seed_primaryreviews():
         user_id=3,
         restaurant_id=12)
 
-    review15c = PrimaryReview(
+    review16c = PrimaryReview(
         name='fries',
         description='The fries were good, but they were a bit too greasy for my liking',
         image='https://images.pexels.com/photos/2741461/pexels-photo-2741461.jpeg',
@@ -643,6 +643,10 @@ def seed_primaryreviews():
     db.session.add(review15a)
     db.session.add(review15b)
     db.session.add(review15c)
+    db.session.add(review16)
+    db.session.add(review16a)
+    db.session.add(review16b)
+    db.session.add(review16c)
     db.session.commit()
 # WSL
 #Fixed WSL for seed data//

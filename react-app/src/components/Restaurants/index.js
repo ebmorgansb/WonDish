@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 import {useParams} from 'react-router-dom'
 import Footer from '../Footer'
 import { getAllRestaurantsThunk } from '../../store/restaurant'
+import { getAllPrimaryReviewsThunk } from '../../store/primaryReview'
 import { NavLink } from 'react-router-dom'
 import { Modal } from '../../context/modal'
 import './index.css'
@@ -18,22 +19,27 @@ export default function Restaurants() {
 
   const user = useSelector(state => state.session.user)
   const userId = user?.id
-  console.log('what is user',user)
 
-//   const primaryDish = Object.values(useSelector(state => state.primaryReview))[0]
+  const primaryDish = Object.values(useSelector(state => state.primaryReview))
   const restaurants = Object.values(useSelector(state => state.restaurant))
-  console.log(restaurants, 'hmm')
+  console.log(primaryDish, 'hmm')
+  console.log(restaurants, 'resty')
 
+  // Function to get a random element from an array
+function getRandomElement(arr) {
+  const randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
+}
 
 
   useEffect(() => {
     dispatch(getAllRestaurantsThunk())
-
+    dispatch(getAllPrimaryReviewsThunk())
   }, [dispatch])
 
-//   if (!primaryDish) {
-//     return null
-//   }
+  if (!primaryDish) {
+    return null
+  }
 
 
 return (
@@ -45,7 +51,12 @@ return (
             <NavLink className='restaurantCard1' style={{ textDecoration: 'none'}} to={`/restaurants/${restaurant?.id}`}>
             <div >
                 <div className='restTitle'>{restaurant.name}</div>
-                <div>
+                <div className='splitGoogDish'>
+                  <img
+                   src={getRandomElement(primaryDish.filter(dish => restaurant.id === dish.restaurant_id))?.image}
+                   alt="image description for screen readers"
+                   onError={e => { e.currentTarget.src ="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930" }}
+                   className='splitImg' ></img>
                 <PlacesAutocomplete
   value={restaurant.address}
   // onChange={setAddress}

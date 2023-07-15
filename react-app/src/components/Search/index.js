@@ -9,6 +9,9 @@ export default function Search() {
     const sessUser = useSelector(state => state.session.user)
     const primaryReviews = Object.values(useSelector(state => state.primaryReview))
     const preReviewNames = [...new Set(primaryReviews.map(ele => ele.name))]
+    console.log(primaryReviews, '[researchy')
+
+    console.log(preReviewNames, 'searchy')
     const dispatch = useDispatch()
     const history = useHistory()
     const [name, setName] = useState('');
