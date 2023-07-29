@@ -5,7 +5,7 @@ import gitLogo from '../../allImages/github-logo.png';
 import inLogo from '../../allImages/in.png';
 import {NavLink, useParams} from 'react-router-dom'
 import CreateDish from '../CreateDish'
-// import { ModalProvider } from '../../context/modal'
+import { ModalProvider } from '../../context/modal'
 import { Modal } from '../../context/modal'
 import Search from '../Search';
 import Slider from '../Slider';
