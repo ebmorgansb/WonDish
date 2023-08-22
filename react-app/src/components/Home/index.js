@@ -15,7 +15,7 @@ import { clearPrimaryAction } from '../../store/primaryReview'
 import Google from '../GoogleAuto/GoogleAuto'
 import table from '../../allImages/TABLE.jpeg';
 import HomeDishes from '../HomeDishes'
-///////////
+/////////////
 export default function Home() {
   const dispatch = useDispatch()
   const [ spinner, setSpinner ] = useState(true);
