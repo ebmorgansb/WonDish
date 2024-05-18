@@ -18,6 +18,9 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0"
   },
+  "engines": {
+    "node": "16.20.2"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "CI=false && react-scripts build",
