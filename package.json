@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "16.20.2"
+  },
   "dependencies": {
     "react-autocomplete": "^1.8.1",
     "react-google-places-autocomplete": "^3.4.0",
