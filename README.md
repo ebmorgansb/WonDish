@@ -6,7 +6,7 @@
 
 WonDish is a Full Stack web application where you can always find favorite dish.
 
-## Check out my live AirBeeBs site:
+## Check out my live WonDish site:
 [**https://won-dish.onrender.com**](https://won-dish.onrender.com)
 
 ## Project Wiki
