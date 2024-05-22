@@ -7,7 +7,7 @@ from app.models import PrimaryReview, db
 from app.forms.edit_primaryreview import EditPrimaryReviewForm
 from app.forms.primary_review import PrimaryReviewForm
 
-
+#test
 primaryreviews_routes = Blueprint('primaryreviews', __name__, url_prefix="/api/primaryreviews")
 
 #get all primary reviews////
